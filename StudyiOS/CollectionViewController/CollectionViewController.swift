@@ -45,7 +45,7 @@ class CollectionViewController: UICollectionViewController {
         var snapShot = SnapShot()
         // 뷰로 보여줄 Section Identifier지정
         snapShot.appendSections([0])
-        // 스냅샷에서 어떤 Section에 어떤 Item을 기록해둘지를 지정
+        // 스냅샷에서 어떤 Section에 어떤 Item을 기록해둘지를 지정 (item identity)
         snapShot.appendItems(Reminder.sampleData.map({ $0.title }))
         dataSource.applySnapshotUsingReloadData(snapShot)
         

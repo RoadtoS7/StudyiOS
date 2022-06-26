@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E548BFE28683118003BEC5D /* BottomPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E548BFD28683118003BEC5D /* BottomPopUpViewController.swift */; };
 		2EC58171285C2BE5001446C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC58170285C2BE5001446C3 /* AppDelegate.swift */; };
 		2EC58173285C2BE5001446C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC58172285C2BE5001446C3 /* SceneDelegate.swift */; };
 		2EC58175285C2BE5001446C3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC58174285C2BE5001446C3 /* MainViewController.swift */; };
@@ -20,6 +21,7 @@
 		2EC581A3285C696A001446C3 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC581A2285C696A001446C3 /* TabBarViewController.swift */; };
 		2EC581A5285C70CE001446C3 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC581A4285C70CE001446C3 /* CollectionViewController.swift */; };
 		2EC581A9285C76CA001446C3 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC581A8285C76CA001446C3 /* Reminder.swift */; };
+		2EC581AC285C8F9D001446C3 /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC581AB285C8F9D001446C3 /* ViewType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E548BFD28683118003BEC5D /* BottomPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPopUpViewController.swift; sourceTree = "<group>"; };
 		2EC5816D285C2BE5001446C3 /* StudyiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EC58170285C2BE5001446C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EC58172285C2BE5001446C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +60,7 @@
 		2EC581A2285C696A001446C3 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		2EC581A4285C70CE001446C3 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		2EC581A8285C76CA001446C3 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		2EC581AB285C8F9D001446C3 /* ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E548BFC286830FC003BEC5D /* BottomPopUpViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2E548BFD28683118003BEC5D /* BottomPopUpViewController.swift */,
+			);
+			path = BottomPopUpViewController;
+			sourceTree = "<group>";
+		};
 		2EC58164285C2BE5001446C3 = {
 			isa = PBXGroup;
 			children = (
@@ -107,10 +119,11 @@
 		2EC5816F285C2BE5001446C3 /* StudyiOS */ = {
 			isa = PBXGroup;
 			children = (
+				2E548BFC286830FC003BEC5D /* BottomPopUpViewController */,
+				2EC581AA285C8F75001446C3 /* MainViewController */,
 				2EC581A6285C769C001446C3 /* CollectionViewController */,
 				2EC58170285C2BE5001446C3 /* AppDelegate.swift */,
 				2EC58172285C2BE5001446C3 /* SceneDelegate.swift */,
-				2EC58174285C2BE5001446C3 /* MainViewController.swift */,
 				2EC58176285C2BE5001446C3 /* Main.storyboard */,
 				2EC58179285C2BE6001446C3 /* Assets.xcassets */,
 				2EC5817B285C2BE6001446C3 /* LaunchScreen.storyboard */,
@@ -153,6 +166,15 @@
 				2EC581A8285C76CA001446C3 /* Reminder.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2EC581AA285C8F75001446C3 /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2EC581AB285C8F9D001446C3 /* ViewType.swift */,
+				2EC58174285C2BE5001446C3 /* MainViewController.swift */,
+			);
+			path = MainViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,7 +314,9 @@
 				2EC58175285C2BE5001446C3 /* MainViewController.swift in Sources */,
 				2EC58171285C2BE5001446C3 /* AppDelegate.swift in Sources */,
 				2EC581A3285C696A001446C3 /* TabBarViewController.swift in Sources */,
+				2EC581AC285C8F9D001446C3 /* ViewType.swift in Sources */,
 				2EC58173285C2BE5001446C3 /* SceneDelegate.swift in Sources */,
+				2E548BFE28683118003BEC5D /* BottomPopUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
