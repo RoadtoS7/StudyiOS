@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E548BFE28683118003BEC5D /* BottomPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E548BFD28683118003BEC5D /* BottomPopUpViewController.swift */; };
+		2E548C012868386B003BEC5D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E548C002868386B003BEC5D /* UIColor+Extension.swift */; };
 		2EC58171285C2BE5001446C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC58170285C2BE5001446C3 /* AppDelegate.swift */; };
 		2EC58173285C2BE5001446C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC58172285C2BE5001446C3 /* SceneDelegate.swift */; };
 		2EC58175285C2BE5001446C3 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC58174285C2BE5001446C3 /* MainViewController.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		2E548BFD28683118003BEC5D /* BottomPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPopUpViewController.swift; sourceTree = "<group>"; };
+		2E548C002868386B003BEC5D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		2EC5816D285C2BE5001446C3 /* StudyiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EC58170285C2BE5001446C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2EC58172285C2BE5001446C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 			path = BottomPopUpViewController;
 			sourceTree = "<group>";
 		};
+		2E548BFF2868385E003BEC5D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2E548C002868386B003BEC5D /* UIColor+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		2EC58164285C2BE5001446C3 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +129,7 @@
 		2EC5816F285C2BE5001446C3 /* StudyiOS */ = {
 			isa = PBXGroup;
 			children = (
+				2E548BFF2868385E003BEC5D /* Extension */,
 				2E548BFC286830FC003BEC5D /* BottomPopUpViewController */,
 				2EC581AA285C8F75001446C3 /* MainViewController */,
 				2EC581A6285C769C001446C3 /* CollectionViewController */,
@@ -317,6 +328,7 @@
 				2EC581AC285C8F9D001446C3 /* ViewType.swift in Sources */,
 				2EC58173285C2BE5001446C3 /* SceneDelegate.swift in Sources */,
 				2E548BFE28683118003BEC5D /* BottomPopUpViewController.swift in Sources */,
+				2E548C012868386B003BEC5D /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
