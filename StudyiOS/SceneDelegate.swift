@@ -16,10 +16,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         
-        let popUp = BottomPopUpViewController.create(title: "샬롯에게는 긴말긴말긴말긴말긴단어긴단어긴단어긴단어", description: "기다무 이용권을 사용할 수 없는 회차")
+        let mainViewController = MainViewController()
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = popUp
+        window?.rootViewController = mainViewController
         window?.makeKeyAndVisible()
     }
 

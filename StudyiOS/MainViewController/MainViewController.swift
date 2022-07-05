@@ -11,21 +11,32 @@ class MainViewController: UICollectionViewController {
     typealias SnapShot = NSDiffableDataSourceSnapshot<Int, String>
     
     // 어떤 데이터에 어떤 cell을 사용할지 맵핑해준다.
-    var dataSource: UICollectionViewDiffableDataSource<Int, String>!
+    var dataSource: DataSource!
+    
+    convenience init() {
+        var layoutConfiguration = UICollectionLayoutListConfiguration(appearance: .grouped)
+        layoutConfiguration.showsSeparators = false
+        layoutConfiguration.backgroundColor = .clear
+        let layout = UICollectionViewCompositionalLayout.list(using: layoutConfiguration)
+        self.init(collectionViewLayout: layout)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.collectionViewLayout = listLayout()
-        
         // CellRegistration: Cell 등록 (CollectionView에서 보여줄 cell 마다 Cell
+            // contentConfiguration 생성
+            // contentConfiguration과 Cell 연결
         // contentConfiguration: cell에서 데이터가 어떻게 나타낼지를 결정
-        // DiffableDataSource.CellProvider: Cell을 contentConfiguration을 설정하여 제공
+        view.backgroundColor = .white
         let cellRegistration = UICollectionView.CellRegistration { (cell: UICollectionViewListCell, indexPath: IndexPath, itemIdentifier: String) in
+            let viewType = ViewType.value[indexPath.item]
             var configuration = cell.defaultContentConfiguration()
-            configuration.text = ViewType.value[indexPath.item].title
+            configuration.text = viewType.title
             cell.contentConfiguration = configuration
         }
         
+        // dataSource 이니셜라이저는 cellProvider를 받는다.
+        // cell Provider는 cell pool에서 알맞은 cell을 꺼내서 반환한다.
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
             return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
         })
@@ -41,6 +52,7 @@ class MainViewController: UICollectionViewController {
     
     // 어떤 layout을 만들지를 생성한다.
     private func listLayout() -> UICollectionViewLayout {
+        // list layout에서 섹션 하나를 만든다.
         var layoutConfiguration = UICollectionLayoutListConfiguration(appearance: .grouped)
         layoutConfiguration.showsSeparators = false
         layoutConfiguration.backgroundColor = .clear
