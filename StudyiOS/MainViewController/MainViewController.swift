@@ -32,7 +32,12 @@ class MainViewController: UICollectionViewController {
             let viewType = ViewType.value[indexPath.item]
             var configuration = cell.defaultContentConfiguration()
             configuration.text = viewType.title
+            configuration.textProperties.color = UIColor.darkGray
             cell.contentConfiguration = configuration
+            
+            var backgroundConfig = UIBackgroundConfiguration.listPlainCell()
+            backgroundConfig.cornerRadius = 8
+            cell.backgroundConfiguration = backgroundConfig
         }
         
         // dataSource 이니셜라이저는 cellProvider를 받는다.
