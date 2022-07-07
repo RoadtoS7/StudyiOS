@@ -9,28 +9,24 @@ import Foundation
 import UIKit
 
 class CollectionViewController: UICollectionViewController {
-
-    // UICollectionViewDiffableDataSource<SectionIdentifierType, ItemIdentifierType>
-    // UICollectionviewDataSource: 프로토콜, CollectionView의 DataSource가 가져야 하는 것들을 정의
-    typealias DataSource = UICollectionViewDiffableDataSource<Int, String>
-    
-    // NSDiffableDataSourceSnapShot <SectionIdentifierType, ItemIdentiferType>
-    typealias SnapShot = NSDiffableDataSourceSnapshot<Int, String>
     private var dataSource: DataSource!
     
+    convenience init() {
+        var layoutConfiguration = UICollectionLayoutListConfiguration(appearance: .grouped)
+        layoutConfiguration.showsSeparators = false
+        layoutConfiguration.backgroundColor = .clear
+        let layout = UICollectionViewCompositionalLayout.list(using: layoutConfiguration)
+        self.init(collectionViewLayout: layout)
+        
+        view.backgroundColor = .white
+    }
     
     override func viewDidLoad() {
         let listLayout = listLayout()
         collectionView.collectionViewLayout = listLayout
 
         // CellRegistration: 데이터와 cell 연결
-        let cellRegistration = UICollectionView.CellRegistration { (cell: UICollectionViewListCell, indexPath: IndexPath, itemIdentifier: String) in
-            let reminder = Reminder.sampleData[indexPath.item]
-            // cell.defaultContentConfiguration = 시스템에 설정된 default 스타일에 따른 cell configuration
-            var contentConfiguration = cell.defaultContentConfiguration()
-            contentConfiguration.text = reminder.title
-            cell.contentConfiguration = contentConfiguration
-        }
+        let cellRegistration = UICollectionView.CellRegistration(handler: cellRegistrationHandler)
         
         // DataSource: 데이터를 담당, cell을 만드는 역할
         // 데이터를 변경하고 그에 따라 UI를 변경할 수 있는 방법 제공

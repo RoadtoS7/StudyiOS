@@ -65,3 +65,14 @@ class MainViewController: UICollectionViewController {
     }
 }
 
+extension MainViewController  {
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            let collectionViewController = CollectionViewController()
+            self.navigationController?.pushViewController(collectionViewController, animated: false)
+        default: return
+        }
+    }
+}
+

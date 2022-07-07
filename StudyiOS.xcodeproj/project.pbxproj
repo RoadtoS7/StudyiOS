@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E3BB39A2874868F00BBB95C /* Date+Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BB3992874868F00BBB95C /* Date+Today.swift */; };
+		2E3BB39F2876658F00BBB95C /* CollectionViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BB39E2876658F00BBB95C /* CollectionViewController+DataSource.swift */; };
 		2E548BFE28683118003BEC5D /* BottomPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E548BFD28683118003BEC5D /* BottomPopUpViewController.swift */; };
 		2E548C012868386B003BEC5D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E548C002868386B003BEC5D /* UIColor+Extension.swift */; };
 		2EC58171285C2BE5001446C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC58170285C2BE5001446C3 /* AppDelegate.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		2E3BB3992874868F00BBB95C /* Date+Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Today.swift"; sourceTree = "<group>"; };
+		2E3BB39E2876658F00BBB95C /* CollectionViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewController+DataSource.swift"; sourceTree = "<group>"; };
 		2E548BFD28683118003BEC5D /* BottomPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPopUpViewController.swift; sourceTree = "<group>"; };
 		2E548C002868386B003BEC5D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		2EC5816D285C2BE5001446C3 /* StudyiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,8 +170,9 @@
 		2EC581A6285C769C001446C3 /* CollectionViewController */ = {
 			isa = PBXGroup;
 			children = (
-				2EC581A7285C76B4001446C3 /* Models */,
+				2E3BB39E2876658F00BBB95C /* CollectionViewController+DataSource.swift */,
 				2EC581A4285C70CE001446C3 /* CollectionViewController.swift */,
+				2EC581A7285C76B4001446C3 /* Models */,
 			);
 			path = CollectionViewController;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				2EC581A1285C3756001446C3 /* PresentationStyleViewController.swift in Sources */,
 				2EC58175285C2BE5001446C3 /* MainViewController.swift in Sources */,
 				2EC58171285C2BE5001446C3 /* AppDelegate.swift in Sources */,
+				2E3BB39F2876658F00BBB95C /* CollectionViewController+DataSource.swift in Sources */,
 				2EC581A3285C696A001446C3 /* TabBarViewController.swift in Sources */,
 				2EC581AC285C8F9D001446C3 /* ViewType.swift in Sources */,
 				2E3BB39A2874868F00BBB95C /* Date+Today.swift in Sources */,
