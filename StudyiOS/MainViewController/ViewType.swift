@@ -14,7 +14,9 @@ struct ViewType {
 #if DEBUG
 extension ViewType {
     static var value = [
-        ViewType(title: "Prototype of CollectionView")
+        ViewType(title: "Prototype of CollectionView"),
+        ViewType(title: "ImageView"),
+        ViewType(title: "TextView with Multiple Links"),
     ]
 }
 #endif

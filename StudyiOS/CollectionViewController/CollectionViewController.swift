@@ -48,7 +48,7 @@ class CollectionViewController: UICollectionViewController {
         collectionView.dataSource = dataSource
     }
     private func listLayout() -> UICollectionViewCompositionalLayout {
-        // TODO: appearance에 따라서 어떻게 나타나는 것일까?
+        // TODO: a(ppearance에 따라서 어떻게 나타나는 것일까?
         var listConfiguration = UICollectionLayoutListConfiguration(appearance: .grouped)
         listConfiguration.showsSeparators = false
         listConfiguration.backgroundColor = .clear

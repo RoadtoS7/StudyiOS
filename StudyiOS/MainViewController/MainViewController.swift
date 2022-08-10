@@ -9,9 +9,16 @@ import UIKit
 class MainViewController: UICollectionViewController {
     typealias DataSource = UICollectionViewDiffableDataSource<Int, String>
     typealias SnapShot = NSDiffableDataSourceSnapshot<Int, String>
-    
+    let label: UILabel = {
+        let label = UILabel()
+        label.text = "please tab me!"
+        label.textColor = .black
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     // 어떤 데이터에 어떤 cell을 사용할지 맵핑해준다.
     var dataSource: DataSource!
+    var tapArea: CGRect!
     
     convenience init() {
         var layoutConfiguration = UICollectionLayoutListConfiguration(appearance: .grouped)
@@ -67,12 +74,22 @@ class MainViewController: UICollectionViewController {
 
 extension MainViewController  {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let toViewController: UIViewController
+        
         switch indexPath.row {
         case 0:
-            let collectionViewController = CollectionViewController()
-            self.navigationController?.pushViewController(collectionViewController, animated: false)
+            toViewController = CollectionViewController()
+            
+        case 1:
+            return
+            
+        case 2:
+            toViewController = MultipleLinkTextViewController()
+            
         default: return
         }
+        
+        self.navigationController?.pushViewController(toViewController, animated: false)
     }
 }
 
