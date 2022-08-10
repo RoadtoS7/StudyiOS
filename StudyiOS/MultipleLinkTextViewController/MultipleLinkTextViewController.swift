@@ -11,7 +11,7 @@ class MultipleLinkTextViewController: UIViewController {
     private static let oneLineContent = "원라인콘텐츠입니다."
     private static let twoLineContent = "투라인콘텐츠입니다.투라인콘텐츠입니다.투라인콘텐츠입니다.투라인콘텐츠입니다.투라인콘텐츠입니다."
     private static let threeLineContent = "쓰리라인콘텐츠입니다.쓰리라인콘텐츠입니다.쓰리라인콘텐츠입니다.쓰리라인콘텐츠입니다.쓰리라인콘텐츠입니다.쓰리라인콘텐츠입니다.쓰리라인콘텐츠입니다.쓰리라인콘텐츠입니다.쓰리라인콘텐츠입니다.쓰리라인콘텐츠입니다."
-    private static let seeMoreContent = "보기"
+    static let seeMoreContent = "보기"
     
     private let vStackView: UIStackView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -31,7 +31,6 @@ class MultipleLinkTextViewController: UIViewController {
     private let twoLineTextView: UITextView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.isScrollEnabled = false
-        $0.text = twoLineContent
         $0.isEditable = false
         return $0
     }(UITextView())
@@ -62,16 +61,10 @@ class MultipleLinkTextViewController: UIViewController {
         return $0
     }(UILabel())
     
-    private var subviews: [UIView] = .init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
-        subviews.append(oneLineTextView)
-        subviews.append(twoLineTextView)
-        subviews.append(threeLineTextView)
-        subviews.append(threeLineLabel)
         
         vStackView.addArrangedSubview(oneLineTextView)
         vStackView.addArrangedSubview(twoLineTextView)
@@ -92,10 +85,22 @@ class MultipleLinkTextViewController: UIViewController {
         ])
         
         setLink()
-//        let gestureRecognizer = UITapGestureRecognizer()
-//        gestureRecognizer.delegate = self
-//        threeLineLabel.addGestureRecognizer(gestureRecognizer)
-        let recognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(sender:)))
+        
+        // MARK: - UITExtView
+        
+        let recognizerInTextView = UITapGestureRecognizer(target: self, action: #selector(handleTapInTextView(sender:)))
+//        twoLineTextView.addGestureRecognizer(recognizerInTextView)
+        threeLineTextView.addGestureRecognizer(recognizerInTextView)
+        
+        let tapRecognizer = UITapGestureRecognizer()
+        tapRecognizer.delegate = self
+        oneLineTextView.addGestureRecognizer(tapRecognizer)
+        twoLineTextView.addGestureRecognizer(tapRecognizer)
+      
+        
+        // MARK: - UILabel
+    
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(handleTapInLabel(sender:)))
         threeLineLabel.addGestureRecognizer(recognizer)
         twoLineLabel.addGestureRecognizer(recognizer)
         oneLineLabel.addGestureRecognizer(recognizer)
@@ -106,61 +111,107 @@ class MultipleLinkTextViewController: UIViewController {
     }
     
     private func setLink() {
-        let oneLineLinkText = "\(Self.oneLineContent) \(Self.seeMoreContent)"
-        let contentRange = NSRange(oneLineLinkText.range(of: Self.oneLineContent)!, in: oneLineLinkText)
-        let seeMoreRange = NSRange(oneLineLinkText.range(of: Self.seeMoreContent)!, in: oneLineLinkText)
-        
-        
-        let mutable = NSMutableAttributedString(string: oneLineLinkText)
-        mutable.addAttributes([.foregroundColor : UIColor.red,
-                               .link: "toggleAgreement"], range: contentRange)
-        mutable.addAttributes([.foregroundColor : UIColor.blue,
-                               .link: "webView"], range: seeMoreRange)
-        
-        oneLineTextView.attributedText = mutable
-        oneLineTextView.sizeToFit()
-        
-        
-        // MARK: - threeLineLabel
-        
+//        let oneLineLinkText = "\(Self.oneLineContent) \(Self.seeMoreContent)"
+//        let contentRange = NSRange(oneLineLinkText.range(of: Self.oneLineContent)!, in: oneLineLinkText)
+//        let seeMoreRange = NSRange(oneLineLinkText.range(of: Self.seeMoreContent)!, in: oneLineLinkText)
+//
+//
+//        let mutable = NSMutableAttributedString(string: oneLineLinkText)
+//        mutable.addAttributes([.foregroundColor : UIColor.red,
+//                               .link: "toggleAgreement"], range: contentRange)
+//        mutable.addAttributes([.foregroundColor : UIColor.blue,
+//                               .link: "webView"], range: seeMoreRange)
+//
+//        oneLineTextView.attributedText = mutable
+//        oneLineTextView.sizeToFit()
         let oneLineAttributedText = NSAttributedString(string: "\(Self.oneLineContent) \(Self.seeMoreContent)")
         let twoLineAttributedText = NSAttributedString(string: "\(Self.twoLineContent) \(Self.seeMoreContent)")
         let threeLineAttributedText = NSAttributedString(string: "\(Self.threeLineContent) \(Self.seeMoreContent)")
         
+        
+        // MARK: - textview
+        oneLineTextView.attributedText = oneLineAttributedText
+        twoLineTextView.attributedText = twoLineAttributedText
+        threeLineTextView.attributedText = threeLineAttributedText
+        
+        // MARK: - threeLineLabel
         oneLineLabel.attributedText = oneLineAttributedText
         twoLineLabel.attributedText = twoLineAttributedText
         threeLineLabel.attributedText = threeLineAttributedText
-        threeLineTextView.attributedText = threeLineAttributedText
     }
     
-    @objc func handleTap(sender: UITapGestureRecognizer) {
-        let touchOccuredLabel: UILabel
-        
+    @objc func handleTapInLabel(sender: UITapGestureRecognizer) {
         let oneLinePoint = sender.location(in: oneLineLabel)
         let twoLinePoint = sender.location(in: twoLineLabel)
         let threeLinePoint = sender.location(in: threeLineLabel)
         
+        let touchOccuredLabel: UILabel
+        let content: String
+
         if oneLinePoint.y > 0 {
             touchOccuredLabel = oneLineLabel
+            content = Self.oneLineContent
             print("touchOccuredLabel: oneLineLabel")
         }
         else if twoLinePoint.y > 0 {
             touchOccuredLabel = twoLineLabel
+            content = Self.twoLineContent
             print("touchOccuredLabel: twoLineLabel")
         }
         else if threeLinePoint.y > 0 {
             touchOccuredLabel = threeLineLabel
+            content = Self.threeLineContent
             print("touchOccuredLabel: threeLineLabel")
         } else {
             return 
         }
         
         let seeMoreRange = (touchOccuredLabel.text! as NSString).range(of: Self.seeMoreContent)
-        let contentRange = (touchOccuredLabel.text! as NSString).range(of: Self.seeMoreContent)
+        let contentRange = (touchOccuredLabel.text! as NSString).range(of: content)
         if sender.didTapAttributedTextInLabel(label: touchOccuredLabel, inRange: seeMoreRange) {
             print("see more detected")
         } else if sender.didTapAttributedTextInLabel(label: touchOccuredLabel, inRange: contentRange) {
             print("three line content detected")
+        }
+    }
+    
+    @objc func handleTapInTextView(sender: UITapGestureRecognizer) {
+        let point = sender.location(in: sender.view)
+        let indexPoint = sender.location(ofTouch: 0, in: sender.view)
+        let oneTouchPoint = sender.location(in: oneLineTextView)
+        let twoTouchPoint = sender.location(in: twoLineTextView)
+        let threeTouchPoint = sender.location(in: threeLineTextView)
+        
+        let touchOccuredLabel: UITextView
+        let content: String
+        
+        
+        if oneLineTextView.bounds.contains(oneTouchPoint) {
+            touchOccuredLabel = oneLineTextView
+            content = Self.oneLineContent
+            print("touchOccuredLabel: oneLineTextView")
+        }
+        else if twoLineTextView.bounds.contains(twoTouchPoint) {
+            touchOccuredLabel = twoLineTextView
+            content = Self.twoLineContent
+            print("touchOccuredLabel: twoLineTextView")
+        }
+        else if threeLineTextView.bounds.contains(threeTouchPoint) {
+            touchOccuredLabel = threeLineTextView
+            content = Self.threeLineContent
+            print("touchOccuredLabel: threeLineTextView")
+        } else {
+            return
+        }
+        
+        let seeMoreRange = (touchOccuredLabel.text! as NSString).range(of: Self.seeMoreContent)
+        let contentRange = (touchOccuredLabel.text! as NSString).range(of: content)
+        if sender.didTapAttributedTextInLabel(textView: touchOccuredLabel, inRange: seeMoreRange) {
+            print("\nsee more detected\n")
+        } else if sender.didTapAttributedTextInLabel(textView: touchOccuredLabel, inRange: contentRange) {
+            print("\nthree line content detected\n")
+        } else {
+            print("\nnothing\n")
         }
     }
 }
@@ -171,18 +222,7 @@ extension MultipleLinkTextViewController: UIGestureRecognizerDelegate {
         guard let tapRecognizer = gestureRecognizer as? UITapGestureRecognizer else {
             return false
         }
-        
-        let seeMoreRange = (threeLineLabel.text! as NSString).range(of: Self.seeMoreContent)
-        let contentRange = (threeLineLabel.text! as NSString).range(of: Self.seeMoreContent)
-        
-        if tapRecognizer.didTapAttributedTextInLabel(label: threeLineLabel, inRange: seeMoreRange) {
-            print("see more detected")
-            return true
-        } else if tapRecognizer.didTapAttributedTextInLabel(label: threeLineLabel, inRange: contentRange) {
-            print("three line content detected")
-            return true
-        } else {
-            return false
-        }
+        handleTapInTextView(sender: tapRecognizer)
+        return true
     }
 }
