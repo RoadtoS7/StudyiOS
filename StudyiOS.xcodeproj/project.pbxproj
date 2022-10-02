@@ -10,6 +10,7 @@
 		2E0ADBDE28B841290035A21B /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0ADBDD28B841290035A21B /* StackView.swift */; };
 		2E0ADBE028B842220035A21B /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0ADBDF28B842220035A21B /* Main.swift */; };
 		2E0ADBE228B842780035A21B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0ADBE128B842780035A21B /* UIView.swift */; };
+		2E0ADBEA28B8A9F40035A21B /* TestCombineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0ADBE928B8A9F40035A21B /* TestCombineViewController.swift */; };
 		2E0D6BD328A14059001E0019 /* MultipleLinkTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0D6BD228A14059001E0019 /* MultipleLinkTextViewController.swift */; };
 		2E0D6BD528A14BCB001E0019 /* TextViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0D6BD428A14BCB001E0019 /* TextViewContainer.swift */; };
 		2E0D6BD728A238BC001E0019 /* UITapGestureRecognizer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0D6BD628A238BC001E0019 /* UITapGestureRecognizer+Extension.swift */; };
@@ -56,6 +57,7 @@
 		2E0ADBDD28B841290035A21B /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		2E0ADBDF28B842220035A21B /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		2E0ADBE128B842780035A21B /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		2E0ADBE928B8A9F40035A21B /* TestCombineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCombineViewController.swift; sourceTree = "<group>"; };
 		2E0D6BD228A14059001E0019 /* MultipleLinkTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleLinkTextViewController.swift; sourceTree = "<group>"; };
 		2E0D6BD428A14BCB001E0019 /* TextViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewContainer.swift; sourceTree = "<group>"; };
 		2E0D6BD628A238BC001E0019 /* UITapGestureRecognizer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+Extension.swift"; sourceTree = "<group>"; };
@@ -120,6 +122,14 @@
 			path = DSL;
 			sourceTree = "<group>";
 		};
+		2E0ADBE828B8A9DC0035A21B /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				2E0ADBE928B8A9F40035A21B /* TestCombineViewController.swift */,
+			);
+			path = Combine;
+			sourceTree = "<group>";
+		};
 		2E0D6BD128A1403E001E0019 /* MultipleLinkTextViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +181,7 @@
 		2EC5816F285C2BE5001446C3 /* StudyiOS */ = {
 			isa = PBXGroup;
 			children = (
+				2E0ADBE828B8A9DC0035A21B /* Combine */,
 				2E0ADBDC28B8411B0035A21B /* DSL */,
 				2E0D6BD128A1403E001E0019 /* MultipleLinkTextViewController */,
 				2E548BFF2868385E003BEC5D /* Extension */,
@@ -384,6 +395,7 @@
 				2E548BFE28683118003BEC5D /* BottomPopUpViewController.swift in Sources */,
 				2EC15228288681FA00649ED4 /* ImageViewController.swift in Sources */,
 				2E548C012868386B003BEC5D /* UIColor+Extension.swift in Sources */,
+				2E0ADBEA28B8A9F40035A21B /* TestCombineViewController.swift in Sources */,
 				2E0D6BD728A238BC001E0019 /* UITapGestureRecognizer+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

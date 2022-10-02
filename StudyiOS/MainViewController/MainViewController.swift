@@ -30,10 +30,33 @@ class MainViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        /// test view 복사시 reference 복사되는지 체크
+        let view = UIView()
+        let otherView = view
+        
+        withUnsafePointer(to: view) { pointer in
+            print("view address: \(String.pointer(view))")
+        }
+        
+        withUnsafePointer(to: otherView) { pointer in
+            print("otherview address: \(String.pointer(otherView))")
+        }
+        
+        let number: Int = 10
+        let otherNumber = number
+        withUnsafePointer(to: number) { pointer in
+            print("number address: \(pointer)")
+        }
+        
+        withUnsafePointer(to: otherNumber) { pointer in
+            print("other number address: \(pointer)")
+        }
+        
         // CellRegistration: Cell 등록 (CollectionView에서 보여줄 cell 마다 Cell
             // contentConfiguration 생성
             // contentConfiguration과 Cell 연결
         // contentConfiguration: cell에서 데이터가 어떻게 나타낼지를 결정
+        
         view.backgroundColor = .white
         let cellRegistration = UICollectionView.CellRegistration { (cell: UICollectionViewListCell, indexPath: IndexPath, itemIdentifier: String) in
             let viewType = ViewType.value[indexPath.item]
@@ -85,6 +108,9 @@ extension MainViewController  {
             
         case 2:
             toViewController = MultipleLinkTextViewController()
+        
+        case 3:
+            toViewController = TestCombineViewController()
             
         default: return
         }

@@ -13,8 +13,3 @@ public func stackview(apply closure: (UIStackView) -> Void) -> UIStackView {
     closure(stack)
     return stack
 }
-
-extension UIStackView {
-    @discardableResult
-    
-}

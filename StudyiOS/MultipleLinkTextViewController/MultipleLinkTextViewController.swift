@@ -43,6 +43,15 @@ class MultipleLinkTextViewController: UIViewController {
         return $0
     }(UITextView())
     
+    private let newLineTextView: UITextView = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.isScrollEnabled = false
+        $0.attributedText = NSAttributedString("뉴라인뉴라인뉴라인뉴라인뉴라인뉴라인뉴라인뉴라인뉴라인뉴라인뉴라인뉴라인보기")
+        $0.isEditable = false
+        $0.textContainer.lineFragmentPadding = 0
+        return $0
+    }(UITextView())
+    
     private let oneLineLabel: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.numberOfLines = .zero
@@ -69,6 +78,7 @@ class MultipleLinkTextViewController: UIViewController {
         vStackView.addArrangedSubview(oneLineTextView)
         vStackView.addArrangedSubview(twoLineTextView)
         vStackView.addArrangedSubview(threeLineTextView)
+        vStackView.addArrangedSubview(newLineTextView)
         
         vStackView.addArrangedSubview(oneLineLabel)
         vStackView.addArrangedSubview(threeLineLabel)
@@ -91,6 +101,7 @@ class MultipleLinkTextViewController: UIViewController {
         let recognizerInTextView = UITapGestureRecognizer(target: self, action: #selector(handleTapInTextView(sender:)))
 //        twoLineTextView.addGestureRecognizer(recognizerInTextView)
         threeLineTextView.addGestureRecognizer(recognizerInTextView)
+        newLineTextView.addGestureRecognizer(recognizerInTextView)
         
         let tapRecognizer = UITapGestureRecognizer()
         tapRecognizer.delegate = self
@@ -200,7 +211,13 @@ class MultipleLinkTextViewController: UIViewController {
             touchOccuredLabel = threeLineTextView
             content = Self.threeLineContent
             print("touchOccuredLabel: threeLineTextView")
-        } else {
+        }
+        else if newLineTextView.bounds.contains(point) {
+            touchOccuredLabel = newLineTextView
+            content = newLineTextView.attributedText.string
+            print("touchOccuredLabel: newLineTextView")
+        }
+        else {
             return
         }
         

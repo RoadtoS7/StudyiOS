@@ -17,6 +17,7 @@ extension ViewType {
         ViewType(title: "Prototype of CollectionView"),
         ViewType(title: "ImageView"),
         ViewType(title: "TextView with Multiple Links"),
+        ViewType(title: "Test Future")
     ]
 }
 #endif
