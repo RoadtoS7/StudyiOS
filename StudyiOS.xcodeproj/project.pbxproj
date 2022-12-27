@@ -20,6 +20,7 @@
 		2E548BFE28683118003BEC5D /* BottomPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E548BFD28683118003BEC5D /* BottomPopUpViewController.swift */; };
 		2E548C012868386B003BEC5D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E548C002868386B003BEC5D /* UIColor+Extension.swift */; };
 		2E62C80F295ADADA00C83C0C /* ResponderChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62C80E295ADADA00C83C0C /* ResponderChainViewController.swift */; };
+		2E62C811295AE54300C83C0C /* TouchableResponderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62C810295AE54300C83C0C /* TouchableResponderView.swift */; };
 		2EC15228288681FA00649ED4 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC15227288681FA00649ED4 /* ImageViewController.swift */; };
 		2EC58171285C2BE5001446C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC58170285C2BE5001446C3 /* AppDelegate.swift */; };
 		2EC58173285C2BE5001446C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC58172285C2BE5001446C3 /* SceneDelegate.swift */; };
@@ -70,6 +71,7 @@
 		2E548BFD28683118003BEC5D /* BottomPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPopUpViewController.swift; sourceTree = "<group>"; };
 		2E548C002868386B003BEC5D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		2E62C80E295ADADA00C83C0C /* ResponderChainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderChainViewController.swift; sourceTree = "<group>"; };
+		2E62C810295AE54300C83C0C /* TouchableResponderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchableResponderView.swift; sourceTree = "<group>"; };
 		2EC15227288681FA00649ED4 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		2EC5816D285C2BE5001446C3 /* StudyiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EC58170285C2BE5001446C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				2E62C80E295ADADA00C83C0C /* ResponderChainViewController.swift */,
+				2E62C810295AE54300C83C0C /* TouchableResponderView.swift */,
 			);
 			path = ResponderChain;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				2E548BFE28683118003BEC5D /* BottomPopUpViewController.swift in Sources */,
 				2EC15228288681FA00649ED4 /* ImageViewController.swift in Sources */,
 				2ECEEE9A28E9E28200B55CCB /* RankOneCell.swift in Sources */,
+				2E62C811295AE54300C83C0C /* TouchableResponderView.swift in Sources */,
 				2E548C012868386B003BEC5D /* UIColor+Extension.swift in Sources */,
 				2E0ADBEA28B8A9F40035A21B /* TestCombineViewController.swift in Sources */,
 				2E0D6BD728A238BC001E0019 /* UITapGestureRecognizer+Extension.swift in Sources */,
