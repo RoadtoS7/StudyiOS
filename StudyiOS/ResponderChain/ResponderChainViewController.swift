@@ -10,6 +10,7 @@ import UIKit
 
 class ResponderChainViewController: UIViewController {
     private var touchableResponderView: TouchableResponderView!
+    private var blueToucableResponderView: TouchableResponderView!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -36,11 +37,22 @@ extension ResponderChainViewController {
         self.touchableResponderView = touchableResponderView
         view.addSubview(touchableResponderView)
         
+        let blueToucableResponderView: TouchableResponderView = .init()
+        blueToucableResponderView.translatesAutoresizingMaskIntoConstraints = false
+        blueToucableResponderView.backgroundColor = .blue
+        self.blueToucableResponderView = blueToucableResponderView
+        view.addSubview(blueToucableResponderView)
+        
         NSLayoutConstraint.activate([
             touchableResponderView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             touchableResponderView.topAnchor.constraint(equalTo: view.topAnchor),
             touchableResponderView.widthAnchor.constraint(equalToConstant: 200),
             touchableResponderView.heightAnchor.constraint(equalToConstant: 400),
+            
+            blueToucableResponderView.leadingAnchor.constraint(equalTo: touchableResponderView.trailingAnchor),
+            blueToucableResponderView.topAnchor.constraint(equalTo: view.topAnchor),
+            blueToucableResponderView.widthAnchor.constraint(equalToConstant: 200),
+            blueToucableResponderView.heightAnchor.constraint(equalToConstant: 400),
         ])
     }
 }
