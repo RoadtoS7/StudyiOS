@@ -21,6 +21,7 @@
 		2E548C012868386B003BEC5D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E548C002868386B003BEC5D /* UIColor+Extension.swift */; };
 		2E62C80F295ADADA00C83C0C /* ResponderChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62C80E295ADADA00C83C0C /* ResponderChainViewController.swift */; };
 		2E62C811295AE54300C83C0C /* TouchableResponderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62C810295AE54300C83C0C /* TouchableResponderView.swift */; };
+		2E62C814295AECC800C83C0C /* OverlappedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62C813295AECC800C83C0C /* OverlappedViewController.swift */; };
 		2EC15228288681FA00649ED4 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC15227288681FA00649ED4 /* ImageViewController.swift */; };
 		2EC58171285C2BE5001446C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC58170285C2BE5001446C3 /* AppDelegate.swift */; };
 		2EC58173285C2BE5001446C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC58172285C2BE5001446C3 /* SceneDelegate.swift */; };
@@ -72,6 +73,7 @@
 		2E548C002868386B003BEC5D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		2E62C80E295ADADA00C83C0C /* ResponderChainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderChainViewController.swift; sourceTree = "<group>"; };
 		2E62C810295AE54300C83C0C /* TouchableResponderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchableResponderView.swift; sourceTree = "<group>"; };
+		2E62C813295AECC800C83C0C /* OverlappedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlappedViewController.swift; sourceTree = "<group>"; };
 		2EC15227288681FA00649ED4 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		2EC5816D285C2BE5001446C3 /* StudyiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EC58170285C2BE5001446C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +177,14 @@
 			path = ResponderChain;
 			sourceTree = "<group>";
 		};
+		2E62C812295AEC9800C83C0C /* ResponderChain - OverlappedViews */ = {
+			isa = PBXGroup;
+			children = (
+				2E62C813295AECC800C83C0C /* OverlappedViewController.swift */,
+			);
+			path = "ResponderChain - OverlappedViews";
+			sourceTree = "<group>";
+		};
 		2EC58164285C2BE5001446C3 = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +208,7 @@
 		2EC5816F285C2BE5001446C3 /* StudyiOS */ = {
 			isa = PBXGroup;
 			children = (
+				2E62C812295AEC9800C83C0C /* ResponderChain - OverlappedViews */,
 				2E62C80D295ADAC800C83C0C /* ResponderChain */,
 				2E0ADBE828B8A9DC0035A21B /* Combine */,
 				2E0ADBDC28B8411B0035A21B /* DSL */,
@@ -408,6 +419,7 @@
 				2EC581A5285C70CE001446C3 /* CollectionViewController.swift in Sources */,
 				2EC581A9285C76CA001446C3 /* Reminder.swift in Sources */,
 				2ECEEE9828E9D55500B55CCB /* NestedGroupViewController.swift in Sources */,
+				2E62C814295AECC800C83C0C /* OverlappedViewController.swift in Sources */,
 				2E0D6BD328A14059001E0019 /* MultipleLinkTextViewController.swift in Sources */,
 				2EC581A1285C3756001446C3 /* PresentationStyleViewController.swift in Sources */,
 				2EC58175285C2BE5001446C3 /* MainViewController.swift in Sources */,
