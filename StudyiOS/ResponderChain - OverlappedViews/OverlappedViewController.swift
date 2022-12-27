@@ -5,8 +5,8 @@
 //  Created by nylah.j on 2022/12/27.
 //
 // [Alter Responder Chain: Responder Chain 변경하기]
-// first
-
+// canBecomeFirstResponder가 true인 것만 first Responder가 될 수 있다.
+// hitTest에서 nil을 반환하면, 해당 뷰는 UIResponder의 터치이벤트 핸들러가 호출되지 않는다.
 
 import UIKit
 
@@ -14,6 +14,7 @@ import UIKit
 class OverlappedViewController: UIViewController {
     private var touchableResponderView: FirstResponderView!
     private var blueToucableResponderView: NotFirstResponderView!
+    private var grayTouchableView: FirstResponderView!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -46,6 +47,12 @@ extension OverlappedViewController {
         self.blueToucableResponderView = blueToucableResponderView
         view.addSubview(blueToucableResponderView)
         
+        let grayTouchableView: UIView = .init()
+        grayTouchableView.translatesAutoresizingMaskIntoConstraints = false
+        grayTouchableView.backgroundColor = .gray
+        self.grayTouchableView = blueToucableResponderView
+        blueToucableResponderView.addSubview(grayTouchableView)
+        
         NSLayoutConstraint.activate([
             touchableResponderView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             touchableResponderView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -56,6 +63,11 @@ extension OverlappedViewController {
             blueToucableResponderView.topAnchor.constraint(equalTo: view.topAnchor),
             blueToucableResponderView.widthAnchor.constraint(equalToConstant: 200),
             blueToucableResponderView.heightAnchor.constraint(equalToConstant: 400),
+            
+            grayTouchableView.leadingAnchor.constraint(equalTo: grayTouchableView.superview?.leadingAnchor),
+            grayTouchableView.widthAnchor.constraint(equalToConstant: 100),
+            grayTouchableView.heightAnchor.constraint(equalToConstant: 100),
+            
         ])
     }
 }
@@ -87,8 +99,13 @@ class FirstResponderView: UIView {
     }
 }
 
+///  hitTest에서 nil을 반환하면, 해당 뷰는 UIResponder의 터치이벤트 핸들러가 호출되지 않는다.
 class NotFirstResponderView: UIView {
     override var canBecomeFirstResponder: Bool { false } // default가 false이다.
+    
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        return nil
+    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("NotFirstResponderView touches began")
