@@ -111,6 +111,8 @@ extension MainViewController  {
         
         case 3:
             toViewController = TestCombineViewController()
+        case 4:
+            toViewController = ResponderChainViewController()
             
         default: return
         }
