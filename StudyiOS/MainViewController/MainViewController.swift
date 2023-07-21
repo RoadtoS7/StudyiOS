@@ -115,6 +115,8 @@ extension MainViewController  {
             toViewController = ResponderChainViewController()
         case 5:
             toViewController = OverlappedViewController()
+        case 6:
+            toViewController = TestCombineViewController()
             
         default: return
         }

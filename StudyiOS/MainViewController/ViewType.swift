@@ -19,7 +19,8 @@ extension ViewType {
         ViewType(title: "TextView with Multiple Links"),
         ViewType(title: "Test Future"),
         ViewType(title: "Touch Event Responable View"),
-        ViewType(title: "Alter Responder Chain")
+        ViewType(title: "Alter Responder Chain"),
+        ViewType(title: "Test Retained Publisher")
     ]
 }
 #endif

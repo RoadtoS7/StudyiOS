@@ -14,7 +14,7 @@ import UIKit
 class OverlappedViewController: UIViewController {
     private var touchableResponderView: FirstResponderView!
     private var blueToucableResponderView: NotFirstResponderView!
-    private var grayTouchableView: FirstResponderView!
+    private var grayTouchableView: NotFirstResponderView!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -64,7 +64,7 @@ extension OverlappedViewController {
             blueToucableResponderView.widthAnchor.constraint(equalToConstant: 200),
             blueToucableResponderView.heightAnchor.constraint(equalToConstant: 400),
             
-            grayTouchableView.leadingAnchor.constraint(equalTo: grayTouchableView.superview?.leadingAnchor),
+            grayTouchableView.leadingAnchor.constraint(equalTo: grayTouchableView.superview?.leadingAnchor ?? view.leadingAnchor),
             grayTouchableView.widthAnchor.constraint(equalToConstant: 100),
             grayTouchableView.heightAnchor.constraint(equalToConstant: 100),
             
@@ -103,13 +103,14 @@ class FirstResponderView: UIView {
 class NotFirstResponderView: UIView {
     override var canBecomeFirstResponder: Bool { false } // default가 false이다.
     
-    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        return nil
-    }
+//    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+//        return nil
+//    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("NotFirstResponderView touches began")
         touches.forEach { touch in
+            touch.view
             print("altitudeAngle: \(touch.altitudeAngle)")
             print("force: \(touch.force)")
             print("majorRadius: \(touch.majorRadius)")
