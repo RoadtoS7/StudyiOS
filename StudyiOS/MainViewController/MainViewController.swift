@@ -117,7 +117,8 @@ extension MainViewController  {
             toViewController = OverlappedViewController()
         case 6:
             toViewController = TestCombineViewController()
-            
+        case 7:
+            toViewController = NonSubviewsViewController()
         default: return
         }
         

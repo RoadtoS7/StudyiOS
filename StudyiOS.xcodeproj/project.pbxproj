@@ -23,6 +23,8 @@
 		2E62C80F295ADADA00C83C0C /* ResponderChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62C80E295ADADA00C83C0C /* ResponderChainViewController.swift */; };
 		2E62C811295AE54300C83C0C /* TouchableResponderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62C810295AE54300C83C0C /* TouchableResponderView.swift */; };
 		2E62C814295AECC800C83C0C /* OverlappedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62C813295AECC800C83C0C /* OverlappedViewController.swift */; };
+		2E87D0582A6A194000346934 /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E87D0572A6A194000346934 /* CustomFlowLayout.swift */; };
+		2E87D05A2A6A19D800346934 /* CustomFlowLayoutCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E87D0592A6A19D800346934 /* CustomFlowLayoutCollectionViewController.swift */; };
 		2EC15228288681FA00649ED4 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC15227288681FA00649ED4 /* ImageViewController.swift */; };
 		2EC318D329EFEF2E0015A8B1 /* StudyUIViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC318D229EFEF2E0015A8B1 /* StudyUIViewViewController.swift */; };
 		2EC58171285C2BE5001446C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC58170285C2BE5001446C3 /* AppDelegate.swift */; };
@@ -39,6 +41,7 @@
 		2EC581A5285C70CE001446C3 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC581A4285C70CE001446C3 /* CollectionViewController.swift */; };
 		2EC581A9285C76CA001446C3 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC581A8285C76CA001446C3 /* Reminder.swift */; };
 		2EC581AC285C8F9D001446C3 /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC581AB285C8F9D001446C3 /* ViewType.swift */; };
+		2ECC29BB2A723D3D009D210D /* NonSubviewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECC29BA2A723D3D009D210D /* NonSubviewsViewController.swift */; };
 		2ECEEE9828E9D55500B55CCB /* NestedGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECEEE9728E9D55500B55CCB /* NestedGroupViewController.swift */; };
 		2ECEEE9A28E9E28200B55CCB /* RankOneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECEEE9928E9E28200B55CCB /* RankOneCell.swift */; };
 /* End PBXBuildFile section */
@@ -77,6 +80,8 @@
 		2E62C80E295ADADA00C83C0C /* ResponderChainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderChainViewController.swift; sourceTree = "<group>"; };
 		2E62C810295AE54300C83C0C /* TouchableResponderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchableResponderView.swift; sourceTree = "<group>"; };
 		2E62C813295AECC800C83C0C /* OverlappedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlappedViewController.swift; sourceTree = "<group>"; };
+		2E87D0572A6A194000346934 /* CustomFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
+		2E87D0592A6A19D800346934 /* CustomFlowLayoutCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayoutCollectionViewController.swift; sourceTree = "<group>"; };
 		2EC15227288681FA00649ED4 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		2EC318D229EFEF2E0015A8B1 /* StudyUIViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyUIViewViewController.swift; sourceTree = "<group>"; };
 		2EC5816D285C2BE5001446C3 /* StudyiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +102,7 @@
 		2EC581A4285C70CE001446C3 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		2EC581A8285C76CA001446C3 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		2EC581AB285C8F9D001446C3 /* ViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
+		2ECC29BA2A723D3D009D210D /* NonSubviewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonSubviewsViewController.swift; sourceTree = "<group>"; };
 		2ECEEE9728E9D55500B55CCB /* NestedGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedGroupViewController.swift; sourceTree = "<group>"; };
 		2ECEEE9928E9E28200B55CCB /* RankOneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankOneCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -197,6 +203,15 @@
 			path = "ResponderChain - OverlappedViews";
 			sourceTree = "<group>";
 		};
+		2E87D0562A6A193300346934 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				2E87D0572A6A194000346934 /* CustomFlowLayout.swift */,
+				2E87D0592A6A19D800346934 /* CustomFlowLayoutCollectionViewController.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
 		2EC318D129EFEE8C0015A8B1 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +243,7 @@
 		2EC5816F285C2BE5001446C3 /* StudyiOS */ = {
 			isa = PBXGroup;
 			children = (
+				2ECC29B92A723D17009D210D /* UIViewController */,
 				2E00B9A32A3A97DC0096E5A3 /* SwiftConcurrency */,
 				2EC318D129EFEE8C0015A8B1 /* UIView */,
 				2E62C812295AEC9800C83C0C /* ResponderChain - OverlappedViews */,
@@ -272,6 +288,7 @@
 		2EC581A6285C769C001446C3 /* CollectionViewController */ = {
 			isa = PBXGroup;
 			children = (
+				2E87D0562A6A193300346934 /* Layout */,
 				2ECEEE9628E9D53B00B55CCB /* CompositionalLayout_NestedGroup */,
 				2E3BB39E2876658F00BBB95C /* CollectionViewController+DataSource.swift */,
 				2EC581A4285C70CE001446C3 /* CollectionViewController.swift */,
@@ -295,6 +312,14 @@
 				2EC58174285C2BE5001446C3 /* MainViewController.swift */,
 			);
 			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		2ECC29B92A723D17009D210D /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2ECC29BA2A723D3D009D210D /* NonSubviewsViewController.swift */,
+			);
+			path = UIViewController;
 			sourceTree = "<group>";
 		};
 		2ECEEE9628E9D53B00B55CCB /* CompositionalLayout_NestedGroup */ = {
@@ -438,6 +463,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E0ADBE228B842780035A21B /* UIView.swift in Sources */,
+				2E87D05A2A6A19D800346934 /* CustomFlowLayoutCollectionViewController.swift in Sources */,
+				2E87D0582A6A194000346934 /* CustomFlowLayout.swift in Sources */,
 				2E00B9A52A3A97F30096E5A3 /* MainActorViewController.swift in Sources */,
 				2EC581A5285C70CE001446C3 /* CollectionViewController.swift in Sources */,
 				2EC581A9285C76CA001446C3 /* Reminder.swift in Sources */,
@@ -459,6 +486,7 @@
 				2EC58173285C2BE5001446C3 /* SceneDelegate.swift in Sources */,
 				2E548BFE28683118003BEC5D /* BottomPopUpViewController.swift in Sources */,
 				2EC318D329EFEF2E0015A8B1 /* StudyUIViewViewController.swift in Sources */,
+				2ECC29BB2A723D3D009D210D /* NonSubviewsViewController.swift in Sources */,
 				2EC15228288681FA00649ED4 /* ImageViewController.swift in Sources */,
 				2ECEEE9A28E9E28200B55CCB /* RankOneCell.swift in Sources */,
 				2E62C811295AE54300C83C0C /* TouchableResponderView.swift in Sources */,

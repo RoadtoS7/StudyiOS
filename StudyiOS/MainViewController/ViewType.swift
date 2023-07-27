@@ -20,7 +20,8 @@ extension ViewType {
         ViewType(title: "Test Future"),
         ViewType(title: "Touch Event Responable View"),
         ViewType(title: "Alter Responder Chain"),
-        ViewType(title: "Test Retained Publisher")
+        ViewType(title: "Test Retained Publisher"),
+        ViewType(title: "If there is no subviews, are layout callbacks called?")
     ]
 }
 #endif
