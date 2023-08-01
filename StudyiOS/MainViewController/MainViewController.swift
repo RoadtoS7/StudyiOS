@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import SwiftUI
+
 class MainViewController: UICollectionViewController {
     typealias DataSource = UICollectionViewDiffableDataSource<Int, String>
     typealias SnapShot = NSDiffableDataSourceSnapshot<Int, String>
@@ -119,10 +121,13 @@ extension MainViewController  {
             toViewController = TestCombineViewController()
         case 7:
             toViewController = NonSubviewsViewController()
+        case 8:
+            let view = NavigationTestView()
+            toViewController = UIHostingController(rootView: view)
+            navigationController?.setNavigationBarHidden(true, animated: true)
         default: return
         }
         
         self.navigationController?.pushViewController(toViewController, animated: false)
     }
 }
-

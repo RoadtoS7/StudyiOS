@@ -18,6 +18,7 @@
 		2E3BB39A2874868F00BBB95C /* Date+Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BB3992874868F00BBB95C /* Date+Today.swift */; };
 		2E3BB39F2876658F00BBB95C /* CollectionViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BB39E2876658F00BBB95C /* CollectionViewController+DataSource.swift */; };
 		2E3BB3A32876CB2F00BBB95C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BB3A22876CB2F00BBB95C /* String+Extension.swift */; };
+		2E4BA2B02A78EA2F0004E73E /* NavigationTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4BA2AF2A78EA2F0004E73E /* NavigationTestView.swift */; };
 		2E548BFE28683118003BEC5D /* BottomPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E548BFD28683118003BEC5D /* BottomPopUpViewController.swift */; };
 		2E548C012868386B003BEC5D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E548C002868386B003BEC5D /* UIColor+Extension.swift */; };
 		2E62C80F295ADADA00C83C0C /* ResponderChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62C80E295ADADA00C83C0C /* ResponderChainViewController.swift */; };
@@ -75,6 +76,7 @@
 		2E3BB3992874868F00BBB95C /* Date+Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Today.swift"; sourceTree = "<group>"; };
 		2E3BB39E2876658F00BBB95C /* CollectionViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewController+DataSource.swift"; sourceTree = "<group>"; };
 		2E3BB3A22876CB2F00BBB95C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		2E4BA2AF2A78EA2F0004E73E /* NavigationTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTestView.swift; sourceTree = "<group>"; };
 		2E548BFD28683118003BEC5D /* BottomPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPopUpViewController.swift; sourceTree = "<group>"; };
 		2E548C002868386B003BEC5D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		2E62C80E295ADADA00C83C0C /* ResponderChainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderChainViewController.swift; sourceTree = "<group>"; };
@@ -167,6 +169,14 @@
 			path = MultipleLinkTextViewController;
 			sourceTree = "<group>";
 		};
+		2E4BA2AC2A7886BA0004E73E /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				2E4BA2AF2A78EA2F0004E73E /* NavigationTestView.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
 		2E548BFC286830FC003BEC5D /* BottomPopUpViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +222,13 @@
 			path = Layout;
 			sourceTree = "<group>";
 		};
+		2EA40CAF2A72501100DA8C76 /* XCode New Feature */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "XCode New Feature";
+			sourceTree = "<group>";
+		};
 		2EC318D129EFEE8C0015A8B1 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +260,8 @@
 		2EC5816F285C2BE5001446C3 /* StudyiOS */ = {
 			isa = PBXGroup;
 			children = (
+				2E4BA2AC2A7886BA0004E73E /* SwiftUI */,
+				2EA40CAF2A72501100DA8C76 /* XCode New Feature */,
 				2ECC29B92A723D17009D210D /* UIViewController */,
 				2E00B9A32A3A97DC0096E5A3 /* SwiftConcurrency */,
 				2EC318D129EFEE8C0015A8B1 /* UIView */,
@@ -465,6 +484,7 @@
 				2E0ADBE228B842780035A21B /* UIView.swift in Sources */,
 				2E87D05A2A6A19D800346934 /* CustomFlowLayoutCollectionViewController.swift in Sources */,
 				2E87D0582A6A194000346934 /* CustomFlowLayout.swift in Sources */,
+				2E4BA2B02A78EA2F0004E73E /* NavigationTestView.swift in Sources */,
 				2E00B9A52A3A97F30096E5A3 /* MainActorViewController.swift in Sources */,
 				2EC581A5285C70CE001446C3 /* CollectionViewController.swift in Sources */,
 				2EC581A9285C76CA001446C3 /* Reminder.swift in Sources */,
