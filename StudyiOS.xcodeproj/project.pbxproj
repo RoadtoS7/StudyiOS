@@ -21,6 +21,7 @@
 		2E4BA2B02A78EA2F0004E73E /* NavigationTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4BA2AF2A78EA2F0004E73E /* NavigationTestView.swift */; };
 		2E548BFE28683118003BEC5D /* BottomPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E548BFD28683118003BEC5D /* BottomPopUpViewController.swift */; };
 		2E548C012868386B003BEC5D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E548C002868386B003BEC5D /* UIColor+Extension.swift */; };
+		2E60B06C2A7C807E00680EBC /* GCDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E60B06B2A7C807E00680EBC /* GCDViewController.swift */; };
 		2E62C80F295ADADA00C83C0C /* ResponderChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62C80E295ADADA00C83C0C /* ResponderChainViewController.swift */; };
 		2E62C811295AE54300C83C0C /* TouchableResponderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62C810295AE54300C83C0C /* TouchableResponderView.swift */; };
 		2E62C814295AECC800C83C0C /* OverlappedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62C813295AECC800C83C0C /* OverlappedViewController.swift */; };
@@ -79,6 +80,7 @@
 		2E4BA2AF2A78EA2F0004E73E /* NavigationTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTestView.swift; sourceTree = "<group>"; };
 		2E548BFD28683118003BEC5D /* BottomPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPopUpViewController.swift; sourceTree = "<group>"; };
 		2E548C002868386B003BEC5D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		2E60B06B2A7C807E00680EBC /* GCDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDViewController.swift; sourceTree = "<group>"; };
 		2E62C80E295ADADA00C83C0C /* ResponderChainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderChainViewController.swift; sourceTree = "<group>"; };
 		2E62C810295AE54300C83C0C /* TouchableResponderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchableResponderView.swift; sourceTree = "<group>"; };
 		2E62C813295AECC800C83C0C /* OverlappedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlappedViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +198,14 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		2E60B06A2A7C805500680EBC /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				2E60B06B2A7C807E00680EBC /* GCDViewController.swift */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
 		2E62C80D295ADAC800C83C0C /* ResponderChain */ = {
 			isa = PBXGroup;
 			children = (
@@ -260,6 +270,7 @@
 		2EC5816F285C2BE5001446C3 /* StudyiOS */ = {
 			isa = PBXGroup;
 			children = (
+				2E60B06A2A7C805500680EBC /* GCD */,
 				2E4BA2AC2A7886BA0004E73E /* SwiftUI */,
 				2EA40CAF2A72501100DA8C76 /* XCode New Feature */,
 				2ECC29B92A723D17009D210D /* UIViewController */,
@@ -498,6 +509,7 @@
 				2EC58171285C2BE5001446C3 /* AppDelegate.swift in Sources */,
 				2E3BB39F2876658F00BBB95C /* CollectionViewController+DataSource.swift in Sources */,
 				2E3BB3A32876CB2F00BBB95C /* String+Extension.swift in Sources */,
+				2E60B06C2A7C807E00680EBC /* GCDViewController.swift in Sources */,
 				2EC581A3285C696A001446C3 /* TabBarViewController.swift in Sources */,
 				2EC581AC285C8F9D001446C3 /* ViewType.swift in Sources */,
 				2E0ADBE028B842220035A21B /* Main.swift in Sources */,

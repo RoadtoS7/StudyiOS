@@ -22,7 +22,8 @@ extension ViewType {
         ViewType(title: "Alter Responder Chain"),
         ViewType(title: "Test Retained Publisher"),
         ViewType(title: "If there is no subviews, are layout callbacks called?"),
-        ViewType(title: "[SwiftUI] - NavigationView")
+        ViewType(title: "[SwiftUI] - NavigationView"),
+        ViewType(title: "GCD - weak self 관계 ")
     ]
 }
 #endif

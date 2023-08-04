@@ -125,6 +125,8 @@ extension MainViewController  {
             let view = NavigationTestView()
             toViewController = UIHostingController(rootView: view)
             navigationController?.setNavigationBarHidden(true, animated: true)
+        case 9:
+            toViewController = GCDViewController()
         default: return
         }
         
