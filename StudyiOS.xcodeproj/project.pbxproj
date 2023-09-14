@@ -28,6 +28,10 @@
 		2E62C814295AECC800C83C0C /* OverlappedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62C813295AECC800C83C0C /* OverlappedViewController.swift */; };
 		2E87D0582A6A194000346934 /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E87D0572A6A194000346934 /* CustomFlowLayout.swift */; };
 		2E87D05A2A6A19D800346934 /* CustomFlowLayoutCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E87D0592A6A19D800346934 /* CustomFlowLayoutCollectionViewController.swift */; };
+		2E8B46132AB295B500E8F1B6 /* BaseTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B46122AB295B500E8F1B6 /* BaseTabBar.swift */; };
+		2E8B46152AB295D700E8F1B6 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B46142AB295D700E8F1B6 /* BaseTabBarController.swift */; };
+		2E8B46172AB2960200E8F1B6 /* BaseTabBarContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B46162AB2960200E8F1B6 /* BaseTabBarContentView.swift */; };
+		2E8B461A2AB2968100E8F1B6 /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B46192AB2968100E8F1B6 /* Collection+Extension.swift */; };
 		2EC15228288681FA00649ED4 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC15227288681FA00649ED4 /* ImageViewController.swift */; };
 		2EC318D329EFEF2E0015A8B1 /* StudyUIViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC318D229EFEF2E0015A8B1 /* StudyUIViewViewController.swift */; };
 		2EC58171285C2BE5001446C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC58170285C2BE5001446C3 /* AppDelegate.swift */; };
@@ -88,6 +92,10 @@
 		2E62C813295AECC800C83C0C /* OverlappedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlappedViewController.swift; sourceTree = "<group>"; };
 		2E87D0572A6A194000346934 /* CustomFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
 		2E87D0592A6A19D800346934 /* CustomFlowLayoutCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayoutCollectionViewController.swift; sourceTree = "<group>"; };
+		2E8B46122AB295B500E8F1B6 /* BaseTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBar.swift; sourceTree = "<group>"; };
+		2E8B46142AB295D700E8F1B6 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
+		2E8B46162AB2960200E8F1B6 /* BaseTabBarContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarContentView.swift; sourceTree = "<group>"; };
+		2E8B46192AB2968100E8F1B6 /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 		2EC15227288681FA00649ED4 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		2EC318D229EFEF2E0015A8B1 /* StudyUIViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyUIViewViewController.swift; sourceTree = "<group>"; };
 		2EC5816D285C2BE5001446C3 /* StudyiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,6 +212,7 @@
 				2E3BB3992874868F00BBB95C /* Date+Today.swift */,
 				2E3BB3A22876CB2F00BBB95C /* String+Extension.swift */,
 				2E0D6BD628A238BC001E0019 /* UITapGestureRecognizer+Extension.swift */,
+				2E8B46192AB2968100E8F1B6 /* Collection+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -240,6 +249,16 @@
 				2E87D0592A6A19D800346934 /* CustomFlowLayoutCollectionViewController.swift */,
 			);
 			path = Layout;
+			sourceTree = "<group>";
+		};
+		2E8B46112AB291D400E8F1B6 /* TapasContentsHome */ = {
+			isa = PBXGroup;
+			children = (
+				2E8B46122AB295B500E8F1B6 /* BaseTabBar.swift */,
+				2E8B46142AB295D700E8F1B6 /* BaseTabBarController.swift */,
+				2E8B46162AB2960200E8F1B6 /* BaseTabBarContentView.swift */,
+			);
+			path = TapasContentsHome;
 			sourceTree = "<group>";
 		};
 		2EA40CAF2A72501100DA8C76 /* XCode New Feature */ = {
@@ -280,6 +299,7 @@
 		2EC5816F285C2BE5001446C3 /* StudyiOS */ = {
 			isa = PBXGroup;
 			children = (
+				2E8B46112AB291D400E8F1B6 /* TapasContentsHome */,
 				2E3C719E2AAAB1D400AD2811 /* EdgeBackGesture */,
 				2E60B06A2A7C805500680EBC /* GCD */,
 				2E4BA2AC2A7886BA0004E73E /* SwiftUI */,
@@ -510,9 +530,11 @@
 				2E00B9A52A3A97F30096E5A3 /* MainActorViewController.swift in Sources */,
 				2EC581A5285C70CE001446C3 /* CollectionViewController.swift in Sources */,
 				2EC581A9285C76CA001446C3 /* Reminder.swift in Sources */,
+				2E8B461A2AB2968100E8F1B6 /* Collection+Extension.swift in Sources */,
 				2ECEEE9828E9D55500B55CCB /* NestedGroupViewController.swift in Sources */,
 				2E62C814295AECC800C83C0C /* OverlappedViewController.swift in Sources */,
 				2E0D6BD328A14059001E0019 /* MultipleLinkTextViewController.swift in Sources */,
+				2E8B46132AB295B500E8F1B6 /* BaseTabBar.swift in Sources */,
 				2EC581A1285C3756001446C3 /* PresentationStyleViewController.swift in Sources */,
 				2EC58175285C2BE5001446C3 /* MainViewController.swift in Sources */,
 				2E0ADBDE28B841290035A21B /* StackView.swift in Sources */,
@@ -522,10 +544,12 @@
 				2E3BB3A32876CB2F00BBB95C /* String+Extension.swift in Sources */,
 				2E60B06C2A7C807E00680EBC /* GCDViewController.swift in Sources */,
 				2EC581A3285C696A001446C3 /* TabBarViewController.swift in Sources */,
+				2E8B46152AB295D700E8F1B6 /* BaseTabBarController.swift in Sources */,
 				2EC581AC285C8F9D001446C3 /* ViewType.swift in Sources */,
 				2E0ADBE028B842220035A21B /* Main.swift in Sources */,
 				2E3BB39A2874868F00BBB95C /* Date+Today.swift in Sources */,
 				2E62C80F295ADADA00C83C0C /* ResponderChainViewController.swift in Sources */,
+				2E8B46172AB2960200E8F1B6 /* BaseTabBarContentView.swift in Sources */,
 				2EC58173285C2BE5001446C3 /* SceneDelegate.swift in Sources */,
 				2E548BFE28683118003BEC5D /* BottomPopUpViewController.swift in Sources */,
 				2EC318D329EFEF2E0015A8B1 /* StudyUIViewViewController.swift in Sources */,
