@@ -18,6 +18,7 @@
 		2E3BB39A2874868F00BBB95C /* Date+Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BB3992874868F00BBB95C /* Date+Today.swift */; };
 		2E3BB39F2876658F00BBB95C /* CollectionViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BB39E2876658F00BBB95C /* CollectionViewController+DataSource.swift */; };
 		2E3BB3A32876CB2F00BBB95C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BB3A22876CB2F00BBB95C /* String+Extension.swift */; };
+		2E3C71A02AAAB1FC00AD2811 /* EdgeBackNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3C719F2AAAB1FC00AD2811 /* EdgeBackNavigationViewController.swift */; };
 		2E4BA2B02A78EA2F0004E73E /* NavigationTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4BA2AF2A78EA2F0004E73E /* NavigationTestView.swift */; };
 		2E548BFE28683118003BEC5D /* BottomPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E548BFD28683118003BEC5D /* BottomPopUpViewController.swift */; };
 		2E548C012868386B003BEC5D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E548C002868386B003BEC5D /* UIColor+Extension.swift */; };
@@ -77,6 +78,7 @@
 		2E3BB3992874868F00BBB95C /* Date+Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Today.swift"; sourceTree = "<group>"; };
 		2E3BB39E2876658F00BBB95C /* CollectionViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewController+DataSource.swift"; sourceTree = "<group>"; };
 		2E3BB3A22876CB2F00BBB95C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		2E3C719F2AAAB1FC00AD2811 /* EdgeBackNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeBackNavigationViewController.swift; sourceTree = "<group>"; };
 		2E4BA2AF2A78EA2F0004E73E /* NavigationTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTestView.swift; sourceTree = "<group>"; };
 		2E548BFD28683118003BEC5D /* BottomPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPopUpViewController.swift; sourceTree = "<group>"; };
 		2E548C002868386B003BEC5D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -169,6 +171,14 @@
 				2E0D6BD428A14BCB001E0019 /* TextViewContainer.swift */,
 			);
 			path = MultipleLinkTextViewController;
+			sourceTree = "<group>";
+		};
+		2E3C719E2AAAB1D400AD2811 /* EdgeBackGesture */ = {
+			isa = PBXGroup;
+			children = (
+				2E3C719F2AAAB1FC00AD2811 /* EdgeBackNavigationViewController.swift */,
+			);
+			path = EdgeBackGesture;
 			sourceTree = "<group>";
 		};
 		2E4BA2AC2A7886BA0004E73E /* SwiftUI */ = {
@@ -270,6 +280,7 @@
 		2EC5816F285C2BE5001446C3 /* StudyiOS */ = {
 			isa = PBXGroup;
 			children = (
+				2E3C719E2AAAB1D400AD2811 /* EdgeBackGesture */,
 				2E60B06A2A7C805500680EBC /* GCD */,
 				2E4BA2AC2A7886BA0004E73E /* SwiftUI */,
 				2EA40CAF2A72501100DA8C76 /* XCode New Feature */,
@@ -520,6 +531,7 @@
 				2EC318D329EFEF2E0015A8B1 /* StudyUIViewViewController.swift in Sources */,
 				2ECC29BB2A723D3D009D210D /* NonSubviewsViewController.swift in Sources */,
 				2EC15228288681FA00649ED4 /* ImageViewController.swift in Sources */,
+				2E3C71A02AAAB1FC00AD2811 /* EdgeBackNavigationViewController.swift in Sources */,
 				2ECEEE9A28E9E28200B55CCB /* RankOneCell.swift in Sources */,
 				2E62C811295AE54300C83C0C /* TouchableResponderView.swift in Sources */,
 				2E548C012868386B003BEC5D /* UIColor+Extension.swift in Sources */,

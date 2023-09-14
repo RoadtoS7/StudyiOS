@@ -127,6 +127,8 @@ extension MainViewController  {
             navigationController?.setNavigationBarHidden(true, animated: true)
         case 9:
             toViewController = GCDViewController()
+        case 10:
+            toViewController = EdgeBackNavigationViewController()
         default: return
         }
         
