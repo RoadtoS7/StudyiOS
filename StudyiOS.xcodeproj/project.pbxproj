@@ -15,6 +15,7 @@
 		2E0D6BD328A14059001E0019 /* MultipleLinkTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0D6BD228A14059001E0019 /* MultipleLinkTextViewController.swift */; };
 		2E0D6BD528A14BCB001E0019 /* TextViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0D6BD428A14BCB001E0019 /* TextViewContainer.swift */; };
 		2E0D6BD728A238BC001E0019 /* UITapGestureRecognizer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0D6BD628A238BC001E0019 /* UITapGestureRecognizer+Extension.swift */; };
+		2E35C63C2AC3B06D000D2D03 /* AsyncAwaitOnWhichThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E35C63B2AC3B06D000D2D03 /* AsyncAwaitOnWhichThreadViewController.swift */; };
 		2E3BB39A2874868F00BBB95C /* Date+Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BB3992874868F00BBB95C /* Date+Today.swift */; };
 		2E3BB39F2876658F00BBB95C /* CollectionViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BB39E2876658F00BBB95C /* CollectionViewController+DataSource.swift */; };
 		2E3BB3A32876CB2F00BBB95C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BB3A22876CB2F00BBB95C /* String+Extension.swift */; };
@@ -32,6 +33,7 @@
 		2E8B46152AB295D700E8F1B6 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B46142AB295D700E8F1B6 /* BaseTabBarController.swift */; };
 		2E8B46172AB2960200E8F1B6 /* BaseTabBarContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B46162AB2960200E8F1B6 /* BaseTabBarContentView.swift */; };
 		2E8B461A2AB2968100E8F1B6 /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B46192AB2968100E8F1B6 /* Collection+Extension.swift */; };
+		2E8B461D2AB296D800E8F1B6 /* BoxTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B461C2AB296D800E8F1B6 /* BoxTabBar.swift */; };
 		2EC15228288681FA00649ED4 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC15227288681FA00649ED4 /* ImageViewController.swift */; };
 		2EC318D329EFEF2E0015A8B1 /* StudyUIViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC318D229EFEF2E0015A8B1 /* StudyUIViewViewController.swift */; };
 		2EC58171285C2BE5001446C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC58170285C2BE5001446C3 /* AppDelegate.swift */; };
@@ -79,6 +81,7 @@
 		2E0D6BD228A14059001E0019 /* MultipleLinkTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleLinkTextViewController.swift; sourceTree = "<group>"; };
 		2E0D6BD428A14BCB001E0019 /* TextViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewContainer.swift; sourceTree = "<group>"; };
 		2E0D6BD628A238BC001E0019 /* UITapGestureRecognizer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+Extension.swift"; sourceTree = "<group>"; };
+		2E35C63B2AC3B06D000D2D03 /* AsyncAwaitOnWhichThreadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwaitOnWhichThreadViewController.swift; sourceTree = "<group>"; };
 		2E3BB3992874868F00BBB95C /* Date+Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Today.swift"; sourceTree = "<group>"; };
 		2E3BB39E2876658F00BBB95C /* CollectionViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewController+DataSource.swift"; sourceTree = "<group>"; };
 		2E3BB3A22876CB2F00BBB95C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -96,6 +99,7 @@
 		2E8B46142AB295D700E8F1B6 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		2E8B46162AB2960200E8F1B6 /* BaseTabBarContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarContentView.swift; sourceTree = "<group>"; };
 		2E8B46192AB2968100E8F1B6 /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
+		2E8B461C2AB296D800E8F1B6 /* BoxTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxTabBar.swift; sourceTree = "<group>"; };
 		2EC15227288681FA00649ED4 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		2EC318D229EFEF2E0015A8B1 /* StudyUIViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyUIViewViewController.swift; sourceTree = "<group>"; };
 		2EC5816D285C2BE5001446C3 /* StudyiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				2E00B9A42A3A97F30096E5A3 /* MainActorViewController.swift */,
+				2E35C63B2AC3B06D000D2D03 /* AsyncAwaitOnWhichThreadViewController.swift */,
 			);
 			path = SwiftConcurrency;
 			sourceTree = "<group>";
@@ -254,11 +259,20 @@
 		2E8B46112AB291D400E8F1B6 /* TapasContentsHome */ = {
 			isa = PBXGroup;
 			children = (
+				2E8B461B2AB296CA00E8F1B6 /* New Group */,
 				2E8B46122AB295B500E8F1B6 /* BaseTabBar.swift */,
 				2E8B46142AB295D700E8F1B6 /* BaseTabBarController.swift */,
 				2E8B46162AB2960200E8F1B6 /* BaseTabBarContentView.swift */,
+				2E8B461C2AB296D800E8F1B6 /* BoxTabBar.swift */,
 			);
 			path = TapasContentsHome;
+			sourceTree = "<group>";
+		};
+		2E8B461B2AB296CA00E8F1B6 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		2EA40CAF2A72501100DA8C76 /* XCode New Feature */ = {
@@ -526,6 +540,7 @@
 				2E0ADBE228B842780035A21B /* UIView.swift in Sources */,
 				2E87D05A2A6A19D800346934 /* CustomFlowLayoutCollectionViewController.swift in Sources */,
 				2E87D0582A6A194000346934 /* CustomFlowLayout.swift in Sources */,
+				2E8B461D2AB296D800E8F1B6 /* BoxTabBar.swift in Sources */,
 				2E4BA2B02A78EA2F0004E73E /* NavigationTestView.swift in Sources */,
 				2E00B9A52A3A97F30096E5A3 /* MainActorViewController.swift in Sources */,
 				2EC581A5285C70CE001446C3 /* CollectionViewController.swift in Sources */,
@@ -539,6 +554,7 @@
 				2EC58175285C2BE5001446C3 /* MainViewController.swift in Sources */,
 				2E0ADBDE28B841290035A21B /* StackView.swift in Sources */,
 				2E0D6BD528A14BCB001E0019 /* TextViewContainer.swift in Sources */,
+				2E35C63C2AC3B06D000D2D03 /* AsyncAwaitOnWhichThreadViewController.swift in Sources */,
 				2EC58171285C2BE5001446C3 /* AppDelegate.swift in Sources */,
 				2E3BB39F2876658F00BBB95C /* CollectionViewController+DataSource.swift in Sources */,
 				2E3BB3A32876CB2F00BBB95C /* String+Extension.swift in Sources */,

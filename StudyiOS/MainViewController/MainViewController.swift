@@ -129,6 +129,8 @@ extension MainViewController  {
             toViewController = GCDViewController()
         case 10:
             toViewController = EdgeBackNavigationViewController()
+        case 11:
+            toViewController = AsyncAwaitOnWhichThreadViewController()
         default: return
         }
         
