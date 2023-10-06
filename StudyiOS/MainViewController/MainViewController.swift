@@ -104,13 +104,10 @@ extension MainViewController  {
         switch indexPath.row {
         case 0:
             toViewController = CollectionViewController()
-            
         case 1:
             return
-            
         case 2:
             toViewController = MultipleLinkTextViewController()
-        
         case 3:
             toViewController = TestCombineViewController()
         case 4:
@@ -131,6 +128,8 @@ extension MainViewController  {
             toViewController = EdgeBackNavigationViewController()
         case 11:
             toViewController = AsyncAwaitOnWhichThreadViewController()
+        case 12:
+            toViewController = CoreDataViewController()
         default: return
         }
         

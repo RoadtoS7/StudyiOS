@@ -25,7 +25,8 @@ extension ViewType {
         ViewType(title: "[SwiftUI] - NavigationView"),
         ViewType(title: "GCD - weak self 관계 "),
         ViewType(title: "엣지백 제스처에서 UINavigationController의 delegate 메서드 호출 여부 체크"),
-        ViewType(title: "async-await 메서드의 실행 스레드가 언제 Main 스레드인가?")
+        ViewType(title: "async-await 메서드의 실행 스레드가 언제 Main 스레드인가?"),
+        ViewType(title: "CoreData 테스트")
     ]
 }
 #endif

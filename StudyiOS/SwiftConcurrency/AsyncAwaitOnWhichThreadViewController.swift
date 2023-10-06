@@ -19,6 +19,7 @@ class AsyncAwaitOnWhichThreadViewController: UIViewController {
             let message: String = mainThreadCheckMessage()
             print("$$ ViewController - Task - ", message)
             
+            print("$$ StrucTester async start")
             await structTester.test()
             await classTester.test()
             

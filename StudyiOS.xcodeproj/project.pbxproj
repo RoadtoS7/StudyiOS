@@ -15,7 +15,10 @@
 		2E0D6BD328A14059001E0019 /* MultipleLinkTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0D6BD228A14059001E0019 /* MultipleLinkTextViewController.swift */; };
 		2E0D6BD528A14BCB001E0019 /* TextViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0D6BD428A14BCB001E0019 /* TextViewContainer.swift */; };
 		2E0D6BD728A238BC001E0019 /* UITapGestureRecognizer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0D6BD628A238BC001E0019 /* UITapGestureRecognizer+Extension.swift */; };
+		2E167DE22ACE8AEB0002B921 /* CoreDataContextSaveIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E167DE12ACE8AEB0002B921 /* CoreDataContextSaveIssue.swift */; };
 		2E35C63C2AC3B06D000D2D03 /* AsyncAwaitOnWhichThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E35C63B2AC3B06D000D2D03 /* AsyncAwaitOnWhichThreadViewController.swift */; };
+		2E3AB9472ACF9C85006DB3C9 /* MenuLayout.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2E3AB9462ACF9C85006DB3C9 /* MenuLayout.txt */; };
+		2E3AB9492ACF9E13006DB3C9 /* CoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3AB9482ACF9E13006DB3C9 /* CoreDataViewController.swift */; };
 		2E3BB39A2874868F00BBB95C /* Date+Today.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BB3992874868F00BBB95C /* Date+Today.swift */; };
 		2E3BB39F2876658F00BBB95C /* CollectionViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BB39E2876658F00BBB95C /* CollectionViewController+DataSource.swift */; };
 		2E3BB3A32876CB2F00BBB95C /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3BB3A22876CB2F00BBB95C /* String+Extension.swift */; };
@@ -34,6 +37,8 @@
 		2E8B46172AB2960200E8F1B6 /* BaseTabBarContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B46162AB2960200E8F1B6 /* BaseTabBarContentView.swift */; };
 		2E8B461A2AB2968100E8F1B6 /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B46192AB2968100E8F1B6 /* Collection+Extension.swift */; };
 		2E8B461D2AB296D800E8F1B6 /* BoxTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B461C2AB296D800E8F1B6 /* BoxTabBar.swift */; };
+		2E9777B72ACE9BCF000016F9 /* MenuLayout.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E9777B52ACE9BCF000016F9 /* MenuLayout.xcdatamodeld */; };
+		2E9777BA2ACE9D96000016F9 /* Slope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9777B92ACE9D96000016F9 /* Slope.swift */; };
 		2EC15228288681FA00649ED4 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC15227288681FA00649ED4 /* ImageViewController.swift */; };
 		2EC318D329EFEF2E0015A8B1 /* StudyUIViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC318D229EFEF2E0015A8B1 /* StudyUIViewViewController.swift */; };
 		2EC58171285C2BE5001446C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC58170285C2BE5001446C3 /* AppDelegate.swift */; };
@@ -81,7 +86,10 @@
 		2E0D6BD228A14059001E0019 /* MultipleLinkTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleLinkTextViewController.swift; sourceTree = "<group>"; };
 		2E0D6BD428A14BCB001E0019 /* TextViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewContainer.swift; sourceTree = "<group>"; };
 		2E0D6BD628A238BC001E0019 /* UITapGestureRecognizer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+Extension.swift"; sourceTree = "<group>"; };
+		2E167DE12ACE8AEB0002B921 /* CoreDataContextSaveIssue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataContextSaveIssue.swift; sourceTree = "<group>"; };
 		2E35C63B2AC3B06D000D2D03 /* AsyncAwaitOnWhichThreadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwaitOnWhichThreadViewController.swift; sourceTree = "<group>"; };
+		2E3AB9462ACF9C85006DB3C9 /* MenuLayout.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MenuLayout.txt; sourceTree = "<group>"; };
+		2E3AB9482ACF9E13006DB3C9 /* CoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewController.swift; sourceTree = "<group>"; };
 		2E3BB3992874868F00BBB95C /* Date+Today.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Today.swift"; sourceTree = "<group>"; };
 		2E3BB39E2876658F00BBB95C /* CollectionViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewController+DataSource.swift"; sourceTree = "<group>"; };
 		2E3BB3A22876CB2F00BBB95C /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -100,6 +108,8 @@
 		2E8B46162AB2960200E8F1B6 /* BaseTabBarContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarContentView.swift; sourceTree = "<group>"; };
 		2E8B46192AB2968100E8F1B6 /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 		2E8B461C2AB296D800E8F1B6 /* BoxTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxTabBar.swift; sourceTree = "<group>"; };
+		2E9777B62ACE9BCF000016F9 /* MenuLayout.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MenuLayout.xcdatamodel; sourceTree = "<group>"; };
+		2E9777B92ACE9D96000016F9 /* Slope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slope.swift; sourceTree = "<group>"; };
 		2EC15227288681FA00649ED4 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		2EC318D229EFEF2E0015A8B1 /* StudyUIViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyUIViewViewController.swift; sourceTree = "<group>"; };
 		2EC5816D285C2BE5001446C3 /* StudyiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +194,17 @@
 				2E0D6BD428A14BCB001E0019 /* TextViewContainer.swift */,
 			);
 			path = MultipleLinkTextViewController;
+			sourceTree = "<group>";
+		};
+		2E167DE02ACE8AAC0002B921 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				2E3AB9462ACF9C85006DB3C9 /* MenuLayout.txt */,
+				2E167DE12ACE8AEB0002B921 /* CoreDataContextSaveIssue.swift */,
+				2E9777B52ACE9BCF000016F9 /* MenuLayout.xcdatamodeld */,
+				2E3AB9482ACF9E13006DB3C9 /* CoreDataViewController.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		2E3C719E2AAAB1D400AD2811 /* EdgeBackGesture */ = {
@@ -275,6 +296,14 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		2E9777B82ACE9D8B000016F9 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				2E9777B92ACE9D96000016F9 /* Slope.swift */,
+			);
+			path = Macro;
+			sourceTree = "<group>";
+		};
 		2EA40CAF2A72501100DA8C76 /* XCode New Feature */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +342,8 @@
 		2EC5816F285C2BE5001446C3 /* StudyiOS */ = {
 			isa = PBXGroup;
 			children = (
+				2E9777B82ACE9D8B000016F9 /* Macro */,
+				2E167DE02ACE8AAC0002B921 /* CoreData */,
 				2E8B46112AB291D400E8F1B6 /* TapasContentsHome */,
 				2E3C719E2AAAB1D400AD2811 /* EdgeBackGesture */,
 				2E60B06A2A7C805500680EBC /* GCD */,
@@ -513,6 +544,7 @@
 				2EC5817D285C2BE6001446C3 /* LaunchScreen.storyboard in Resources */,
 				2EC5817A285C2BE6001446C3 /* Assets.xcassets in Resources */,
 				2EC58178285C2BE5001446C3 /* Main.storyboard in Resources */,
+				2E3AB9472ACF9C85006DB3C9 /* MenuLayout.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,8 +574,11 @@
 				2E87D0582A6A194000346934 /* CustomFlowLayout.swift in Sources */,
 				2E8B461D2AB296D800E8F1B6 /* BoxTabBar.swift in Sources */,
 				2E4BA2B02A78EA2F0004E73E /* NavigationTestView.swift in Sources */,
+				2E3AB9492ACF9E13006DB3C9 /* CoreDataViewController.swift in Sources */,
 				2E00B9A52A3A97F30096E5A3 /* MainActorViewController.swift in Sources */,
+				2E9777B72ACE9BCF000016F9 /* MenuLayout.xcdatamodeld in Sources */,
 				2EC581A5285C70CE001446C3 /* CollectionViewController.swift in Sources */,
+				2E9777BA2ACE9D96000016F9 /* Slope.swift in Sources */,
 				2EC581A9285C76CA001446C3 /* Reminder.swift in Sources */,
 				2E8B461A2AB2968100E8F1B6 /* Collection+Extension.swift in Sources */,
 				2ECEEE9828E9D55500B55CCB /* NestedGroupViewController.swift in Sources */,
@@ -565,6 +600,7 @@
 				2E0ADBE028B842220035A21B /* Main.swift in Sources */,
 				2E3BB39A2874868F00BBB95C /* Date+Today.swift in Sources */,
 				2E62C80F295ADADA00C83C0C /* ResponderChainViewController.swift in Sources */,
+				2E167DE22ACE8AEB0002B921 /* CoreDataContextSaveIssue.swift in Sources */,
 				2E8B46172AB2960200E8F1B6 /* BaseTabBarContentView.swift in Sources */,
 				2EC58173285C2BE5001446C3 /* SceneDelegate.swift in Sources */,
 				2E548BFE28683118003BEC5D /* BottomPopUpViewController.swift in Sources */,
@@ -920,6 +956,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2E9777B52ACE9BCF000016F9 /* MenuLayout.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2E9777B62ACE9BCF000016F9 /* MenuLayout.xcdatamodel */,
+			);
+			currentVersion = 2E9777B62ACE9BCF000016F9 /* MenuLayout.xcdatamodel */;
+			path = MenuLayout.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2EC58165285C2BE5001446C3 /* Project object */;
 }
