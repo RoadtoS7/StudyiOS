@@ -17,6 +17,7 @@ class CoreDataViewController: UIViewController {
     }
     
     func testDeviceLockedEnv() {
+        
         Task {
             // ViewController에서 생성한 Task 이기에 "MainActor"에서 실행됨 -> MainThread에서 실행됨
             await coreDatAdapater.getCachedMenuList(key: .mainHome)
