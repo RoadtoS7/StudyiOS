@@ -41,6 +41,7 @@
 		2E8B461D2AB296D800E8F1B6 /* BoxTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B461C2AB296D800E8F1B6 /* BoxTabBar.swift */; };
 		2E9777B72ACE9BCF000016F9 /* MenuLayout.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E9777B52ACE9BCF000016F9 /* MenuLayout.xcdatamodeld */; };
 		2E9777BA2ACE9D96000016F9 /* Slope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9777B92ACE9D96000016F9 /* Slope.swift */; };
+		2EA1C6122ACFC47800D526DD /* MenuCacheManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA1C6112ACFC47800D526DD /* MenuCacheManagerTest.swift */; };
 		2EC15228288681FA00649ED4 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC15227288681FA00649ED4 /* ImageViewController.swift */; };
 		2EC318D329EFEF2E0015A8B1 /* StudyUIViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC318D229EFEF2E0015A8B1 /* StudyUIViewViewController.swift */; };
 		2EC58171285C2BE5001446C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC58170285C2BE5001446C3 /* AppDelegate.swift */; };
@@ -114,6 +115,7 @@
 		2E8B461C2AB296D800E8F1B6 /* BoxTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxTabBar.swift; sourceTree = "<group>"; };
 		2E9777B62ACE9BCF000016F9 /* MenuLayout.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MenuLayout.xcdatamodel; sourceTree = "<group>"; };
 		2E9777B92ACE9D96000016F9 /* Slope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slope.swift; sourceTree = "<group>"; };
+		2EA1C6112ACFC47800D526DD /* MenuCacheManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCacheManagerTest.swift; sourceTree = "<group>"; };
 		2EC15227288681FA00649ED4 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		2EC318D229EFEF2E0015A8B1 /* StudyUIViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyUIViewViewController.swift; sourceTree = "<group>"; };
 		2EC5816D285C2BE5001446C3 /* StudyiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -392,6 +394,7 @@
 			children = (
 				2EC58187285C2BE6001446C3 /* StudyiOSTests.swift */,
 				2E3AB94F2ACFB8FD006DB3C9 /* FileManagerTest.swift */,
+				2EA1C6112ACFC47800D526DD /* MenuCacheManagerTest.swift */,
 			);
 			path = StudyiOSTests;
 			sourceTree = "<group>";
@@ -636,6 +639,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2EC58188285C2BE6001446C3 /* StudyiOSTests.swift in Sources */,
+				2EA1C6122ACFC47800D526DD /* MenuCacheManagerTest.swift in Sources */,
 				2E3AB9502ACFB8FD006DB3C9 /* FileManagerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
