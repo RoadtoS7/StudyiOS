@@ -9,40 +9,50 @@
 import Foundation
 
 final class MenuCacheManager {
-    private let fileManager: FileManager = FileManager.default
-    private var cache: [MenuLayout.Key : Decodable] = [:]
+    static let shared: MenuCacheManager = .init()
     
-    private lazy var baseURL: String = {
-        fileManager.temporaryDirectory.absoluteString + "/MenuCache"
+    private let fileManager: FileManager = FileManager.default
+    private var cache: [MenuLayout.Key : Json] = [:]
+    typealias Json = Data
+    
+    private lazy var cacheDirPath: String = {
+        let tmpDirectoryPath: String
+        if #available(iOS 16.0, *) {
+            tmpDirectoryPath = fileManager.temporaryDirectory.path()
+        } else {
+            tmpDirectoryPath = fileManager.temporaryDirectory.path
+        }
+
+        return tmpDirectoryPath + "/MenuCache"
+//        return fileManager.temporaryDirectory.absoluteString + "/MenuCache"
     }()
     
     private func cacheFilePath(key: MenuLayout.Key) -> String {
-        baseURL + key.rawValue
+        cacheDirPath + key.rawValue
     }
     
-    init() {
+    private init() {
         makeCacheDirIfNotExist()
     }
     
     private func makeCacheDirIfNotExist() {
-        if cacheDirExists() == false {
+        if fileExist(atPath: cacheDirPath) == false {
             do {
-                try fileManager.createDirectory(atPath: baseURL, withIntermediateDirectories: true)
+                try fileManager.createDirectory(atPath: cacheDirPath, withIntermediateDirectories: true)
             } catch {
                 print("$$ makeCacheDirIfNotExist error: ", error)
             }
         }
     }
     
-    private func cacheDirExists() -> Bool {
+    private func fileExist(atPath path: String) -> Bool {
         var isDirectory : ObjCBool = false
-        let fileExist: Bool = fileManager.fileExists(atPath: baseURL, isDirectory: &isDirectory)
+        let fileExist: Bool = fileManager.fileExists(atPath: path, isDirectory: &isDirectory)
         return fileExist && isDirectory.boolValue
     }
     
     func cacheMenu<Value: Encodable>(key: MenuLayout.Key, value: Value) {
         makeCacheDirIfNotExist()
-        deleteMenu(key: key)
         saveMenu(key: key, value: value)
     }
     
@@ -50,31 +60,65 @@ final class MenuCacheManager {
         let filePath = cacheFilePath(key: key)
         let data: Data? = encode(value)
         
-        fileManager.createFile(atPath: filePath, contents: data)
+        let result = fileManager.createFile(atPath: filePath, contents: data)
+        let resultText: String = result ? "성공" : "실패"
+        cache[key] = data
+        print("$$ menu 캐싱 파일 저장 :", resultText)
     }
     
-    // FileManager에서 읽어서 반환하는 방식
     func menuList<CachedValue: Decodable>(key: MenuLayout.Key) -> CachedValue? {
-        let fileName: String = key.rawValue
-        let path: String = "\(baseURL)\(fileName)"
+        if cache[key] == nil {
+            loadMenuListInMemory(key: key)
+        }
         
-        guard let content: Data = fileManager.contents(atPath: path) else {
+        guard let cachedJson: Json = cache[key] else {
             return nil
         }
         
-        let cachedValue: CachedValue? = decode(data: content)
+        let cachedValue: CachedValue? = decode(data: cachedJson)
+        if let cachedValue {
+            print("$$ menuList를 캐시로부터 로딩하여 반환함")
+        }
         return cachedValue
     }
     
-    func deleteMenu(key: MenuLayout.Key) {
+    func loadAllMenuListInMemory() {
+        MenuLayout.Key.allCases
+            .forEach { key in
+                loadMenuListInMemory(key: key)
+            }
+    }
+    
+    private func loadMenuListInMemory(key: MenuLayout.Key) {
+        let filePath = cacheFilePath(key: key)
+        guard let content: Data = fileManager.contents(atPath: filePath) else {
+            return
+        }
+        
+        cache[key] = content
+    }
+    
+    func deleteAllCachedMenu() {
+        MenuLayout.Key.allCases
+            .forEach { key in
+                deleteMenu(key: key)
+                cache[key] = nil
+            }
+    }
+    
+    private func deleteMenu(key: MenuLayout.Key) {
         let path = cacheFilePath(key: key)
+
+        guard fileExist(atPath: path) else {
+            return
+        }
         do {
             try fileManager.removeItem(atPath: path)
+            cache[key] = nil
         } catch {
             print("$$ deleteMenu error: ", error)
         }
     }
-    
     
     func decode<CachedValue: Decodable>(data: Data) -> CachedValue? {
         let jsonDecoder = JSONDecoder()

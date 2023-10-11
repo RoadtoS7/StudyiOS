@@ -13,7 +13,7 @@
 
 import CoreData
 
-extension MenuLayout {
+struct MenuLayout {
     enum Key: String, CaseIterable {
         case mainHome           // 메인 > 홈
         case rankingComic       // 랭킹 > comic
@@ -25,26 +25,6 @@ extension MenuLayout {
         case genre              // 장르
         case originalComic      // 타파스 오리지널 > comic
         case originalNovel      // 타파스 오리지널 > novel
-    }
-    
-    var key: Key? {
-        set {
-            key_rawValue = newValue?.rawValue
-        }
-        get {
-            Key(rawValue: key_rawValue ?? "")
-        }
-    }
-}
-
-extension Sequence where Element == MenuLayout {
-    func toDict() -> [MenuLayout.Key:String] {
-        self.reduce(into: [MenuLayout.Key:String]()) { partialResult, layout in
-            guard let key = layout.key else {
-                return
-            }
-            partialResult[key] = layout.layout_json
-        }
     }
 }
 
@@ -61,16 +41,13 @@ final class JsonLoader {
             return ""
         }
 
-        print("$$ json: ", contentText)
+        print("$$ MenuLayout.txt exist")
         return contentText
     }
 }
 
 class CoreDataAdapter {
     var menuLayoutArray: [MenuLayout] = []
-    var menuLayoutDict: [MenuLayout.Key : String] {
-        return menuLayoutArray.toDict()
-    }
     
     var context: NSManagedObjectContext {
         return self.persistentContainer.viewContext
@@ -117,51 +94,51 @@ class CoreDataAdapter {
     
     // MARK: MenuLayout
     func getCachedMenuList(key: MenuLayout.Key, completionHandler: @escaping ([MenuLayout]?, Error?) -> Void) {
-        let request: NSFetchRequest<MenuLayout> = MenuLayout.fetchRequest()
-        
-        let asyncFetchRequest: NSAsynchronousFetchRequest<MenuLayout> = .init(fetchRequest: request) { asynchronousResult in
-            if let result = asynchronousResult.finalResult {
-                completionHandler(result, nil)
-                return
-            }
-            
-            completionHandler(nil, NSError(domain: "result is nil", code: -1))
-        }
-        
-        do {
-            try context.execute(asyncFetchRequest)
-        } catch {
-            completionHandler(nil, error)
-        }
+//        let request: NSFetchRequest<MenuLayout> = MenuLayout.fetchRequest()
+//
+//        let asyncFetchRequest: NSAsynchronousFetchRequest<MenuLayout> = .init(fetchRequest: request) { asynchronousResult in
+//            if let result = asynchronousResult.finalResult {
+//                completionHandler(result, nil)
+//                return
+//            }
+//
+//            completionHandler(nil, NSError(domain: "result is nil", code: -1))
+//        }
+//
+//        do {
+//            try context.execute(asyncFetchRequest)
+//        } catch {
+//            completionHandler(nil, error)
+//        }
     }
     
     func saveMenuList<CachedValue: Encodable>(key: MenuLayout.Key, cachedValue: CachedValue) {
-        guard let data: Data = try? JSONEncoder().encode(cachedValue),
-              let json: String = String(data: data, encoding: .utf8) else {
-            return
-        }
-        
-        // find old value and delete if any
-        deleteMenuList(key: key)
-        
-        // create new one and add to DB
-        let menuLayout = MenuLayout(context: self.context)
-        menuLayout.key = key
-        menuLayout.layout_json = json
-        menuLayoutArray.append(menuLayout)
-        
-        try? context.save()
+//        guard let data: Data = try? JSONEncoder().encode(cachedValue),
+//              let json: String = String(data: data, encoding: .utf8) else {
+//            return
+//        }
+//
+//        // find old value and delete if any
+//        deleteMenuList(key: key)
+//
+//        // create new one and add to DB
+//        let menuLayout = MenuLayout(context: self.context)
+//        menuLayout.key = key
+//        menuLayout.layout_json = json
+//        menuLayoutArray.append(menuLayout)
+//
+//        try? context.save()
     }
     
     private func deleteMenuList(key: MenuLayout.Key) {
-        menuLayoutArray = menuLayoutArray.filter { (menu) -> Bool in
-            if menu.key == key {
-                context.delete(menu)
-                return false
-            } else {
-                return true
-            }
-        }
+//        menuLayoutArray = menuLayoutArray.filter { (menu) -> Bool in
+//            if menu.key == key {
+//                context.delete(menu)
+//                return false
+//            } else {
+//                return true
+//            }
+//        }
     }
     
     func save() {
