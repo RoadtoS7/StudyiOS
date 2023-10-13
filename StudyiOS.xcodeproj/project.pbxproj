@@ -32,6 +32,7 @@
 		2E62C80F295ADADA00C83C0C /* ResponderChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62C80E295ADADA00C83C0C /* ResponderChainViewController.swift */; };
 		2E62C811295AE54300C83C0C /* TouchableResponderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62C810295AE54300C83C0C /* TouchableResponderView.swift */; };
 		2E62C814295AECC800C83C0C /* OverlappedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62C813295AECC800C83C0C /* OverlappedViewController.swift */; };
+		2E84BE9C2AD6755D009768D8 /* CoreDataMigrationV2toV4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84BE9B2AD6755D009768D8 /* CoreDataMigrationV2toV4.swift */; };
 		2E87D0582A6A194000346934 /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E87D0572A6A194000346934 /* CustomFlowLayout.swift */; };
 		2E87D05A2A6A19D800346934 /* CustomFlowLayoutCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E87D0592A6A19D800346934 /* CustomFlowLayoutCollectionViewController.swift */; };
 		2E8B46132AB295B500E8F1B6 /* BaseTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B46122AB295B500E8F1B6 /* BaseTabBar.swift */; };
@@ -41,6 +42,9 @@
 		2E8B461D2AB296D800E8F1B6 /* BoxTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B461C2AB296D800E8F1B6 /* BoxTabBar.swift */; };
 		2E9777B72ACE9BCF000016F9 /* MenuLayout.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E9777B52ACE9BCF000016F9 /* MenuLayout.xcdatamodeld */; };
 		2E9777BA2ACE9D96000016F9 /* Slope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9777B92ACE9D96000016F9 /* Slope.swift */; };
+		2E9E340A2AD8C90500EBCE96 /* DeleteEntityAndMigrationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E34092AD8C90500EBCE96 /* DeleteEntityAndMigrationTest.swift */; };
+		2E9E340C2AD8D34C00EBCE96 /* CoreDataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E340B2AD8D34C00EBCE96 /* CoreDataUtils.swift */; };
+		2E9E34102AD9133A00EBCE96 /* MigrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E340F2AD9133A00EBCE96 /* MigrationManager.swift */; };
 		2EA1C6122ACFC47800D526DD /* MenuCacheManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA1C6112ACFC47800D526DD /* MenuCacheManagerTest.swift */; };
 		2EC15228288681FA00649ED4 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC15227288681FA00649ED4 /* ImageViewController.swift */; };
 		2EC318D329EFEF2E0015A8B1 /* StudyUIViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC318D229EFEF2E0015A8B1 /* StudyUIViewViewController.swift */; };
@@ -111,6 +115,9 @@
 		2E62C80E295ADADA00C83C0C /* ResponderChainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderChainViewController.swift; sourceTree = "<group>"; };
 		2E62C810295AE54300C83C0C /* TouchableResponderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchableResponderView.swift; sourceTree = "<group>"; };
 		2E62C813295AECC800C83C0C /* OverlappedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlappedViewController.swift; sourceTree = "<group>"; };
+		2E84BE992AD645E3009768D8 /* MenuLayout_ 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MenuLayout_ 3.xcdatamodel"; sourceTree = "<group>"; };
+		2E84BE9A2AD6745C009768D8 /* MenuLayout_ 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MenuLayout_ 4.xcdatamodel"; sourceTree = "<group>"; };
+		2E84BE9B2AD6755D009768D8 /* CoreDataMigrationV2toV4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMigrationV2toV4.swift; sourceTree = "<group>"; };
 		2E87D0572A6A194000346934 /* CustomFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
 		2E87D0592A6A19D800346934 /* CustomFlowLayoutCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayoutCollectionViewController.swift; sourceTree = "<group>"; };
 		2E8B46122AB295B500E8F1B6 /* BaseTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBar.swift; sourceTree = "<group>"; };
@@ -120,6 +127,9 @@
 		2E8B461C2AB296D800E8F1B6 /* BoxTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxTabBar.swift; sourceTree = "<group>"; };
 		2E9777B62ACE9BCF000016F9 /* MenuLayout.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MenuLayout.xcdatamodel; sourceTree = "<group>"; };
 		2E9777B92ACE9D96000016F9 /* Slope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slope.swift; sourceTree = "<group>"; };
+		2E9E34092AD8C90500EBCE96 /* DeleteEntityAndMigrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteEntityAndMigrationTest.swift; sourceTree = "<group>"; };
+		2E9E340B2AD8D34C00EBCE96 /* CoreDataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataUtils.swift; sourceTree = "<group>"; };
+		2E9E340F2AD9133A00EBCE96 /* MigrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationManager.swift; sourceTree = "<group>"; };
 		2EA1C6112ACFC47800D526DD /* MenuCacheManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCacheManagerTest.swift; sourceTree = "<group>"; };
 		2EC15227288681FA00649ED4 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		2EC318D229EFEF2E0015A8B1 /* StudyUIViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyUIViewViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +230,8 @@
 				2E167DE12ACE8AEB0002B921 /* CoreDataContextSaveIssue.swift */,
 				2E9777B52ACE9BCF000016F9 /* MenuLayout.xcdatamodeld */,
 				2E3AB9482ACF9E13006DB3C9 /* CoreDataViewController.swift */,
+				2E9E340B2AD8D34C00EBCE96 /* CoreDataUtils.swift */,
+				2E9E340F2AD9133A00EBCE96 /* MigrationManager.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -411,6 +423,8 @@
 				2EA1C6112ACFC47800D526DD /* MenuCacheManagerTest.swift */,
 				2EF49EA42AD53E70002EC8E6 /* CoreDataTest.swift */,
 				2EF49EAB2AD53FE2002EC8E6 /* CoreDataMigrationUtil.swift */,
+				2E84BE9B2AD6755D009768D8 /* CoreDataMigrationV2toV4.swift */,
+				2E9E34092AD8C90500EBCE96 /* DeleteEntityAndMigrationTest.swift */,
 			);
 			path = StudyiOSTests;
 			sourceTree = "<group>";
@@ -619,6 +633,7 @@
 			files = (
 				2E0ADBE228B842780035A21B /* UIView.swift in Sources */,
 				2E87D05A2A6A19D800346934 /* CustomFlowLayoutCollectionViewController.swift in Sources */,
+				2E9E340C2AD8D34C00EBCE96 /* CoreDataUtils.swift in Sources */,
 				2E87D0582A6A194000346934 /* CustomFlowLayout.swift in Sources */,
 				2E8B461D2AB296D800E8F1B6 /* BoxTabBar.swift in Sources */,
 				2E4BA2B02A78EA2F0004E73E /* NavigationTestView.swift in Sources */,
@@ -656,6 +671,7 @@
 				2E3AB94E2ACFAF46006DB3C9 /* MenuCacheManager.swift in Sources */,
 				2EC318D329EFEF2E0015A8B1 /* StudyUIViewViewController.swift in Sources */,
 				2ECC29BB2A723D3D009D210D /* NonSubviewsViewController.swift in Sources */,
+				2E9E34102AD9133A00EBCE96 /* MigrationManager.swift in Sources */,
 				2EC15228288681FA00649ED4 /* ImageViewController.swift in Sources */,
 				2E3C71A02AAAB1FC00AD2811 /* EdgeBackNavigationViewController.swift in Sources */,
 				2EF49EAA2AD53F96002EC8E6 /* DTO.swift in Sources */,
@@ -671,6 +687,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E84BE9C2AD6755D009768D8 /* CoreDataMigrationV2toV4.swift in Sources */,
+				2E9E340A2AD8C90500EBCE96 /* DeleteEntityAndMigrationTest.swift in Sources */,
 				2EF49EAC2AD53FE2002EC8E6 /* CoreDataMigrationUtil.swift in Sources */,
 				2EF49EA52AD53E70002EC8E6 /* CoreDataTest.swift in Sources */,
 				2EC58188285C2BE6001446C3 /* StudyiOSTests.swift in Sources */,
@@ -1025,10 +1043,12 @@
 		2E9777B52ACE9BCF000016F9 /* MenuLayout.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				2E84BE9A2AD6745C009768D8 /* MenuLayout_ 4.xcdatamodel */,
+				2E84BE992AD645E3009768D8 /* MenuLayout_ 3.xcdatamodel */,
 				2EF49EAD2AD5401F002EC8E6 /* MenuLayout_2.xcdatamodel */,
 				2E9777B62ACE9BCF000016F9 /* MenuLayout.xcdatamodel */,
 			);
-			currentVersion = 2EF49EAD2AD5401F002EC8E6 /* MenuLayout_2.xcdatamodel */;
+			currentVersion = 2E84BE9A2AD6745C009768D8 /* MenuLayout_ 4.xcdatamodel */;
 			path = MenuLayout.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

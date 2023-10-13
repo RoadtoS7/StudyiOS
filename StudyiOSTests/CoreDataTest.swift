@@ -28,7 +28,6 @@ final class CoreDataTest: XCTestCase {
         testMenuListJson = json
         testMenuListData = data
         testMenuListDTO = menuListDTO
-        
     }
 
     override func tearDownWithError() throws {
