@@ -41,33 +41,18 @@ class MigrationManager {
         return firstVersion
     }
     
-    var latestVersionModel: NSManagedObjectModel = {
-        let modelName: String = "Tako"
-        
-        let managedObject = Bundle.main
-            .url(forResource: modelName, withExtension: "momd")
-            .flatMap(NSManagedObjectModel.init)
-        ?? NSManagedObjectModel()
-        
-        managedObject.entities
-            .forEach { description in
-                print("$$ latestVersionModel entities: ", description.name)
-            }
-        return managedObject
-    }()
-    
-    func performMigration(storeURL: URL, storeModel: NSManagedObjectModel?, destinationModel: NSManagedObjectModel?) -> (URL?, String) {
-        guard store(at: storeURL, isCompatibleWithModel: latestVersionModel) == false else {
-            print("$$ 현재 데이터 모델이 가장 최신 버전에 해당하므로 마이그레이션하지 않는다.")
-            return (nil, "")
-        }
+    func performMigration(storeURL: URL, storeModel: NSManagedObjectModel?, destinationModel: NSManagedObjectModel? = nil) -> (URL?, String) {
+//        guard store(at: storeURL, isCompatibleWithModel: CoreData.latestVersionModel) == false else {
+//            print("$$ 현재 데이터 모델이 가장 최신 버전에 해당하므로 마이그레이션하지 않는다.")
+//            return (nil, "")
+//        }
         
         guard let storeModel = storeModel else {
             print("$$ 데이터베이스 파일이 존재하지 않으므로 마이그레이션 하지 않는다.")
             return (nil, "")
         }
         
-        let destinationModel: NSManagedObjectModel = destinationModel ?? latestVersionModel
+        let destinationModel: NSManagedObjectModel = destinationModel ?? CoreData.latestVersionModel
         return migrateStoreAt(storeURL: storeURL, fromModel: storeModel, toModel: destinationModel)
     }
     
@@ -116,8 +101,11 @@ class MigrationManager {
         
         let targetURL = storeURL.deletingLastPathComponent()
         let destinationName = storeURL.lastPathComponent + "~1"
-        let destinationURL = targetURL
-            .appendingPathComponent(destinationName)
+//        let destinationURL = targetURL
+//            .appendingPathComponent(destinationName)
+        let destinationURL: URL = URL(fileURLWithPath: NSTemporaryDirectory())
+            .appendingPathComponent(UUID().uuidString)
+            .appendingPathExtension("sqlite")
         
         print("$$ From Model: \(fromModel.entityVersionHashesByName)")
         print("$$ To Model: \(toModel.entityVersionHashesByName)")
@@ -145,16 +133,15 @@ class MigrationManager {
             print("$$ Migration Completed Successfully")
             
             let fileManager = FileManager.default
-            do {
-                try fileManager.removeItem(at: storeURL)
-                try fileManager.moveItem(
-                    at: destinationURL,
-                    to: storeURL)
-                // detination URL은 그대로 남음, storeURL의 내용물 중에서 sqlite가 제거됨
-                
-            } catch {
-                print("$$ Error migrating \(error)")
-            }
+//            do {
+//                try fileManager.removeItem(at: storeURL)
+//                try fileManager.moveItem(
+//                    at: destinationURL,
+//                    to: storeURL)
+//                
+//            } catch {
+//                print("$$ Error migrating \(error)")
+//            }
         }
         
         return (destinationURL, destinationName)
