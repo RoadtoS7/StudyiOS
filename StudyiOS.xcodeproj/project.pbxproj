@@ -70,6 +70,8 @@
 		2EF49EA72AD53F15002EC8E6 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF49EA62AD53F15002EC8E6 /* Data+Extensions.swift */; };
 		2EF49EAA2AD53F96002EC8E6 /* DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF49EA92AD53F96002EC8E6 /* DTO.swift */; };
 		2EF49EAC2AD53FE2002EC8E6 /* CoreDataMigrationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF49EAB2AD53FE2002EC8E6 /* CoreDataMigrationUtil.swift */; };
+		F480F5C12ADBB8E100C1FE98 /* FileSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F480F5C02ADBB8E100C1FE98 /* FileSystem.swift */; };
+		F480F5C32ADC29F100C1FE98 /* FileManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F480F5C22ADC29F100C1FE98 /* FileManagerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +162,8 @@
 		2EF49EA92AD53F96002EC8E6 /* DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTO.swift; sourceTree = "<group>"; };
 		2EF49EAB2AD53FE2002EC8E6 /* CoreDataMigrationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMigrationUtil.swift; sourceTree = "<group>"; };
 		2EF49EAD2AD5401F002EC8E6 /* MenuLayout_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MenuLayout_2.xcdatamodel; sourceTree = "<group>"; };
+		F480F5C02ADBB8E100C1FE98 /* FileSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystem.swift; sourceTree = "<group>"; };
+		F480F5C22ADC29F100C1FE98 /* FileManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +244,8 @@
 			isa = PBXGroup;
 			children = (
 				2E3AB94D2ACFAF46006DB3C9 /* MenuCacheManager.swift */,
+				F480F5C02ADBB8E100C1FE98 /* FileSystem.swift */,
+				F480F5C22ADC29F100C1FE98 /* FileManagerViewController.swift */,
 			);
 			path = FileManager;
 			sourceTree = "<group>";
@@ -658,6 +664,7 @@
 				2E3BB39F2876658F00BBB95C /* CollectionViewController+DataSource.swift in Sources */,
 				2E3BB3A32876CB2F00BBB95C /* String+Extension.swift in Sources */,
 				2E60B06C2A7C807E00680EBC /* GCDViewController.swift in Sources */,
+				F480F5C32ADC29F100C1FE98 /* FileManagerViewController.swift in Sources */,
 				2EC581A3285C696A001446C3 /* TabBarViewController.swift in Sources */,
 				2E8B46152AB295D700E8F1B6 /* BaseTabBarController.swift in Sources */,
 				2EC581AC285C8F9D001446C3 /* ViewType.swift in Sources */,
@@ -667,6 +674,7 @@
 				2E167DE22ACE8AEB0002B921 /* CoreDataContextSaveIssue.swift in Sources */,
 				2E8B46172AB2960200E8F1B6 /* BaseTabBarContentView.swift in Sources */,
 				2EC58173285C2BE5001446C3 /* SceneDelegate.swift in Sources */,
+				F480F5C12ADBB8E100C1FE98 /* FileSystem.swift in Sources */,
 				2E548BFE28683118003BEC5D /* BottomPopUpViewController.swift in Sources */,
 				2E3AB94E2ACFAF46006DB3C9 /* MenuCacheManager.swift in Sources */,
 				2EC318D329EFEF2E0015A8B1 /* StudyUIViewViewController.swift in Sources */,
