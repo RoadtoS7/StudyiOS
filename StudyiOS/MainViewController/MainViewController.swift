@@ -99,40 +99,14 @@ class MainViewController: UICollectionViewController {
 
 extension MainViewController  {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let toViewController: UIViewController
-        
-        switch indexPath.row {
-        case 0:
-            toViewController = CollectionViewController()
-        case 1:
+        guard let viewType = ViewType.get(ofIndex: indexPath.row) else {
             return
-        case 2:
-            toViewController = MultipleLinkTextViewController()
-        case 3:
-            toViewController = TestCombineViewController()
-        case 4:
-            toViewController = ResponderChainViewController()
-        case 5:
-            toViewController = OverlappedViewController()
-        case 6:
-            toViewController = TestCombineViewController()
-        case 7:
-            toViewController = NonSubviewsViewController()
-        case 8:
-            let view = NavigationTestView()
-            toViewController = UIHostingController(rootView: view)
-            navigationController?.setNavigationBarHidden(true, animated: true)
-        case 9:
-            toViewController = GCDViewController()
-        case 10:
-            toViewController = EdgeBackNavigationViewController()
-        case 11:
-            toViewController = AsyncAwaitOnWhichThreadViewController()
-        case 12:
-            toViewController = CoreDataViewController()
-        default: return
         }
         
-        self.navigationController?.pushViewController(toViewController, animated: false)
+        if type(of: viewType.toViewController) == UIHostingController<NavigationTestView>.self {
+            navigationController?.setNavigationBarHidden(true, animated: true)
+        }
+
+        self.navigationController?.pushViewController(viewType.toViewController, animated: false)
     }
 }
