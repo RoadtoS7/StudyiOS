@@ -113,7 +113,9 @@ class DeleteEntityAndMigrationTest: XCTestCase {
         wait(for: [expectation], timeout: 5)
     }
     
-    func test_마이그레이션_이후에_기존의_conatiner의_데이터_제거하면_데이터가_남아있는_것_아닌가() throws {
+    /// 마이그레이션 과정에서 해당 데이터를 인식하지 못하게 되기 때문이다.
+    /// Entity를 제거 후에 마이그레이션을 할 때는, 데이터 제거 후에 마이그레이션을 해야 한다.
+    func test_마이그레이션_이후에_기존의_conatiner의_데이터를_제거해도_이후버전에는_데이터가_남아있는다() throws {
         // given
         let v1Model: NSManagedObjectModel = CoreData.versionModel(versionName: "MenuLayout_ 3")
         let persistentStoreDescription = NSPersistentStoreDescription()
@@ -144,6 +146,9 @@ class DeleteEntityAndMigrationTest: XCTestCase {
         // when
         let (toURL, destinationName): (URL?, String) = migrationManager.performMigration(storeURL: storeURL, storeModel: v1Model, destinationModel: CoreData.latestVersionModel)
         XCTAssertNotNil(toURL)
+        let v1AttrsBeforeDeleteMenu = try FileManager.default.attributesOfItem(atPath: toURL!.path)
+        let v1SizeContainingMenu = v1AttrsBeforeDeleteMenu[.size] as! Int
+    
         
         // 마이그레이션 이후에 기존 데이터 제거
         container.viewContext.delete(object)
@@ -165,7 +170,6 @@ class DeleteEntityAndMigrationTest: XCTestCase {
         
         
         // 새로운 persistent container를 로딩하는 방식
-        
         let v2Container = NSPersistentContainer(name: "v2", managedObjectModel: CoreData.latestVersionModel)
         v2Container.persistentStoreDescriptions = [v2StoreDescription]
         
@@ -180,11 +184,11 @@ class DeleteEntityAndMigrationTest: XCTestCase {
             expectation.fulfill()
         }
         
+        // version 3 모델로 다시 마이그레이션
         let version3Model = CoreData.versionModel(versionName: "MenuLayout_ 3")
         let (destURL, destName): (URL?, String) = migrationManager.performMigration(storeURL: toURL!,
-                                                                                         storeModel: CoreData.latestVersionModel,
-                                                                                         destinationModel: version3Model
-                                                                                    )
+                                                                                    storeModel: CoreData.latestVersionModel,
+                                                                                    destinationModel: version3Model)
         XCTAssertNotNil(destURL)
                                                                                                                                 
         let exp = XCTestExpectation()
@@ -204,9 +208,16 @@ class DeleteEntityAndMigrationTest: XCTestCase {
                 
                 let newMenus = try? getMenuLayouts(in: newContainer.viewContext)
                 
-                XCTAssertEqual(newMenus?.count, 1)
+                // 최신 버전으로 마이그레이션 하는 과정에서 Menu 데이터를 인식하지 못하게 되기 때문에, version 3로 메뉴데이터를 가지고 오지 못함
+                XCTAssertEqual(newMenus?.count, 0)
                 exp.fulfill()
             }
+        
+        let v3Attrs = try FileManager.default.attributesOfItem(atPath: destURL!.path)
+        let v3Size = v3Attrs[.size] as! Int
+        
+        XCTAssertNotEqual(v1SizeContainingMenu, .zero)
+        XCTAssertEqual(v1SizeContainingMenu, v3Size)
         
         wait(for: [expectation, exp], timeout: 5)
     }
