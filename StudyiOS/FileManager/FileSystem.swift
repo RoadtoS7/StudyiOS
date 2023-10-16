@@ -13,6 +13,9 @@ func printDocumentsURL() {
     
     docURLs.forEach { print("docURLs: ", $0.path) }
     print("docURL: ", docURL?.path)
+    
+    let contents = try? FileManager.default.contentsOfDirectory(atPath: docURL!.path)
+    contents?.forEach { print("$$ contents in doc: ", $0) }
 }
 
 func printLibraryURL() {
@@ -29,6 +32,17 @@ func prinApplicationSupportURL() {
     
     supportURLs.forEach { print("supportURLS: ", $0.path) }
     print("supportURL: ", supportURL?.path)
+}
+
+func printAllLibraryURL() {
+    let urls = FileManager.default.urls(for: .allLibrariesDirectory, in: .userDomainMask)
+    urls.forEach { print("$$ all library dirs: ", $0.path)}
+}
+
+func printContentsOfLib() {
+    let libDirectoryURL = try? FileManager.default.url(for: .libraryDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+    let contents = try? FileManager.default.contentsOfDirectory(atPath: libDirectoryURL!.path)
+    contents!.forEach { print("$$ contents of library directory: ", $0) }
 }
 
 func printCacheURL() {
@@ -49,6 +63,7 @@ func printNetworkMask() {
     networkURLs.forEach { print("네트워크 - allApplication: ", $0.path) }
 }
 
+
 func printSystemMask() {
     let networkURLs = FileManager.default.urls(for: .allApplicationsDirectory, in: .systemDomainMask)
     networkURLs.forEach { print("시스템 - allApplication: ", $0.path) }
@@ -64,3 +79,10 @@ func printAllDomainMask() {
     networkURLs.forEach { print("all 도메인 - allApplication: ", $0.path) }
 }
 
+func printDomain() {
+    let docURLs = FileManager.default.urls(for: .documentDirectory, in: .localDomainMask)
+    let docURL = try? FileManager.default.url(for: .documentDirectory, in: .localDomainMask, appropriateFor: nil, create: false)
+    
+    docURLs.forEach { print("docURLs: ", $0.path) }
+    print("docURL: ", docURL?.path)
+}

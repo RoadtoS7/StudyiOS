@@ -20,5 +20,7 @@ class FileManagerViewController: UIViewController {
         printSystemMask()
         printLocalMask()
         printAllDomainMask()
+        printAllLibraryURL()
+        printContentsOfLib()
     }
 }
