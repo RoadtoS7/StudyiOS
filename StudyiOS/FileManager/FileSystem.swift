@@ -15,6 +15,14 @@ func printDocumentsURL() {
     print("docURL: ", docURL?.path)
 }
 
+func printLibraryURL() {
+    let libraryURLs = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)
+    let libraryURL = try? FileManager.default.url(for: .libraryDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+    
+    libraryURLs.forEach { print("libraryURL: ", $0.path) }
+    print("libraryURL: ", libraryURL?.path)
+}
+
 func prinApplicationSupportURL() {
     let supportURLs = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)
     let supportURL = try? FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
@@ -34,4 +42,9 @@ func printCacheURL() {
 func printTmpURL() {
     let tmpURL = FileManager.default.temporaryDirectory
     print("tmpURL: ", tmpURL)
+}
+
+func printNetworkMask() {
+    let networkURLs = FileManager.default.urls(for: .allApplicationsDirectory, in: .networkDomainMask)
+    networkURLs.forEach { print("네트워크 - allApplication: ", $0.path) }
 }

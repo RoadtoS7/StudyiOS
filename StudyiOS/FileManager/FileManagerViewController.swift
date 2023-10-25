@@ -12,8 +12,10 @@ class FileManagerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         printDocumentsURL()
+        printLibraryURL()
         prinApplicationSupportURL()
         printCacheURL()
         printTmpURL()
+        printNetworkMask()
     }
 }
