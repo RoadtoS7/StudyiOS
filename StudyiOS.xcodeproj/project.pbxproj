@@ -50,6 +50,8 @@
 		2E62C811295AE54300C83C0C /* TouchableResponderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62C810295AE54300C83C0C /* TouchableResponderView.swift */; };
 		2E62C814295AECC800C83C0C /* OverlappedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62C813295AECC800C83C0C /* OverlappedViewController.swift */; };
 		2E84BE9C2AD6755D009768D8 /* CoreDataMigrationV2toV4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84BE9B2AD6755D009768D8 /* CoreDataMigrationV2toV4.swift */; };
+		2E8641572BFC1342004ABAC2 /* NSLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8641562BFC1342004ABAC2 /* NSLock.swift */; };
+		2E8641592BFC1599004ABAC2 /* Sendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8641582BFC1599004ABAC2 /* Sendable.swift */; };
 		2E87D0582A6A194000346934 /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E87D0572A6A194000346934 /* CustomFlowLayout.swift */; };
 		2E87D05A2A6A19D800346934 /* CustomFlowLayoutCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E87D0592A6A19D800346934 /* CustomFlowLayoutCollectionViewController.swift */; };
 		2E8B46132AB295B500E8F1B6 /* BaseTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B46122AB295B500E8F1B6 /* BaseTabBar.swift */; };
@@ -188,6 +190,8 @@
 		2E84BE992AD645E3009768D8 /* MenuLayout_ 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MenuLayout_ 3.xcdatamodel"; sourceTree = "<group>"; };
 		2E84BE9A2AD6745C009768D8 /* MenuLayout_ 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MenuLayout_ 4.xcdatamodel"; sourceTree = "<group>"; };
 		2E84BE9B2AD6755D009768D8 /* CoreDataMigrationV2toV4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMigrationV2toV4.swift; sourceTree = "<group>"; };
+		2E8641562BFC1342004ABAC2 /* NSLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLock.swift; sourceTree = "<group>"; };
+		2E8641582BFC1599004ABAC2 /* Sendable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sendable.swift; sourceTree = "<group>"; };
 		2E87D0572A6A194000346934 /* CustomFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
 		2E87D0592A6A19D800346934 /* CustomFlowLayoutCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayoutCollectionViewController.swift; sourceTree = "<group>"; };
 		2E8B46122AB295B500E8F1B6 /* BaseTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBar.swift; sourceTree = "<group>"; };
@@ -456,6 +460,15 @@
 			path = "ResponderChain - OverlappedViews";
 			sourceTree = "<group>";
 		};
+		2E8641552BFC1330004ABAC2 /* Datarace */ = {
+			isa = PBXGroup;
+			children = (
+				2E8641562BFC1342004ABAC2 /* NSLock.swift */,
+				2E8641582BFC1599004ABAC2 /* Sendable.swift */,
+			);
+			path = Datarace;
+			sourceTree = "<group>";
+		};
 		2E87D0562A6A193300346934 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
@@ -535,6 +548,7 @@
 		2EC5816F285C2BE5001446C3 /* StudyiOS */ = {
 			isa = PBXGroup;
 			children = (
+				2E8641552BFC1330004ABAC2 /* Datarace */,
 				2E396C402B688028003CBC51 /* ReusePagerView */,
 				2E13BC182B3BFD8400ED1EA4 /* UILayer */,
 				2EF49EA82AD53F89002EC8E6 /* Model */,
@@ -903,6 +917,7 @@
 				2E8B46152AB295D700E8F1B6 /* BaseTabBarController.swift in Sources */,
 				2EC581AC285C8F9D001446C3 /* ViewType.swift in Sources */,
 				2E0ADBE028B842220035A21B /* Main.swift in Sources */,
+				2E8641592BFC1599004ABAC2 /* Sendable.swift in Sources */,
 				2E3BB39A2874868F00BBB95C /* Date+Today.swift in Sources */,
 				2E62C80F295ADADA00C83C0C /* ResponderChainViewController.swift in Sources */,
 				2E167DE22ACE8AEB0002B921 /* CoreDataContextSaveIssue.swift in Sources */,
@@ -926,6 +941,7 @@
 				2ECEEE9A28E9E28200B55CCB /* RankOneCell.swift in Sources */,
 				2E17A2DE2B70876D00FD71B9 /* RecyclerPagerViewController.swift in Sources */,
 				2E17A2E42B70BFB900FD71B9 /* CellContainsCollectionView.swift in Sources */,
+				2E8641572BFC1342004ABAC2 /* NSLock.swift in Sources */,
 				2E62C811295AE54300C83C0C /* TouchableResponderView.swift in Sources */,
 				2E13BC1A2B3BFD9600ED1EA4 /* TestLayerViewController.swift in Sources */,
 				2E548C012868386B003BEC5D /* UIColor+Extension.swift in Sources */,
