@@ -42,17 +42,17 @@ class MigrationManager {
     }
     
     func performMigration(storeURL: URL, storeModel: NSManagedObjectModel?, destinationModel: NSManagedObjectModel? = nil) -> (URL?, String) {
-//        guard store(at: storeURL, isCompatibleWithModel: CoreData.latestVersionModel) == false else {
-//            print("$$ 현재 데이터 모델이 가장 최신 버전에 해당하므로 마이그레이션하지 않는다.")
-//            return (nil, "")
-//        }
+        let destinationModel = destinationModel ?? CoreData.latestVersionModel
+        guard store(at: storeURL, isCompatibleWithModel: destinationModel) == false else {
+            print("$$ 현재 데이터 모델이 가장 최신 버전에 해당하므로 마이그레이션하지 않는다.")
+            return (nil, "")
+        }
         
         guard let storeModel = storeModel else {
             print("$$ 데이터베이스 파일이 존재하지 않으므로 마이그레이션 하지 않는다.")
             return (nil, "")
         }
         
-        let destinationModel: NSManagedObjectModel = destinationModel ?? CoreData.latestVersionModel
         return migrateStoreAt(storeURL: storeURL, fromModel: storeModel, toModel: destinationModel)
     }
     

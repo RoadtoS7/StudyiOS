@@ -8,7 +8,9 @@
 import UIKit
 
 extension UICollectionViewCell {
-    static let reuseIdentifier: String = String(describing: UICollectionViewCell.self)
+    static var reuseIdentifier: String {
+        String(describing: Self.self)
+    }
 }
 
 class RankOneCell: UICollectionViewCell {

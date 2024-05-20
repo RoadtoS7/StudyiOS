@@ -33,10 +33,6 @@ class DeleteEntityAndMigrationTest: XCTestCase {
         storeURL = makeTemporaryStoreURL()
     }
 
-    override func tearDownWithError() throws {
-        try FileManager.default.removeItem(at: storeURL)
-    }
-    
     private func makeStoreDescription(url: URL) -> NSPersistentStoreDescription {
         let persistentStoreDescription = NSPersistentStoreDescription(url: url)
         persistentStoreDescription.shouldInferMappingModelAutomatically = false
@@ -47,8 +43,7 @@ class DeleteEntityAndMigrationTest: XCTestCase {
     func test_마이그레이션_이후에_기존의_container에_접근가능하며_데이터도_삭제_가능하다() throws {
         // given
         let v1Model: NSManagedObjectModel = CoreData.versionModel(versionName: "MenuLayout_ 3")
-        let persistentStoreDescription = NSPersistentStoreDescription()
-        persistentStoreDescription.url = storeURL
+        let persistentStoreDescription = NSPersistentStoreDescription(url: storeURL)
         persistentStoreDescription.shouldInferMappingModelAutomatically = false
         persistentStoreDescription.shouldMigrateStoreAutomatically = false
         
@@ -170,7 +165,7 @@ class DeleteEntityAndMigrationTest: XCTestCase {
         
         
         // 새로운 persistent container를 로딩하는 방식
-        let v2Container = NSPersistentContainer(name: "v2", managedObjectModel: CoreData.latestVersionModel)
+        let v2Container = NSPersistentContainer(name: "App Container", managedObjectModel: CoreData.latestVersionModel)
         v2Container.persistentStoreDescriptions = [v2StoreDescription]
         
         let expectation = XCTestExpectation(description: "Open a file asynchronously.")
@@ -186,22 +181,26 @@ class DeleteEntityAndMigrationTest: XCTestCase {
         
         // version 3 모델로 다시 마이그레이션
         let version3Model = CoreData.versionModel(versionName: "MenuLayout_ 3")
+    
         let (destURL, destName): (URL?, String) = migrationManager.performMigration(storeURL: toURL!,
                                                                                     storeModel: CoreData.latestVersionModel,
                                                                                     destinationModel: version3Model)
-        XCTAssertNotNil(destURL)
+        guard let destURL else {
+            XCTFail("마이그레이션 실패")
+            return
+        }
                                                                                                                                 
         let exp = XCTestExpectation()
         
-        let description = makeStoreDescription(url: destURL!)
-        let newContainer = NSPersistentContainer(name: "new", managedObjectModel: version3Model)
+        let description = makeStoreDescription(url: destURL)
+        let newContainer = NSPersistentContainer(name: "App Container", managedObjectModel: version3Model)
         newContainer.persistentStoreDescriptions = [description]
         
         newContainer
             .loadPersistentStores { description, error in
                 XCTAssertNil(error)
                 XCTAssertNotNil(description.url)
-                XCTAssertEqual(description.url, destURL!)
+                XCTAssertEqual(description.url, destURL)
                 
                 let v2Persons = try? getPersons(in: newContainer.viewContext)
                 XCTAssertEqual(v2Persons!.count, 2)
@@ -213,13 +212,38 @@ class DeleteEntityAndMigrationTest: XCTestCase {
                 exp.fulfill()
             }
         
-        let v3Attrs = try FileManager.default.attributesOfItem(atPath: destURL!.path)
+        let v3Attrs = try FileManager.default.attributesOfItem(atPath: destURL.path)
         let v3Size = v3Attrs[.size] as! Int
         
         XCTAssertNotEqual(v1SizeContainingMenu, .zero)
         XCTAssertEqual(v1SizeContainingMenu, v3Size)
         
         wait(for: [expectation, exp], timeout: 5)
+    }
+    
+    func test_entity구성이_같으면_version_hash가_같아서_같은버전으로_취급되고_마이그레이션도_불가능하다() {
+        let v2 = CoreData.versionModel(versionName: "MenuLayout_2")
+        let v4 = CoreData.versionModel(versionName: "MenuLayout_ 4")
+        let v2PersonId = v2.entityVersionHashesByName["Person"]
+        let v4PersonId = v4.entityVersionHashesByName["Person"]
+        
+        let persistentStoreDescription = NSPersistentStoreDescription(url: storeURL)
+        persistentStoreDescription.shouldInferMappingModelAutomatically = false
+        persistentStoreDescription.shouldMigrateStoreAutomatically = false
+        
+        let container = NSPersistentContainer(name: "App Container", managedObjectModel: v2)
+        container.persistentStoreDescriptions = [persistentStoreDescription]
+        container.loadPersistentStores { description, error in
+            XCTAssertNil(error)
+            XCTAssertEqual(description.url, self.storeURL)
+        }
+        
+        let (destURL, _) = migrationManager.performMigration(storeURL: storeURL, storeModel: v2, destinationModel: v4)
+        XCTAssertNil(destURL, "같은 버전으로 취급되기 때문에 마이그레이션도 불가능하다")
+        
+        XCTAssertNotNil(v2PersonId)
+        XCTAssertNotNil(v4PersonId)
+        XCTAssertEqual(v2PersonId, v4PersonId)
     }
 }
 

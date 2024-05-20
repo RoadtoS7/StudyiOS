@@ -17,7 +17,6 @@ struct ViewType {
 extension ViewType {
     static let hostingViewController = UIHostingController(rootView: NavigationTestView())
     
-    
     static var value = [
         ViewType(title: "Prototype of CollectionView", toViewController: CollectionViewController()),
         ViewType(title: "ImageView", toViewController: MultipleLinkTextViewController()),
@@ -32,7 +31,9 @@ extension ViewType {
         ViewType(title: "엣지백 제스처에서 UINavigationController의 delegate 메서드 호출 여부 체크", toViewController: EdgeBackNavigationViewController()),
         ViewType(title: "async-await 메서드의 실행 스레드가 언제 Main 스레드인가?", toViewController: AsyncAwaitOnWhichThreadViewController()),
         ViewType(title: "CoreData 테스트", toViewController: CoreDataViewController()),
-        ViewType(title: "File System 경로 출력", toViewController: FileManagerViewController())
+        ViewType(title: "File System 경로 출력", toViewController: FileManagerViewController()),
+        ViewType(title: "Throttle 동작 Test", toViewController: ThrottleViewController()),
+        ViewType(title: "layer를 통한 circle 만들기", toViewController: TestLayerViewController())
     ]
     
     static func get(ofIndex index: Int) -> ViewType? {

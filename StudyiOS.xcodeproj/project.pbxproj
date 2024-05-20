@@ -12,11 +12,28 @@
 		2E0ADBE028B842220035A21B /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0ADBDF28B842220035A21B /* Main.swift */; };
 		2E0ADBE228B842780035A21B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0ADBE128B842780035A21B /* UIView.swift */; };
 		2E0ADBEA28B8A9F40035A21B /* TestCombineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0ADBE928B8A9F40035A21B /* TestCombineViewController.swift */; };
+		2E0B63DC2BC532C70097CD3B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E0B63DB2BC532C70097CD3B /* WidgetKit.framework */; };
+		2E0B63DE2BC532C70097CD3B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E0B63DD2BC532C70097CD3B /* SwiftUI.framework */; };
+		2E0B63E12BC532C70097CD3B /* StudyWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0B63E02BC532C70097CD3B /* StudyWidgetBundle.swift */; };
+		2E0B63E32BC532C70097CD3B /* StudyWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0B63E22BC532C70097CD3B /* StudyWidget.swift */; };
+		2E0B63E52BC532C80097CD3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E0B63E42BC532C80097CD3B /* Assets.xcassets */; };
+		2E0B63E92BC532C80097CD3B /* StudyWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2E0B63D92BC532C70097CD3B /* StudyWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2E0D6BD328A14059001E0019 /* MultipleLinkTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0D6BD228A14059001E0019 /* MultipleLinkTextViewController.swift */; };
 		2E0D6BD528A14BCB001E0019 /* TextViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0D6BD428A14BCB001E0019 /* TextViewContainer.swift */; };
 		2E0D6BD728A238BC001E0019 /* UITapGestureRecognizer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0D6BD628A238BC001E0019 /* UITapGestureRecognizer+Extension.swift */; };
+		2E13BC1A2B3BFD9600ED1EA4 /* TestLayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E13BC192B3BFD9600ED1EA4 /* TestLayerViewController.swift */; };
 		2E167DE22ACE8AEB0002B921 /* CoreDataContextSaveIssue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E167DE12ACE8AEB0002B921 /* CoreDataContextSaveIssue.swift */; };
+		2E17A2DC2B70808C00FD71B9 /* PageViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17A2DB2B70808C00FD71B9 /* PageViewcontroller.swift */; };
+		2E17A2DE2B70876D00FD71B9 /* RecyclerPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17A2DD2B70876D00FD71B9 /* RecyclerPagerViewController.swift */; };
+		2E17A2E02B70AFD000FD71B9 /* PageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17A2DF2B70AFD000FD71B9 /* PageViewModel.swift */; };
+		2E17A2E22B70B04C00FD71B9 /* PagerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17A2E12B70B04C00FD71B9 /* PagerAPI.swift */; };
+		2E17A2E42B70BFB900FD71B9 /* CellContainsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E17A2E32B70BFB900FD71B9 /* CellContainsCollectionView.swift */; };
 		2E35C63C2AC3B06D000D2D03 /* AsyncAwaitOnWhichThreadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E35C63B2AC3B06D000D2D03 /* AsyncAwaitOnWhichThreadViewController.swift */; };
+		2E3823162BA284E400C95783 /* UITests_StudyiOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3823152BA284E400C95783 /* UITests_StudyiOS.swift */; };
+		2E396C422B68803D003CBC51 /* InfiniteScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E396C412B68803D003CBC51 /* InfiniteScrollView.swift */; };
+		2E396C442B688083003CBC51 /* InfiniteScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E396C432B688083003CBC51 /* InfiniteScrollViewController.swift */; };
+		2E396C462B688E59003CBC51 /* TabCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E396C452B688E59003CBC51 /* TabCell.swift */; };
+		2E396C482B688F96003CBC51 /* InifiniteScrollPagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E396C472B688F96003CBC51 /* InifiniteScrollPagerViewController.swift */; };
 		2E3AB9472ACF9C85006DB3C9 /* MenuLayout.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2E3AB9462ACF9C85006DB3C9 /* MenuLayout.txt */; };
 		2E3AB9492ACF9E13006DB3C9 /* CoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3AB9482ACF9E13006DB3C9 /* CoreDataViewController.swift */; };
 		2E3AB94E2ACFAF46006DB3C9 /* MenuCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3AB94D2ACFAF46006DB3C9 /* MenuCacheManager.swift */; };
@@ -40,6 +57,8 @@
 		2E8B46172AB2960200E8F1B6 /* BaseTabBarContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B46162AB2960200E8F1B6 /* BaseTabBarContentView.swift */; };
 		2E8B461A2AB2968100E8F1B6 /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B46192AB2968100E8F1B6 /* Collection+Extension.swift */; };
 		2E8B461D2AB296D800E8F1B6 /* BoxTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B461C2AB296D800E8F1B6 /* BoxTabBar.swift */; };
+		2E93CBF52B05B20000BA9F54 /* ThrottleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E93CBF42B05B20000BA9F54 /* ThrottleViewController.swift */; };
+		2E969FC52AE0D52A003DC07B /* CoreDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E969FC42AE0D52A003DC07B /* CoreDataExtensions.swift */; };
 		2E9777B72ACE9BCF000016F9 /* MenuLayout.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E9777B52ACE9BCF000016F9 /* MenuLayout.xcdatamodeld */; };
 		2E9777BA2ACE9D96000016F9 /* Slope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9777B92ACE9D96000016F9 /* Slope.swift */; };
 		2E9E340A2AD8C90500EBCE96 /* DeleteEntityAndMigrationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E34092AD8C90500EBCE96 /* DeleteEntityAndMigrationTest.swift */; };
@@ -70,12 +89,27 @@
 		2EF49EA72AD53F15002EC8E6 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF49EA62AD53F15002EC8E6 /* Data+Extensions.swift */; };
 		2EF49EAA2AD53F96002EC8E6 /* DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF49EA92AD53F96002EC8E6 /* DTO.swift */; };
 		2EF49EAC2AD53FE2002EC8E6 /* CoreDataMigrationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF49EAB2AD53FE2002EC8E6 /* CoreDataMigrationUtil.swift */; };
+		2EF5C4E52BECBCF000E63AB8 /* CustomTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF5C4E42BECBCF000E63AB8 /* CustomTimerView.swift */; };
 		F480F5C12ADBB8E100C1FE98 /* FileSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F480F5C02ADBB8E100C1FE98 /* FileSystem.swift */; };
 		F480F5C32ADC29F100C1FE98 /* FileManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F480F5C22ADC29F100C1FE98 /* FileManagerViewController.swift */; };
 		F4FB13082C7ECCBF009CE0DD /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB13072C7ECCBF009CE0DD /* Actor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2E0B63E72BC532C80097CD3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2EC58165285C2BE5001446C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E0B63D82BC532C70097CD3B;
+			remoteInfo = StudyWidgetExtension;
+		};
+		2E3823172BA284E400C95783 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2EC58165285C2BE5001446C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2EC5816C285C2BE5001446C3;
+			remoteInfo = StudyiOS;
+		};
 		2EC58184285C2BE6001446C3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2EC58165285C2BE5001446C3 /* Project object */;
@@ -92,17 +126,50 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2E0B63EA2BC532C80097CD3B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2E0B63E92BC532C80097CD3B /* StudyWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2E00B9A42A3A97F30096E5A3 /* MainActorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainActorViewController.swift; sourceTree = "<group>"; };
 		2E0ADBDD28B841290035A21B /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		2E0ADBDF28B842220035A21B /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		2E0ADBE128B842780035A21B /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		2E0ADBE928B8A9F40035A21B /* TestCombineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCombineViewController.swift; sourceTree = "<group>"; };
+		2E0B63D92BC532C70097CD3B /* StudyWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StudyWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E0B63DB2BC532C70097CD3B /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		2E0B63DD2BC532C70097CD3B /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		2E0B63E02BC532C70097CD3B /* StudyWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyWidgetBundle.swift; sourceTree = "<group>"; };
+		2E0B63E22BC532C70097CD3B /* StudyWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyWidget.swift; sourceTree = "<group>"; };
+		2E0B63E42BC532C80097CD3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2E0B63E62BC532C80097CD3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E0D6BD228A14059001E0019 /* MultipleLinkTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleLinkTextViewController.swift; sourceTree = "<group>"; };
 		2E0D6BD428A14BCB001E0019 /* TextViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewContainer.swift; sourceTree = "<group>"; };
 		2E0D6BD628A238BC001E0019 /* UITapGestureRecognizer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+Extension.swift"; sourceTree = "<group>"; };
+		2E13BC192B3BFD9600ED1EA4 /* TestLayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLayerViewController.swift; sourceTree = "<group>"; };
 		2E167DE12ACE8AEB0002B921 /* CoreDataContextSaveIssue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataContextSaveIssue.swift; sourceTree = "<group>"; };
+		2E17A2DB2B70808C00FD71B9 /* PageViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewcontroller.swift; sourceTree = "<group>"; };
+		2E17A2DD2B70876D00FD71B9 /* RecyclerPagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecyclerPagerViewController.swift; sourceTree = "<group>"; };
+		2E17A2DF2B70AFD000FD71B9 /* PageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewModel.swift; sourceTree = "<group>"; };
+		2E17A2E12B70B04C00FD71B9 /* PagerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerAPI.swift; sourceTree = "<group>"; };
+		2E17A2E32B70BFB900FD71B9 /* CellContainsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellContainsCollectionView.swift; sourceTree = "<group>"; };
 		2E35C63B2AC3B06D000D2D03 /* AsyncAwaitOnWhichThreadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwaitOnWhichThreadViewController.swift; sourceTree = "<group>"; };
+		2E3823132BA284E400C95783 /* UITests-StudyiOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "UITests-StudyiOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E3823152BA284E400C95783 /* UITests_StudyiOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITests_StudyiOS.swift; sourceTree = "<group>"; };
+		2E396C412B68803D003CBC51 /* InfiniteScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteScrollView.swift; sourceTree = "<group>"; };
+		2E396C432B688083003CBC51 /* InfiniteScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteScrollViewController.swift; sourceTree = "<group>"; };
+		2E396C452B688E59003CBC51 /* TabCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCell.swift; sourceTree = "<group>"; };
+		2E396C472B688F96003CBC51 /* InifiniteScrollPagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InifiniteScrollPagerViewController.swift; sourceTree = "<group>"; };
 		2E3AB9462ACF9C85006DB3C9 /* MenuLayout.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MenuLayout.txt; sourceTree = "<group>"; };
 		2E3AB9482ACF9E13006DB3C9 /* CoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewController.swift; sourceTree = "<group>"; };
 		2E3AB94D2ACFAF46006DB3C9 /* MenuCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCacheManager.swift; sourceTree = "<group>"; };
@@ -128,6 +195,8 @@
 		2E8B46162AB2960200E8F1B6 /* BaseTabBarContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarContentView.swift; sourceTree = "<group>"; };
 		2E8B46192AB2968100E8F1B6 /* Collection+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 		2E8B461C2AB296D800E8F1B6 /* BoxTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxTabBar.swift; sourceTree = "<group>"; };
+		2E93CBF42B05B20000BA9F54 /* ThrottleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThrottleViewController.swift; sourceTree = "<group>"; };
+		2E969FC42AE0D52A003DC07B /* CoreDataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataExtensions.swift; sourceTree = "<group>"; };
 		2E9777B62ACE9BCF000016F9 /* MenuLayout.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MenuLayout.xcdatamodel; sourceTree = "<group>"; };
 		2E9777B92ACE9D96000016F9 /* Slope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slope.swift; sourceTree = "<group>"; };
 		2E9E34092AD8C90500EBCE96 /* DeleteEntityAndMigrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteEntityAndMigrationTest.swift; sourceTree = "<group>"; };
@@ -163,12 +232,29 @@
 		2EF49EA92AD53F96002EC8E6 /* DTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTO.swift; sourceTree = "<group>"; };
 		2EF49EAB2AD53FE2002EC8E6 /* CoreDataMigrationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMigrationUtil.swift; sourceTree = "<group>"; };
 		2EF49EAD2AD5401F002EC8E6 /* MenuLayout_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MenuLayout_2.xcdatamodel; sourceTree = "<group>"; };
+		2EF5C4E42BECBCF000E63AB8 /* CustomTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimerView.swift; sourceTree = "<group>"; };
 		F480F5C02ADBB8E100C1FE98 /* FileSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystem.swift; sourceTree = "<group>"; };
 		F480F5C22ADC29F100C1FE98 /* FileManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerViewController.swift; sourceTree = "<group>"; };
 		F4FB13072C7ECCBF009CE0DD /* Actor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		2E0B63D62BC532C70097CD3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E0B63DE2BC532C70097CD3B /* SwiftUI.framework in Frameworks */,
+				2E0B63DC2BC532C70097CD3B /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E3823102BA284E400C95783 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2EC5816A285C2BE5001446C3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -217,8 +303,29 @@
 			isa = PBXGroup;
 			children = (
 				2E0ADBE928B8A9F40035A21B /* TestCombineViewController.swift */,
+				2E93CBF42B05B20000BA9F54 /* ThrottleViewController.swift */,
 			);
 			path = Combine;
+			sourceTree = "<group>";
+		};
+		2E0B63DA2BC532C70097CD3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E0B63DB2BC532C70097CD3B /* WidgetKit.framework */,
+				2E0B63DD2BC532C70097CD3B /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2E0B63DF2BC532C70097CD3B /* StudyWidget */ = {
+			isa = PBXGroup;
+			children = (
+				2E0B63E02BC532C70097CD3B /* StudyWidgetBundle.swift */,
+				2E0B63E22BC532C70097CD3B /* StudyWidget.swift */,
+				2E0B63E42BC532C80097CD3B /* Assets.xcassets */,
+				2E0B63E62BC532C80097CD3B /* Info.plist */,
+			);
+			path = StudyWidget;
 			sourceTree = "<group>";
 		};
 		2E0D6BD128A1403E001E0019 /* MultipleLinkTextViewController */ = {
@@ -230,6 +337,14 @@
 			path = MultipleLinkTextViewController;
 			sourceTree = "<group>";
 		};
+		2E13BC182B3BFD8400ED1EA4 /* UILayer */ = {
+			isa = PBXGroup;
+			children = (
+				2E13BC192B3BFD9600ED1EA4 /* TestLayerViewController.swift */,
+			);
+			path = UILayer;
+			sourceTree = "<group>";
+		};
 		2E167DE02ACE8AAC0002B921 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -239,8 +354,33 @@
 				2E3AB9482ACF9E13006DB3C9 /* CoreDataViewController.swift */,
 				2E9E340B2AD8D34C00EBCE96 /* CoreDataUtils.swift */,
 				2E9E340F2AD9133A00EBCE96 /* MigrationManager.swift */,
+				2E969FC42AE0D52A003DC07B /* CoreDataExtensions.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		2E3823142BA284E400C95783 /* UITests-StudyiOS */ = {
+			isa = PBXGroup;
+			children = (
+				2E3823152BA284E400C95783 /* UITests_StudyiOS.swift */,
+			);
+			path = "UITests-StudyiOS";
+			sourceTree = "<group>";
+		};
+		2E396C402B688028003CBC51 /* ReusePagerView */ = {
+			isa = PBXGroup;
+			children = (
+				2E396C412B68803D003CBC51 /* InfiniteScrollView.swift */,
+				2E396C432B688083003CBC51 /* InfiniteScrollViewController.swift */,
+				2E396C452B688E59003CBC51 /* TabCell.swift */,
+				2E396C472B688F96003CBC51 /* InifiniteScrollPagerViewController.swift */,
+				2E17A2DB2B70808C00FD71B9 /* PageViewcontroller.swift */,
+				2E17A2DD2B70876D00FD71B9 /* RecyclerPagerViewController.swift */,
+				2E17A2DF2B70AFD000FD71B9 /* PageViewModel.swift */,
+				2E17A2E12B70B04C00FD71B9 /* PagerAPI.swift */,
+				2E17A2E32B70BFB900FD71B9 /* CellContainsCollectionView.swift */,
+			);
+			path = ReusePagerView;
 			sourceTree = "<group>";
 		};
 		2E3AB94C2ACFAF36006DB3C9 /* FileManager */ = {
@@ -265,6 +405,7 @@
 			isa = PBXGroup;
 			children = (
 				2E4BA2AF2A78EA2F0004E73E /* NavigationTestView.swift */,
+				2EF5C4E42BECBCF000E63AB8 /* CustomTimerView.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -372,6 +513,9 @@
 				2EC5816F285C2BE5001446C3 /* StudyiOS */,
 				2EC58186285C2BE6001446C3 /* StudyiOSTests */,
 				2EC58190285C2BE6001446C3 /* StudyiOSUITests */,
+				2E3823142BA284E400C95783 /* UITests-StudyiOS */,
+				2E0B63DF2BC532C70097CD3B /* StudyWidget */,
+				2E0B63DA2BC532C70097CD3B /* Frameworks */,
 				2EC5816E285C2BE5001446C3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -382,6 +526,8 @@
 				2EC5816D285C2BE5001446C3 /* StudyiOS.app */,
 				2EC58183285C2BE6001446C3 /* StudyiOSTests.xctest */,
 				2EC5818D285C2BE6001446C3 /* StudyiOSUITests.xctest */,
+				2E3823132BA284E400C95783 /* UITests-StudyiOS.xctest */,
+				2E0B63D92BC532C70097CD3B /* StudyWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -389,6 +535,8 @@
 		2EC5816F285C2BE5001446C3 /* StudyiOS */ = {
 			isa = PBXGroup;
 			children = (
+				2E396C402B688028003CBC51 /* ReusePagerView */,
+				2E13BC182B3BFD8400ED1EA4 /* UILayer */,
 				2EF49EA82AD53F89002EC8E6 /* Model */,
 				2E3AB94C2ACFAF36006DB3C9 /* FileManager */,
 				2E9777B82ACE9D8B000016F9 /* Macro */,
@@ -504,6 +652,41 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		2E0B63D82BC532C70097CD3B /* StudyWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E0B63ED2BC532C80097CD3B /* Build configuration list for PBXNativeTarget "StudyWidgetExtension" */;
+			buildPhases = (
+				2E0B63D52BC532C70097CD3B /* Sources */,
+				2E0B63D62BC532C70097CD3B /* Frameworks */,
+				2E0B63D72BC532C70097CD3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StudyWidgetExtension;
+			productName = StudyWidgetExtension;
+			productReference = 2E0B63D92BC532C70097CD3B /* StudyWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		2E3823122BA284E400C95783 /* UITests-StudyiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2E38231B2BA284E400C95783 /* Build configuration list for PBXNativeTarget "UITests-StudyiOS" */;
+			buildPhases = (
+				2E38230F2BA284E400C95783 /* Sources */,
+				2E3823102BA284E400C95783 /* Frameworks */,
+				2E3823112BA284E400C95783 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2E3823182BA284E400C95783 /* PBXTargetDependency */,
+			);
+			name = "UITests-StudyiOS";
+			productName = "UITests-StudyiOS";
+			productReference = 2E3823132BA284E400C95783 /* UITests-StudyiOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		2EC5816C285C2BE5001446C3 /* StudyiOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2EC58197285C2BE6001446C3 /* Build configuration list for PBXNativeTarget "StudyiOS" */;
@@ -511,10 +694,12 @@
 				2EC58169285C2BE5001446C3 /* Sources */,
 				2EC5816A285C2BE5001446C3 /* Frameworks */,
 				2EC5816B285C2BE5001446C3 /* Resources */,
+				2E0B63EA2BC532C80097CD3B /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2E0B63E82BC532C80097CD3B /* PBXTargetDependency */,
 			);
 			name = StudyiOS;
 			packageProductDependencies = (
@@ -566,9 +751,16 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					2E0B63D82BC532C70097CD3B = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					2E3823122BA284E400C95783 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 2EC5816C285C2BE5001446C3;
+					};
 					2EC5816C285C2BE5001446C3 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -602,11 +794,28 @@
 				2EC5816C285C2BE5001446C3 /* StudyiOS */,
 				2EC58182285C2BE6001446C3 /* StudyiOSTests */,
 				2EC5818C285C2BE6001446C3 /* StudyiOSUITests */,
+				2E3823122BA284E400C95783 /* UITests-StudyiOS */,
+				2E0B63D82BC532C70097CD3B /* StudyWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		2E0B63D72BC532C70097CD3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E0B63E52BC532C80097CD3B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E3823112BA284E400C95783 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2EC5816B285C2BE5001446C3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -636,6 +845,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		2E0B63D52BC532C70097CD3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E0B63E12BC532C70097CD3B /* StudyWidgetBundle.swift in Sources */,
+				2E0B63E32BC532C70097CD3B /* StudyWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E38230F2BA284E400C95783 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E3823162BA284E400C95783 /* UITests_StudyiOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2EC58169285C2BE5001446C3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -646,6 +872,9 @@
 				2E87D0582A6A194000346934 /* CustomFlowLayout.swift in Sources */,
 				2E8B461D2AB296D800E8F1B6 /* BoxTabBar.swift in Sources */,
 				2E4BA2B02A78EA2F0004E73E /* NavigationTestView.swift in Sources */,
+				2E93CBF52B05B20000BA9F54 /* ThrottleViewController.swift in Sources */,
+				2EF5C4E52BECBCF000E63AB8 /* CustomTimerView.swift in Sources */,
+				2E396C482B688F96003CBC51 /* InifiniteScrollPagerViewController.swift in Sources */,
 				2E3AB9492ACF9E13006DB3C9 /* CoreDataViewController.swift in Sources */,
 				2E00B9A52A3A97F30096E5A3 /* MainActorViewController.swift in Sources */,
 				2E9777B72ACE9BCF000016F9 /* MenuLayout.xcdatamodeld in Sources */,
@@ -659,6 +888,7 @@
 				2E0D6BD328A14059001E0019 /* MultipleLinkTextViewController.swift in Sources */,
 				2E8B46132AB295B500E8F1B6 /* BaseTabBar.swift in Sources */,
 				2EC581A1285C3756001446C3 /* PresentationStyleViewController.swift in Sources */,
+				2E17A2E02B70AFD000FD71B9 /* PageViewModel.swift in Sources */,
 				2EC58175285C2BE5001446C3 /* MainViewController.swift in Sources */,
 				2E0ADBDE28B841290035A21B /* StackView.swift in Sources */,
 				2E0D6BD528A14BCB001E0019 /* TextViewContainer.swift in Sources */,
@@ -669,6 +899,7 @@
 				2E60B06C2A7C807E00680EBC /* GCDViewController.swift in Sources */,
 				F480F5C32ADC29F100C1FE98 /* FileManagerViewController.swift in Sources */,
 				2EC581A3285C696A001446C3 /* TabBarViewController.swift in Sources */,
+				2E17A2DC2B70808C00FD71B9 /* PageViewcontroller.swift in Sources */,
 				2E8B46152AB295D700E8F1B6 /* BaseTabBarController.swift in Sources */,
 				2EC581AC285C8F9D001446C3 /* ViewType.swift in Sources */,
 				2E0ADBE028B842220035A21B /* Main.swift in Sources */,
@@ -677,18 +908,26 @@
 				2E167DE22ACE8AEB0002B921 /* CoreDataContextSaveIssue.swift in Sources */,
 				2E8B46172AB2960200E8F1B6 /* BaseTabBarContentView.swift in Sources */,
 				2EC58173285C2BE5001446C3 /* SceneDelegate.swift in Sources */,
+				2E396C462B688E59003CBC51 /* TabCell.swift in Sources */,
 				F480F5C12ADBB8E100C1FE98 /* FileSystem.swift in Sources */,
 				2E548BFE28683118003BEC5D /* BottomPopUpViewController.swift in Sources */,
 				2E3AB94E2ACFAF46006DB3C9 /* MenuCacheManager.swift in Sources */,
 				2EC318D329EFEF2E0015A8B1 /* StudyUIViewViewController.swift in Sources */,
+				2E396C422B68803D003CBC51 /* InfiniteScrollView.swift in Sources */,
 				2ECC29BB2A723D3D009D210D /* NonSubviewsViewController.swift in Sources */,
+				2E969FC52AE0D52A003DC07B /* CoreDataExtensions.swift in Sources */,
+				2E396C442B688083003CBC51 /* InfiniteScrollViewController.swift in Sources */,
 				2E9E34102AD9133A00EBCE96 /* MigrationManager.swift in Sources */,
 				F4FB13082C7ECCBF009CE0DD /* Actor.swift in Sources */,
 				2EC15228288681FA00649ED4 /* ImageViewController.swift in Sources */,
 				2E3C71A02AAAB1FC00AD2811 /* EdgeBackNavigationViewController.swift in Sources */,
 				2EF49EAA2AD53F96002EC8E6 /* DTO.swift in Sources */,
+				2E17A2E22B70B04C00FD71B9 /* PagerAPI.swift in Sources */,
 				2ECEEE9A28E9E28200B55CCB /* RankOneCell.swift in Sources */,
+				2E17A2DE2B70876D00FD71B9 /* RecyclerPagerViewController.swift in Sources */,
+				2E17A2E42B70BFB900FD71B9 /* CellContainsCollectionView.swift in Sources */,
 				2E62C811295AE54300C83C0C /* TouchableResponderView.swift in Sources */,
+				2E13BC1A2B3BFD9600ED1EA4 /* TestLayerViewController.swift in Sources */,
 				2E548C012868386B003BEC5D /* UIColor+Extension.swift in Sources */,
 				2E0ADBEA28B8A9F40035A21B /* TestCombineViewController.swift in Sources */,
 				2E0D6BD728A238BC001E0019 /* UITapGestureRecognizer+Extension.swift in Sources */,
@@ -721,6 +960,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2E0B63E82BC532C80097CD3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2E0B63D82BC532C70097CD3B /* StudyWidgetExtension */;
+			targetProxy = 2E0B63E72BC532C80097CD3B /* PBXContainerItemProxy */;
+		};
+		2E3823182BA284E400C95783 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2EC5816C285C2BE5001446C3 /* StudyiOS */;
+			targetProxy = 2E3823172BA284E400C95783 /* PBXContainerItemProxy */;
+		};
 		2EC58185285C2BE6001446C3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2EC5816C285C2BE5001446C3 /* StudyiOS */;
@@ -753,6 +1002,128 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		2E0B63EB2BC532C80097CD3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G49TCMH6D2;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StudyWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StudyWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roadtos7.ios.StudyiOS.StudyWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2E0B63EC2BC532C80097CD3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G49TCMH6D2;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StudyWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = StudyWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roadtos7.ios.StudyiOS.StudyWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2E3823192BA284E400C95783 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G49TCMH6D2;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.comfy91.UITests-StudyiOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StudyiOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/StudyiOS";
+			};
+			name = Debug;
+		};
+		2E38231A2BA284E400C95783 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = G49TCMH6D2;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.comfy91.UITests-StudyiOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StudyiOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/StudyiOS";
+			};
+			name = Release;
+		};
 		2EC58195285C2BE6001446C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -872,6 +1243,7 @@
 		2EC58198285C2BE6001446C3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -900,6 +1272,7 @@
 		2EC58199285C2BE6001446C3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -1004,6 +1377,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		2E0B63ED2BC532C80097CD3B /* Build configuration list for PBXNativeTarget "StudyWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E0B63EB2BC532C80097CD3B /* Debug */,
+				2E0B63EC2BC532C80097CD3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2E38231B2BA284E400C95783 /* Build configuration list for PBXNativeTarget "UITests-StudyiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2E3823192BA284E400C95783 /* Debug */,
+				2E38231A2BA284E400C95783 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2EC58168285C2BE5001446C3 /* Build configuration list for PBXProject "StudyiOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
