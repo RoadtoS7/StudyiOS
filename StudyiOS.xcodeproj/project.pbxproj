@@ -52,6 +52,7 @@
 		2E84BE9C2AD6755D009768D8 /* CoreDataMigrationV2toV4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84BE9B2AD6755D009768D8 /* CoreDataMigrationV2toV4.swift */; };
 		2E8641572BFC1342004ABAC2 /* NSLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8641562BFC1342004ABAC2 /* NSLock.swift */; };
 		2E8641592BFC1599004ABAC2 /* Sendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8641582BFC1599004ABAC2 /* Sendable.swift */; };
+		2E86415B2BFC1A52004ABAC2 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E86415A2BFC1A52004ABAC2 /* Actor.swift */; };
 		2E87D0582A6A194000346934 /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E87D0572A6A194000346934 /* CustomFlowLayout.swift */; };
 		2E87D05A2A6A19D800346934 /* CustomFlowLayoutCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E87D0592A6A19D800346934 /* CustomFlowLayoutCollectionViewController.swift */; };
 		2E8B46132AB295B500E8F1B6 /* BaseTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B46122AB295B500E8F1B6 /* BaseTabBar.swift */; };
@@ -192,6 +193,7 @@
 		2E84BE9B2AD6755D009768D8 /* CoreDataMigrationV2toV4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMigrationV2toV4.swift; sourceTree = "<group>"; };
 		2E8641562BFC1342004ABAC2 /* NSLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLock.swift; sourceTree = "<group>"; };
 		2E8641582BFC1599004ABAC2 /* Sendable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sendable.swift; sourceTree = "<group>"; };
+		2E86415A2BFC1A52004ABAC2 /* Actor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
 		2E87D0572A6A194000346934 /* CustomFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
 		2E87D0592A6A19D800346934 /* CustomFlowLayoutCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayoutCollectionViewController.swift; sourceTree = "<group>"; };
 		2E8B46122AB295B500E8F1B6 /* BaseTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBar.swift; sourceTree = "<group>"; };
@@ -465,6 +467,7 @@
 			children = (
 				2E8641562BFC1342004ABAC2 /* NSLock.swift */,
 				2E8641582BFC1599004ABAC2 /* Sendable.swift */,
+				2E86415A2BFC1A52004ABAC2 /* Actor.swift */,
 			);
 			path = Datarace;
 			sourceTree = "<group>";
@@ -913,6 +916,7 @@
 				2E60B06C2A7C807E00680EBC /* GCDViewController.swift in Sources */,
 				F480F5C32ADC29F100C1FE98 /* FileManagerViewController.swift in Sources */,
 				2EC581A3285C696A001446C3 /* TabBarViewController.swift in Sources */,
+				2E86415B2BFC1A52004ABAC2 /* Actor.swift in Sources */,
 				2E17A2DC2B70808C00FD71B9 /* PageViewcontroller.swift in Sources */,
 				2E8B46152AB295D700E8F1B6 /* BaseTabBarController.swift in Sources */,
 				2EC581AC285C8F9D001446C3 /* ViewType.swift in Sources */,

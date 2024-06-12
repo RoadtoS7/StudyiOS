@@ -52,7 +52,7 @@ final class RightSendable: Sendable {
 // 꼭꼭 동기화를 해주어야 겠지!!
 class UnchckedCounteer: @unchecked Sendable {
     let lock = NSLock()
-    var count = .zero
+    var count: Int = .zero
     
     func increment() {
         lock.lock()
