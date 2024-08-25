@@ -14,21 +14,26 @@ class AsyncAwaitOnWhichThreadViewController: UIViewController {
     private let classTester: ClassAsyncAwait = .init()
     
     override func viewDidLoad() {
+        print("$$ viewDidLoad - mainThread? ", Thread.isMainThread) // true
         super.viewDidLoad()
         Task {
             let message: String = mainThreadCheckMessage()
-            print("$$ ViewController - Task - ", message)
+            print("$$ ViewController - Task - ", message) // true
             
             print("$$ StrucTester async start")
-            await structTester.test()
-            await classTester.test()
             
-            structTester.notAsyncCall()
-            classTester.notAsyncCall()
+            await structTester.pretendingAsync() // MainActor가 아닌 Task에서 호출된 async-await는 어디 스레드에서 호출될지 보장되지 않는다.
+            await classTester.pretendingAsync()
+            
+            await structTester.test() // false
+            await classTester.test() // false
+            
+            structTester.notAsyncCall() // main
+            classTester.notAsyncCall() // main
         }
         
-        structTester.startTask()
-        classTester.startTask()
+        structTester.startTask() // false
+        classTester.startTask() // false
     }
     
     private func notAsyncCall() {
@@ -48,7 +53,7 @@ class AsyncAwaitOnWhichThreadViewController: UIViewController {
 }
 
 func mainThreadCheckMessage() -> String {
-    return Thread.isMainThread ? "on MainThread" : "not on MainThread"
+    return Thread.current.isMainThread ? "on MainThread" : "not on MainThread"
 }
 
 private struct StructAsyncAwait {
@@ -56,6 +61,12 @@ private struct StructAsyncAwait {
         try? await Task.sleep(nanoseconds: 1)
         let message: String = mainThreadCheckMessage()
         print("$$ StructAsyncAwait - ", message)
+    }
+    
+    func pretendingAsync() async {
+        let message: String = mainThreadCheckMessage()
+        let result: Bool = Thread.current.isMainThread
+        print("$$ 이것은 async이지만 내부에서 async-await를 사용하지 않습니다. mainThread? - ", result)
     }
     
     func startTask() {
@@ -76,6 +87,11 @@ private class ClassAsyncAwait {
         try? await Task.sleep(nanoseconds: 1)
         let message: String = mainThreadCheckMessage()
         print("$$ ClassAsyncAwait - ", message)
+    }
+    
+    func pretendingAsync() async {
+        let message: String = mainThreadCheckMessage()
+        print("$$ 이것은 async이지만 내부에서 async-await를 사용하지 않습니다. mainThread? - ", message)
     }
     
     func startTask() {

@@ -17,5 +17,8 @@ class FileManagerViewController: UIViewController {
         printCacheURL()
         printTmpURL()
         printNetworkMask()
+        printSystemMask()
+        printLocalMask()
+        printAllDomainMask()
     }
 }

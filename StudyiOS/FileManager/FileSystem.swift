@@ -48,3 +48,19 @@ func printNetworkMask() {
     let networkURLs = FileManager.default.urls(for: .allApplicationsDirectory, in: .networkDomainMask)
     networkURLs.forEach { print("네트워크 - allApplication: ", $0.path) }
 }
+
+func printSystemMask() {
+    let networkURLs = FileManager.default.urls(for: .allApplicationsDirectory, in: .systemDomainMask)
+    networkURLs.forEach { print("시스템 - allApplication: ", $0.path) }
+}
+
+func printLocalMask() {
+    let networkURLs = FileManager.default.urls(for: .allApplicationsDirectory, in: .allDomainsMask)
+    networkURLs.forEach { print("로컬 도메인 - allApplication: ", $0.path) }
+}
+
+func printAllDomainMask() {
+    let networkURLs = FileManager.default.urls(for: .allApplicationsDirectory, in: .allDomainsMask)
+    networkURLs.forEach { print("all 도메인 - allApplication: ", $0.path) }
+}
+
