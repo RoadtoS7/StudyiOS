@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E00B9A52A3A97F30096E5A3 /* MainActorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E00B9A42A3A97F30096E5A3 /* MainActorViewController.swift */; };
+		2E0994242C7DADB2009E5871 /* FromGCDToTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0994232C7DADB2009E5871 /* FromGCDToTask.swift */; };
 		2E0ADBDE28B841290035A21B /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0ADBDD28B841290035A21B /* StackView.swift */; };
 		2E0ADBE028B842220035A21B /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0ADBDF28B842220035A21B /* Main.swift */; };
 		2E0ADBE228B842780035A21B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0ADBE128B842780035A21B /* UIView.swift */; };
@@ -95,7 +96,7 @@
 		2EF5C4E52BECBCF000E63AB8 /* CustomTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF5C4E42BECBCF000E63AB8 /* CustomTimerView.swift */; };
 		F480F5C12ADBB8E100C1FE98 /* FileSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F480F5C02ADBB8E100C1FE98 /* FileSystem.swift */; };
 		F480F5C32ADC29F100C1FE98 /* FileManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F480F5C22ADC29F100C1FE98 /* FileManagerViewController.swift */; };
-		F4FB13082C7ECCBF009CE0DD /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB13072C7ECCBF009CE0DD /* Actor.swift */; };
+		F4FB13082C7ECCBF009CE0DD /* TestActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB13072C7ECCBF009CE0DD /* TestActor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +146,7 @@
 
 /* Begin PBXFileReference section */
 		2E00B9A42A3A97F30096E5A3 /* MainActorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainActorViewController.swift; sourceTree = "<group>"; };
+		2E0994232C7DADB2009E5871 /* FromGCDToTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromGCDToTask.swift; sourceTree = "<group>"; };
 		2E0ADBDD28B841290035A21B /* StackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
 		2E0ADBDF28B842220035A21B /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		2E0ADBE128B842780035A21B /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -241,7 +243,7 @@
 		2EF5C4E42BECBCF000E63AB8 /* CustomTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimerView.swift; sourceTree = "<group>"; };
 		F480F5C02ADBB8E100C1FE98 /* FileSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystem.swift; sourceTree = "<group>"; };
 		F480F5C22ADC29F100C1FE98 /* FileManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerViewController.swift; sourceTree = "<group>"; };
-		F4FB13072C7ECCBF009CE0DD /* Actor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
+		F4FB13072C7ECCBF009CE0DD /* TestActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestActor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,7 +292,8 @@
 			children = (
 				2E00B9A42A3A97F30096E5A3 /* MainActorViewController.swift */,
 				2E35C63B2AC3B06D000D2D03 /* AsyncAwaitOnWhichThreadViewController.swift */,
-				F4FB13072C7ECCBF009CE0DD /* Actor.swift */,
+				F4FB13072C7ECCBF009CE0DD /* TestActor.swift */,
+				2E0994232C7DADB2009E5871 /* FromGCDToTask.swift */,
 			);
 			path = SwiftConcurrency;
 			sourceTree = "<group>";
@@ -885,6 +888,7 @@
 			files = (
 				2E0ADBE228B842780035A21B /* UIView.swift in Sources */,
 				2E87D05A2A6A19D800346934 /* CustomFlowLayoutCollectionViewController.swift in Sources */,
+				2E0994242C7DADB2009E5871 /* FromGCDToTask.swift in Sources */,
 				2E9E340C2AD8D34C00EBCE96 /* CoreDataUtils.swift in Sources */,
 				2E87D0582A6A194000346934 /* CustomFlowLayout.swift in Sources */,
 				2E8B461D2AB296D800E8F1B6 /* BoxTabBar.swift in Sources */,
@@ -937,7 +941,7 @@
 				2E969FC52AE0D52A003DC07B /* CoreDataExtensions.swift in Sources */,
 				2E396C442B688083003CBC51 /* InfiniteScrollViewController.swift in Sources */,
 				2E9E34102AD9133A00EBCE96 /* MigrationManager.swift in Sources */,
-				F4FB13082C7ECCBF009CE0DD /* Actor.swift in Sources */,
+				F4FB13082C7ECCBF009CE0DD /* TestActor.swift in Sources */,
 				2EC15228288681FA00649ED4 /* ImageViewController.swift in Sources */,
 				2E3C71A02AAAB1FC00AD2811 /* EdgeBackNavigationViewController.swift in Sources */,
 				2EF49EAA2AD53F96002EC8E6 /* DTO.swift in Sources */,

@@ -7,21 +7,25 @@
 // async-await method가 기본적으로 어디 스레드에서 호출되는지 체크하는 것
 
 import UIKit
+import OSLog
+
 
 class AsyncAwaitOnWhichThreadViewController: UIViewController {
     // private 또는 fileprivate의 프로퍼티는 private으로 선언되어야 한다.
     private let structTester: StructAsyncAwait = .init()
     private let classTester: ClassAsyncAwait = .init()
+    private let logger = Logger()
     
+    @MainActor
     override func viewDidLoad() {
         print("$$ viewDidLoad - mainThread? ", Thread.isMainThread) // true
         super.viewDidLoad()
-        Task {
+        Task { // main thread
             let message: String = mainThreadCheckMessage()
             print("$$ ViewController - Task - ", message) // true
             
             print("$$ StrucTester async start")
-            
+
             await structTester.pretendingAsync() // MainActor가 아닌 Task에서 호출된 async-await는 어디 스레드에서 호출될지 보장되지 않는다.
             await classTester.pretendingAsync()
             
@@ -36,6 +40,12 @@ class AsyncAwaitOnWhichThreadViewController: UIViewController {
         classTester.startTask() // false
     }
     
+    
+    @MainActor
+    private func asyncCall(id: Int) async {
+        logger.log("$$ async로 표기되더라도, MainActor에서 호출될 때는 동기로 호출됩니다. - id: \(id)")
+    }
+    
     private func notAsyncCall() {
         let message: String = mainThreadCheckMessage()
         print("$$ ViewController - notAsyncCall - ", message)
@@ -48,9 +58,9 @@ func mainThreadCheckMessage() -> String {
 
 private struct StructAsyncAwait {
     func test() async {
-        try? await Task.sleep(nanoseconds: 1)
+//        try? await Task.sleep(nanoseconds: 1)
         let message: String = mainThreadCheckMessage()
-        print("$$ StructAsyncAwait - ", message)
+        print("$$ StructAsyncAwait - ", message) // main thread X
     }
     
     func pretendingAsync() async {

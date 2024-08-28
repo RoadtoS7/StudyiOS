@@ -6,16 +6,36 @@
 //
 
 import UIKit
+import OSLog
+
+let willShowLifecycleLog: Bool = true
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    
+    let logger = Logger()
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
     }
-
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        if willShowLifecycleLog {
+            logger.log("$$ applicationDidBecomeActive")
+        }
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        if willShowLifecycleLog {
+            logger.log("$$ applicationWillEnterForeground")
+        }
+    }
+    
+    
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

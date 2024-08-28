@@ -9,7 +9,7 @@ import Foundation
 // 기존에는 lock을 사용했다.
 // Task를 사용하면 mutable한 변수를 캡쳐할 수 없도록 한다.
 
-class Counter {
+class TestCounter {
     let lock: NSLock = .init()
     var count: Int = .zero // data race 발생 가능 (mutable)
     
@@ -29,12 +29,12 @@ class Counter {
         
         for _ in 0..<workCount {
             Task {
-                counter.increment
+//                counter.increment
             }
         }
         
         Thread.sleep(forTimeInterval: 2.0)
-        print("$$ countr.count: ", counter.count) // Outputs: 1000
+//        print("$$ countr.count: ", counter.count) // Outputs: 1000
     }
     
     /// 컴파일러는 더이상 mutable한 변수를 다른 실행 context 에서 캡쳐하는 것을 허용하지 않는다.
