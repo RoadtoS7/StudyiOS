@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -72,6 +72,7 @@
 		2EF49EAC2AD53FE2002EC8E6 /* CoreDataMigrationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF49EAB2AD53FE2002EC8E6 /* CoreDataMigrationUtil.swift */; };
 		F480F5C12ADBB8E100C1FE98 /* FileSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F480F5C02ADBB8E100C1FE98 /* FileSystem.swift */; };
 		F480F5C32ADC29F100C1FE98 /* FileManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F480F5C22ADC29F100C1FE98 /* FileManagerViewController.swift */; };
+		F4FB13082C7ECCBF009CE0DD /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB13072C7ECCBF009CE0DD /* Actor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +165,7 @@
 		2EF49EAD2AD5401F002EC8E6 /* MenuLayout_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MenuLayout_2.xcdatamodel; sourceTree = "<group>"; };
 		F480F5C02ADBB8E100C1FE98 /* FileSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystem.swift; sourceTree = "<group>"; };
 		F480F5C22ADC29F100C1FE98 /* FileManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerViewController.swift; sourceTree = "<group>"; };
+		F4FB13072C7ECCBF009CE0DD /* Actor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 			children = (
 				2E00B9A42A3A97F30096E5A3 /* MainActorViewController.swift */,
 				2E35C63B2AC3B06D000D2D03 /* AsyncAwaitOnWhichThreadViewController.swift */,
+				F4FB13072C7ECCBF009CE0DD /* Actor.swift */,
 			);
 			path = SwiftConcurrency;
 			sourceTree = "<group>";
@@ -680,6 +683,7 @@
 				2EC318D329EFEF2E0015A8B1 /* StudyUIViewViewController.swift in Sources */,
 				2ECC29BB2A723D3D009D210D /* NonSubviewsViewController.swift in Sources */,
 				2E9E34102AD9133A00EBCE96 /* MigrationManager.swift in Sources */,
+				F4FB13082C7ECCBF009CE0DD /* Actor.swift in Sources */,
 				2EC15228288681FA00649ED4 /* ImageViewController.swift in Sources */,
 				2E3C71A02AAAB1FC00AD2811 /* EdgeBackNavigationViewController.swift in Sources */,
 				2EF49EAA2AD53F96002EC8E6 /* DTO.swift in Sources */,
