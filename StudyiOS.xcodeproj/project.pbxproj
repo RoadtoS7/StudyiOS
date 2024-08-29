@@ -244,6 +244,7 @@
 		F480F5C02ADBB8E100C1FE98 /* FileSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystem.swift; sourceTree = "<group>"; };
 		F480F5C22ADC29F100C1FE98 /* FileManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerViewController.swift; sourceTree = "<group>"; };
 		F4FB13072C7ECCBF009CE0DD /* TestActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestActor.swift; sourceTree = "<group>"; };
+		F4FB13092C80ABEC009CE0DD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +295,7 @@
 				2E35C63B2AC3B06D000D2D03 /* AsyncAwaitOnWhichThreadViewController.swift */,
 				F4FB13072C7ECCBF009CE0DD /* TestActor.swift */,
 				2E0994232C7DADB2009E5871 /* FromGCDToTask.swift */,
+				F4FB13092C80ABEC009CE0DD /* README.md */,
 			);
 			path = SwiftConcurrency;
 			sourceTree = "<group>";
