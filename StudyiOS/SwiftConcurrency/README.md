@@ -3,6 +3,7 @@
 ## Task 
 - Concurrency의 기본 단위. 비동기로 실행되는 코드 블럭.
 - 종류 3가지
+
 | Structured Concurrency | Unstructured Concurrency | Detached Concurrency 
 | :---: | :---: | :---: |
 | 부모 Task의 task-local value, actor isolation 상속 O | O | X | 
