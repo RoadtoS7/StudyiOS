@@ -6,5 +6,9 @@
 | Structured Concurrency | Unstructured Concurrency | Detached Concurrency 
 | :---: | :---: | :---: |
 | 부모 Task의 task-local value, actor isolation 상속 O | O | X | 
-| 부모 Task 가 끝날 때, 자식 Task가 모두 완료되는 것이 보장된다. | X | X | 
+| 부모 Task 가 끝날 때, 자식 Task가 모두 완료되는 것이 보장된다. | X | X |
+
+## 파일별 설명
+- FromGCDToTask.swift  
+: DispatchQueue.main.async를 SwiftConcurrency로 대체하는 방법과 Task와 Task.detach의 실행 순서 비교.  
     

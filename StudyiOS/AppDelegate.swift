@@ -8,7 +8,7 @@
 import UIKit
 import OSLog
 
-let willShowLifecycleLog: Bool = true
+let willShowLifecycleLog: Bool = false
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

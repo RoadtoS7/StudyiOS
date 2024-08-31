@@ -20,10 +20,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         
 //        let mainViewController = PagerViewController()
-        let mainViewController = MainViewController()
+//        let mainViewController = MainViewController()
+        let vc = FromGCDToTaskViewController()
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        window?.rootViewController = UINavigationController(rootViewController: mainViewController)
+        window?.rootViewController = UINavigationController(rootViewController: vc)
         window?.makeKeyAndVisible()
     }
 
