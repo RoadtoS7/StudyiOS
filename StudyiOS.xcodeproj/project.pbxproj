@@ -94,6 +94,7 @@
 		2EF49EAA2AD53F96002EC8E6 /* DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF49EA92AD53F96002EC8E6 /* DTO.swift */; };
 		2EF49EAC2AD53FE2002EC8E6 /* CoreDataMigrationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF49EAB2AD53FE2002EC8E6 /* CoreDataMigrationUtil.swift */; };
 		2EF5C4E52BECBCF000E63AB8 /* CustomTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF5C4E42BECBCF000E63AB8 /* CustomTimerView.swift */; };
+		F44191FC2C84B25700156655 /* CompleteConcurrencyChecking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44191FB2C84B25700156655 /* CompleteConcurrencyChecking.swift */; };
 		F480F5C12ADBB8E100C1FE98 /* FileSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F480F5C02ADBB8E100C1FE98 /* FileSystem.swift */; };
 		F480F5C32ADC29F100C1FE98 /* FileManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F480F5C22ADC29F100C1FE98 /* FileManagerViewController.swift */; };
 		F4FB13082C7ECCBF009CE0DD /* TestActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB13072C7ECCBF009CE0DD /* TestActor.swift */; };
@@ -241,6 +242,7 @@
 		2EF49EAB2AD53FE2002EC8E6 /* CoreDataMigrationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMigrationUtil.swift; sourceTree = "<group>"; };
 		2EF49EAD2AD5401F002EC8E6 /* MenuLayout_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MenuLayout_2.xcdatamodel; sourceTree = "<group>"; };
 		2EF5C4E42BECBCF000E63AB8 /* CustomTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimerView.swift; sourceTree = "<group>"; };
+		F44191FB2C84B25700156655 /* CompleteConcurrencyChecking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteConcurrencyChecking.swift; sourceTree = "<group>"; };
 		F480F5C02ADBB8E100C1FE98 /* FileSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystem.swift; sourceTree = "<group>"; };
 		F480F5C22ADC29F100C1FE98 /* FileManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerViewController.swift; sourceTree = "<group>"; };
 		F4FB13072C7ECCBF009CE0DD /* TestActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestActor.swift; sourceTree = "<group>"; };
@@ -556,6 +558,7 @@
 		2EC5816F285C2BE5001446C3 /* StudyiOS */ = {
 			isa = PBXGroup;
 			children = (
+				F44191FA2C84B22500156655 /* Swift6 */,
 				2E8641552BFC1330004ABAC2 /* Datarace */,
 				2E396C402B688028003CBC51 /* ReusePagerView */,
 				2E13BC182B3BFD8400ED1EA4 /* UILayer */,
@@ -669,6 +672,14 @@
 				2EF49EA92AD53F96002EC8E6 /* DTO.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F44191FA2C84B22500156655 /* Swift6 */ = {
+			isa = PBXGroup;
+			children = (
+				F44191FB2C84B25700156655 /* CompleteConcurrencyChecking.swift */,
+			);
+			path = Swift6;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -950,6 +961,7 @@
 				2E17A2E22B70B04C00FD71B9 /* PagerAPI.swift in Sources */,
 				2ECEEE9A28E9E28200B55CCB /* RankOneCell.swift in Sources */,
 				2E17A2DE2B70876D00FD71B9 /* RecyclerPagerViewController.swift in Sources */,
+				F44191FC2C84B25700156655 /* CompleteConcurrencyChecking.swift in Sources */,
 				2E17A2E42B70BFB900FD71B9 /* CellContainsCollectionView.swift in Sources */,
 				2E8641572BFC1342004ABAC2 /* NSLock.swift in Sources */,
 				2E62C811295AE54300C83C0C /* TouchableResponderView.swift in Sources */,
