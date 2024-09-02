@@ -52,9 +52,6 @@
 		2E62C811295AE54300C83C0C /* TouchableResponderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62C810295AE54300C83C0C /* TouchableResponderView.swift */; };
 		2E62C814295AECC800C83C0C /* OverlappedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62C813295AECC800C83C0C /* OverlappedViewController.swift */; };
 		2E84BE9C2AD6755D009768D8 /* CoreDataMigrationV2toV4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E84BE9B2AD6755D009768D8 /* CoreDataMigrationV2toV4.swift */; };
-		2E8641572BFC1342004ABAC2 /* NSLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8641562BFC1342004ABAC2 /* NSLock.swift */; };
-		2E8641592BFC1599004ABAC2 /* Sendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8641582BFC1599004ABAC2 /* Sendable.swift */; };
-		2E86415B2BFC1A52004ABAC2 /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E86415A2BFC1A52004ABAC2 /* Actor.swift */; };
 		2E87D0582A6A194000346934 /* CustomFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E87D0572A6A194000346934 /* CustomFlowLayout.swift */; };
 		2E87D05A2A6A19D800346934 /* CustomFlowLayoutCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E87D0592A6A19D800346934 /* CustomFlowLayoutCollectionViewController.swift */; };
 		2E8B46132AB295B500E8F1B6 /* BaseTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8B46122AB295B500E8F1B6 /* BaseTabBar.swift */; };
@@ -96,6 +93,9 @@
 		2EF49EAC2AD53FE2002EC8E6 /* CoreDataMigrationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF49EAB2AD53FE2002EC8E6 /* CoreDataMigrationUtil.swift */; };
 		2EF5C4E52BECBCF000E63AB8 /* CustomTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF5C4E42BECBCF000E63AB8 /* CustomTimerView.swift */; };
 		F426E7A52C8B3D56002852B2 /* DiffableCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E7A42C8B3D56002852B2 /* DiffableCollectionView.swift */; };
+		2EF8484A2C8572ED0090D82C /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF848462C8572ED0090D82C /* Actor.swift */; };
+		2EF8484B2C8572ED0090D82C /* NSLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF848472C8572ED0090D82C /* NSLock.swift */; };
+		2EF8484C2C8572ED0090D82C /* Sendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF848482C8572ED0090D82C /* Sendable.swift */; };
 		F44191FC2C84B25700156655 /* CompleteConcurrencyChecking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44191FB2C84B25700156655 /* CompleteConcurrencyChecking.swift */; };
 		F44191FE2C84B75500156655 /* GlobalVariableInConcurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44191FD2C84B75500156655 /* GlobalVariableInConcurrency.swift */; };
 		F480F5C12ADBB8E100C1FE98 /* FileSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F480F5C02ADBB8E100C1FE98 /* FileSystem.swift */; };
@@ -198,9 +198,6 @@
 		2E84BE992AD645E3009768D8 /* MenuLayout_ 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MenuLayout_ 3.xcdatamodel"; sourceTree = "<group>"; };
 		2E84BE9A2AD6745C009768D8 /* MenuLayout_ 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "MenuLayout_ 4.xcdatamodel"; sourceTree = "<group>"; };
 		2E84BE9B2AD6755D009768D8 /* CoreDataMigrationV2toV4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMigrationV2toV4.swift; sourceTree = "<group>"; };
-		2E8641562BFC1342004ABAC2 /* NSLock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLock.swift; sourceTree = "<group>"; };
-		2E8641582BFC1599004ABAC2 /* Sendable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sendable.swift; sourceTree = "<group>"; };
-		2E86415A2BFC1A52004ABAC2 /* Actor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
 		2E87D0572A6A194000346934 /* CustomFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayout.swift; sourceTree = "<group>"; };
 		2E87D0592A6A19D800346934 /* CustomFlowLayoutCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFlowLayoutCollectionViewController.swift; sourceTree = "<group>"; };
 		2E8B46122AB295B500E8F1B6 /* BaseTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBar.swift; sourceTree = "<group>"; };
@@ -247,6 +244,9 @@
 		2EF49EAD2AD5401F002EC8E6 /* MenuLayout_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MenuLayout_2.xcdatamodel; sourceTree = "<group>"; };
 		2EF5C4E42BECBCF000E63AB8 /* CustomTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimerView.swift; sourceTree = "<group>"; };
 		F426E7A42C8B3D56002852B2 /* DiffableCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableCollectionView.swift; sourceTree = "<group>"; };
+		2EF848462C8572ED0090D82C /* Actor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
+		2EF848472C8572ED0090D82C /* NSLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLock.swift; sourceTree = "<group>"; };
+		2EF848482C8572ED0090D82C /* Sendable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sendable.swift; sourceTree = "<group>"; };
 		F44191FB2C84B25700156655 /* CompleteConcurrencyChecking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteConcurrencyChecking.swift; sourceTree = "<group>"; };
 		F44191FD2C84B75500156655 /* GlobalVariableInConcurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariableInConcurrency.swift; sourceTree = "<group>"; };
 		F480F5C02ADBB8E100C1FE98 /* FileSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystem.swift; sourceTree = "<group>"; };
@@ -476,16 +476,6 @@
 			path = "ResponderChain - OverlappedViews";
 			sourceTree = "<group>";
 		};
-		2E8641552BFC1330004ABAC2 /* Datarace */ = {
-			isa = PBXGroup;
-			children = (
-				2E8641562BFC1342004ABAC2 /* NSLock.swift */,
-				2E8641582BFC1599004ABAC2 /* Sendable.swift */,
-				2E86415A2BFC1A52004ABAC2 /* Actor.swift */,
-			);
-			path = Datarace;
-			sourceTree = "<group>";
-		};
 		2E87D0562A6A193300346934 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
@@ -566,7 +556,7 @@
 			isa = PBXGroup;
 			children = (
 				F44191FA2C84B22500156655 /* Swift6 */,
-				2E8641552BFC1330004ABAC2 /* Datarace */,
+				2EF848492C8572ED0090D82C /* Datarace */,
 				2E396C402B688028003CBC51 /* ReusePagerView */,
 				2E13BC182B3BFD8400ED1EA4 /* UILayer */,
 				2EF49EA82AD53F89002EC8E6 /* Model */,
@@ -689,6 +679,17 @@
 			);
 			path = DiffableDataSource;
 			sourceTree = "<group>";
+           };
+		2EF848492C8572ED0090D82C /* Datarace */ = {
+			isa = PBXGroup;
+			children = (
+				2EF848462C8572ED0090D82C /* Actor.swift */,
+				2EF848472C8572ED0090D82C /* NSLock.swift */,
+				2EF848482C8572ED0090D82C /* Sendable.swift */,
+			);
+			name = Datarace;
+			path = StudyiOS/Datarace;
+			sourceTree = SOURCE_ROOT;
 		};
 		F44191FA2C84B22500156655 /* Swift6 */ = {
 			isa = PBXGroup;
@@ -931,6 +932,7 @@
 				2E9777B72ACE9BCF000016F9 /* MenuLayout.xcdatamodeld in Sources */,
 				2EC581A5285C70CE001446C3 /* CollectionViewController.swift in Sources */,
 				2E9777BA2ACE9D96000016F9 /* Slope.swift in Sources */,
+				2EF8484C2C8572ED0090D82C /* Sendable.swift in Sources */,
 				2EC581A9285C76CA001446C3 /* Reminder.swift in Sources */,
 				2E8B461A2AB2968100E8F1B6 /* Collection+Extension.swift in Sources */,
 				2ECEEE9828E9D55500B55CCB /* NestedGroupViewController.swift in Sources */,
@@ -938,6 +940,7 @@
 				2E62C814295AECC800C83C0C /* OverlappedViewController.swift in Sources */,
 				2E0D6BD328A14059001E0019 /* MultipleLinkTextViewController.swift in Sources */,
 				2E8B46132AB295B500E8F1B6 /* BaseTabBar.swift in Sources */,
+				2EF8484A2C8572ED0090D82C /* Actor.swift in Sources */,
 				2EC581A1285C3756001446C3 /* PresentationStyleViewController.swift in Sources */,
 				2E17A2E02B70AFD000FD71B9 /* PageViewModel.swift in Sources */,
 				2EC58175285C2BE5001446C3 /* MainViewController.swift in Sources */,
@@ -956,7 +959,6 @@
 				2E8B46152AB295D700E8F1B6 /* BaseTabBarController.swift in Sources */,
 				2EC581AC285C8F9D001446C3 /* ViewType.swift in Sources */,
 				2E0ADBE028B842220035A21B /* Main.swift in Sources */,
-				2E8641592BFC1599004ABAC2 /* Sendable.swift in Sources */,
 				2E3BB39A2874868F00BBB95C /* Date+Today.swift in Sources */,
 				2E62C80F295ADADA00C83C0C /* ResponderChainViewController.swift in Sources */,
 				2E167DE22ACE8AEB0002B921 /* CoreDataContextSaveIssue.swift in Sources */,
@@ -981,7 +983,7 @@
 				2E17A2DE2B70876D00FD71B9 /* RecyclerPagerViewController.swift in Sources */,
 				F44191FC2C84B25700156655 /* CompleteConcurrencyChecking.swift in Sources */,
 				2E17A2E42B70BFB900FD71B9 /* CellContainsCollectionView.swift in Sources */,
-				2E8641572BFC1342004ABAC2 /* NSLock.swift in Sources */,
+				2EF8484B2C8572ED0090D82C /* NSLock.swift in Sources */,
 				2E5825DC2C803AAE0051F42B /* InheritActorIsolation.swift in Sources */,
 				2E62C811295AE54300C83C0C /* TouchableResponderView.swift in Sources */,
 				2E13BC1A2B3BFD9600ED1EA4 /* TestLayerViewController.swift in Sources */,
