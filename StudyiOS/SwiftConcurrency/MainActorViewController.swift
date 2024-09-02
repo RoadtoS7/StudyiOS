@@ -16,6 +16,7 @@ class MainActorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
 
         // Do any additional setup after loading the view.
     }
@@ -33,6 +34,7 @@ class MainActorViewController: UIViewController {
 
 }
 
+@MainActor
 class MainActorViewModel {
     let mainActorContainer = MainActorContainer()
     
@@ -49,7 +51,7 @@ class MainActorViewModel {
     }
     
     @MainActor
-    func testInMainActor() {
+    func mainActorMethod() {
         self.mainActorContainer.mainActorMethod()
     }
     

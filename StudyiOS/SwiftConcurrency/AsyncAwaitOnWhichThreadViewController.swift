@@ -58,7 +58,7 @@ func mainThreadCheckMessage() -> String {
 
 private struct StructAsyncAwait {
     func test() async {
-//        try? await Task.sleep(nanoseconds: 1)
+        try? await Task.sleep(nanoseconds: 1)
         let message: String = mainThreadCheckMessage()
         print("$$ StructAsyncAwait - ", message) // main thread X
     }

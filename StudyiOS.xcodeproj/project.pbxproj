@@ -46,6 +46,7 @@
 		2E4BA2B02A78EA2F0004E73E /* NavigationTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4BA2AF2A78EA2F0004E73E /* NavigationTestView.swift */; };
 		2E548BFE28683118003BEC5D /* BottomPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E548BFD28683118003BEC5D /* BottomPopUpViewController.swift */; };
 		2E548C012868386B003BEC5D /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E548C002868386B003BEC5D /* UIColor+Extension.swift */; };
+		2E5825DC2C803AAE0051F42B /* InheritActorIsolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E5825DB2C803AAE0051F42B /* InheritActorIsolation.swift */; };
 		2E60B06C2A7C807E00680EBC /* GCDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E60B06B2A7C807E00680EBC /* GCDViewController.swift */; };
 		2E62C80F295ADADA00C83C0C /* ResponderChainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62C80E295ADADA00C83C0C /* ResponderChainViewController.swift */; };
 		2E62C811295AE54300C83C0C /* TouchableResponderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E62C810295AE54300C83C0C /* TouchableResponderView.swift */; };
@@ -187,6 +188,7 @@
 		2E4BA2AF2A78EA2F0004E73E /* NavigationTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationTestView.swift; sourceTree = "<group>"; };
 		2E548BFD28683118003BEC5D /* BottomPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomPopUpViewController.swift; sourceTree = "<group>"; };
 		2E548C002868386B003BEC5D /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		2E5825DB2C803AAE0051F42B /* InheritActorIsolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InheritActorIsolation.swift; sourceTree = "<group>"; };
 		2E60B06B2A7C807E00680EBC /* GCDViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDViewController.swift; sourceTree = "<group>"; };
 		2E62C80E295ADADA00C83C0C /* ResponderChainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponderChainViewController.swift; sourceTree = "<group>"; };
 		2E62C810295AE54300C83C0C /* TouchableResponderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchableResponderView.swift; sourceTree = "<group>"; };
@@ -293,11 +295,13 @@
 		2E00B9A32A3A97DC0096E5A3 /* SwiftConcurrency */ = {
 			isa = PBXGroup;
 			children = (
+				2E8641552BFC1330004ABAC2 /* Datarace */,
 				2E00B9A42A3A97F30096E5A3 /* MainActorViewController.swift */,
 				2E35C63B2AC3B06D000D2D03 /* AsyncAwaitOnWhichThreadViewController.swift */,
 				F4FB13072C7ECCBF009CE0DD /* TestActor.swift */,
 				2E0994232C7DADB2009E5871 /* FromGCDToTask.swift */,
 				F4FB13092C80ABEC009CE0DD /* README.md */,
+				2E5825DB2C803AAE0051F42B /* InheritActorIsolation.swift */,
 			);
 			path = SwiftConcurrency;
 			sourceTree = "<group>";
@@ -964,6 +968,7 @@
 				F44191FC2C84B25700156655 /* CompleteConcurrencyChecking.swift in Sources */,
 				2E17A2E42B70BFB900FD71B9 /* CellContainsCollectionView.swift in Sources */,
 				2E8641572BFC1342004ABAC2 /* NSLock.swift in Sources */,
+				2E5825DC2C803AAE0051F42B /* InheritActorIsolation.swift in Sources */,
 				2E62C811295AE54300C83C0C /* TouchableResponderView.swift in Sources */,
 				2E13BC1A2B3BFD9600ED1EA4 /* TestLayerViewController.swift in Sources */,
 				2E548C012868386B003BEC5D /* UIColor+Extension.swift in Sources */,

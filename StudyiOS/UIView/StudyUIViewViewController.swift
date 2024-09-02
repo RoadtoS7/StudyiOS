@@ -6,28 +6,34 @@
 //
 
 import UIKit
+import OSLog
 
-class StudyUIViewViewController: UINavigationController {
+class StudyUIViewViewController: UIViewController {
     private var sizeToFitLabel: UILabel!
+    let logger = Logger()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        logger.log("$$ viewDidLoad")
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewIsAppearing(_ animated: Bool) {
+        super.viewIsAppearing(animated)
+        logger.log("$$ viewIsAppearing")
     }
-    */
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        logger.log("$$ viewWillAppear")
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        logger.log("$$ viewDidAppear")
+    }
 }
 
 
