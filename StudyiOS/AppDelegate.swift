@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let logger = Logger()
     
 
+    /// not runing -> inactive
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         if willShowLifecycleLog {
@@ -25,18 +26,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    /// inactive -> active
     func applicationDidBecomeActive(_ application: UIApplication) {
         if willShowLifecycleLog {
             logger.log("$$ applicationDidBecomeActive")
         }
     }
     
+    /// active -> inactive
+    func applicationWillResignActive(_ application: UIApplication) {
+        
+    }
+    
+    /// inactive -> background
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        
+    }
+    
+    /// background -> foreground (inactive)
     func applicationWillEnterForeground(_ application: UIApplication) {
         if willShowLifecycleLog {
             logger.log("$$ applicationWillEnterForeground")
         }
     }
     
+    /// app termination
+    func applicationWillTerminate(_ application: UIApplication) {
+        
+    }
+   
     
     
     // MARK: UISceneSession Lifecycle
