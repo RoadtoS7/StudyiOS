@@ -78,5 +78,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = MainViewController()
         window?.makeKeyAndVisible()
     }
+    
+    // 공식문서에서는 iOS13이상이면 이걸 쓰라고 했는데, deprecated 됬다고 나온다.
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
+    }
 }
 
