@@ -96,6 +96,7 @@
 		2EF8484A2C8572ED0090D82C /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF848462C8572ED0090D82C /* Actor.swift */; };
 		2EF8484B2C8572ED0090D82C /* NSLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF848472C8572ED0090D82C /* NSLock.swift */; };
 		2EF8484C2C8572ED0090D82C /* Sendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF848482C8572ED0090D82C /* Sendable.swift */; };
+		2EF8484E2C8573200090D82C /* DefaultParameterActorIsolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF8484D2C8573200090D82C /* DefaultParameterActorIsolation.swift */; };
 		F44191FC2C84B25700156655 /* CompleteConcurrencyChecking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44191FB2C84B25700156655 /* CompleteConcurrencyChecking.swift */; };
 		F44191FE2C84B75500156655 /* GlobalVariableInConcurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44191FD2C84B75500156655 /* GlobalVariableInConcurrency.swift */; };
 		F480F5C12ADBB8E100C1FE98 /* FileSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F480F5C02ADBB8E100C1FE98 /* FileSystem.swift */; };
@@ -247,6 +248,7 @@
 		2EF848462C8572ED0090D82C /* Actor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
 		2EF848472C8572ED0090D82C /* NSLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLock.swift; sourceTree = "<group>"; };
 		2EF848482C8572ED0090D82C /* Sendable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sendable.swift; sourceTree = "<group>"; };
+		2EF8484D2C8573200090D82C /* DefaultParameterActorIsolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultParameterActorIsolation.swift; sourceTree = "<group>"; };
 		F44191FB2C84B25700156655 /* CompleteConcurrencyChecking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteConcurrencyChecking.swift; sourceTree = "<group>"; };
 		F44191FD2C84B75500156655 /* GlobalVariableInConcurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariableInConcurrency.swift; sourceTree = "<group>"; };
 		F480F5C02ADBB8E100C1FE98 /* FileSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystem.swift; sourceTree = "<group>"; };
@@ -696,6 +698,7 @@
 			children = (
 				F44191FB2C84B25700156655 /* CompleteConcurrencyChecking.swift */,
 				F44191FD2C84B75500156655 /* GlobalVariableInConcurrency.swift */,
+				2EF8484D2C8573200090D82C /* DefaultParameterActorIsolation.swift */,
 			);
 			path = Swift6;
 			sourceTree = "<group>";
@@ -925,6 +928,7 @@
 				2E8B461D2AB296D800E8F1B6 /* BoxTabBar.swift in Sources */,
 				2E4BA2B02A78EA2F0004E73E /* NavigationTestView.swift in Sources */,
 				2E93CBF52B05B20000BA9F54 /* ThrottleViewController.swift in Sources */,
+				2EF8484E2C8573200090D82C /* DefaultParameterActorIsolation.swift in Sources */,
 				2EF5C4E52BECBCF000E63AB8 /* CustomTimerView.swift in Sources */,
 				2E396C482B688F96003CBC51 /* InifiniteScrollPagerViewController.swift in Sources */,
 				2E3AB9492ACF9E13006DB3C9 /* CoreDataViewController.swift in Sources */,
