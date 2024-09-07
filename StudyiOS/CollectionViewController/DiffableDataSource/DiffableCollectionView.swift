@@ -26,10 +26,8 @@ final class DiffableCollectionView: UIViewController {
             
         }
 
-        // escpaing closure이다.
-        // strong refrence cycle이 발생할 우려가 있는가?
-        // self가 dataSource를 갖는다. dataSource가 closure를 갖는다.
-        dataSource = DataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
+        
+        dataSource = DataSource(collectionView: collectionView, cellProvider: { [unowned self] (collectionView, indexPath, itemIdentifier) in
             return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: self.items[itemIdentifier])
         })
         collectionView.dataSource = dataSource
