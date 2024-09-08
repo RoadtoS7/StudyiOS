@@ -17,4 +17,4 @@ struct MainActorGlobalConstant {
     static let maximum: Int = 1929
 }
 
-nonisolated(unsafe) var candy = ["melon", "orange", "lemon"]
+//nonisolated(unsafe) var candy = ["melon", "orange", "lemon"]
