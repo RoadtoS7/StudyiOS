@@ -92,11 +92,12 @@
 		2EF49EAA2AD53F96002EC8E6 /* DTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF49EA92AD53F96002EC8E6 /* DTO.swift */; };
 		2EF49EAC2AD53FE2002EC8E6 /* CoreDataMigrationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF49EAB2AD53FE2002EC8E6 /* CoreDataMigrationUtil.swift */; };
 		2EF5C4E52BECBCF000E63AB8 /* CustomTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF5C4E42BECBCF000E63AB8 /* CustomTimerView.swift */; };
-		F426E7A52C8B3D56002852B2 /* DiffableCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E7A42C8B3D56002852B2 /* DiffableCollectionView.swift */; };
 		2EF8484A2C8572ED0090D82C /* Actor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF848462C8572ED0090D82C /* Actor.swift */; };
 		2EF8484B2C8572ED0090D82C /* NSLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF848472C8572ED0090D82C /* NSLock.swift */; };
 		2EF8484C2C8572ED0090D82C /* Sendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF848482C8572ED0090D82C /* Sendable.swift */; };
 		2EF8484E2C8573200090D82C /* DefaultParameterActorIsolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EF8484D2C8573200090D82C /* DefaultParameterActorIsolation.swift */; };
+		F412DE842C8D956A00AB3AD8 /* CollectionViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F412DE832C8D956A00AB3AD8 /* CollectionViewController+DataSource.swift */; };
+		F426E7A52C8B3D56002852B2 /* DiffableCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426E7A42C8B3D56002852B2 /* DiffableCollectionView.swift */; };
 		F44191FC2C84B25700156655 /* CompleteConcurrencyChecking.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44191FB2C84B25700156655 /* CompleteConcurrencyChecking.swift */; };
 		F44191FE2C84B75500156655 /* GlobalVariableInConcurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44191FD2C84B75500156655 /* GlobalVariableInConcurrency.swift */; };
 		F480F5C12ADBB8E100C1FE98 /* FileSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F480F5C02ADBB8E100C1FE98 /* FileSystem.swift */; };
@@ -244,11 +245,12 @@
 		2EF49EAB2AD53FE2002EC8E6 /* CoreDataMigrationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMigrationUtil.swift; sourceTree = "<group>"; };
 		2EF49EAD2AD5401F002EC8E6 /* MenuLayout_2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MenuLayout_2.xcdatamodel; sourceTree = "<group>"; };
 		2EF5C4E42BECBCF000E63AB8 /* CustomTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTimerView.swift; sourceTree = "<group>"; };
-		F426E7A42C8B3D56002852B2 /* DiffableCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableCollectionView.swift; sourceTree = "<group>"; };
 		2EF848462C8572ED0090D82C /* Actor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Actor.swift; sourceTree = "<group>"; };
 		2EF848472C8572ED0090D82C /* NSLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLock.swift; sourceTree = "<group>"; };
 		2EF848482C8572ED0090D82C /* Sendable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sendable.swift; sourceTree = "<group>"; };
 		2EF8484D2C8573200090D82C /* DefaultParameterActorIsolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultParameterActorIsolation.swift; sourceTree = "<group>"; };
+		F412DE832C8D956A00AB3AD8 /* CollectionViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewController+DataSource.swift"; sourceTree = "<group>"; };
+		F426E7A42C8B3D56002852B2 /* DiffableCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableCollectionView.swift; sourceTree = "<group>"; };
 		F44191FB2C84B25700156655 /* CompleteConcurrencyChecking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteConcurrencyChecking.swift; sourceTree = "<group>"; };
 		F44191FD2C84B75500156655 /* GlobalVariableInConcurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariableInConcurrency.swift; sourceTree = "<group>"; };
 		F480F5C02ADBB8E100C1FE98 /* FileSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystem.swift; sourceTree = "<group>"; };
@@ -622,6 +624,7 @@
 		2EC581A6285C769C001446C3 /* CollectionViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F412DE822C8D955600AB3AD8 /* DataSource */,
 				F426E7A22C8B3D33002852B2 /* DiffableDataSource */,
 				2E87D0562A6A193300346934 /* Layout */,
 				2ECEEE9628E9D53B00B55CCB /* CompositionalLayout_NestedGroup */,
@@ -672,16 +675,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		F426E7A22C8B3D33002852B2 /* DiffableDataSource */ = {
-			isa = PBXGroup;
-			children = (
-				2E3BB39E2876658F00BBB95C /* CollectionViewController+DiffableDataSource.swift */,
-				2EC581A4285C70CE001446C3 /* CollectionViewController.swift */,
-				F426E7A42C8B3D56002852B2 /* DiffableCollectionView.swift */,
-			);
-			path = DiffableDataSource;
-			sourceTree = "<group>";
-           };
 		2EF848492C8572ED0090D82C /* Datarace */ = {
 			isa = PBXGroup;
 			children = (
@@ -692,6 +685,24 @@
 			name = Datarace;
 			path = StudyiOS/Datarace;
 			sourceTree = SOURCE_ROOT;
+		};
+		F412DE822C8D955600AB3AD8 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				F412DE832C8D956A00AB3AD8 /* CollectionViewController+DataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		F426E7A22C8B3D33002852B2 /* DiffableDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				2E3BB39E2876658F00BBB95C /* CollectionViewController+DiffableDataSource.swift */,
+				2EC581A4285C70CE001446C3 /* CollectionViewController.swift */,
+				F426E7A42C8B3D56002852B2 /* DiffableCollectionView.swift */,
+			);
+			path = DiffableDataSource;
+			sourceTree = "<group>";
 		};
 		F44191FA2C84B22500156655 /* Swift6 */ = {
 			isa = PBXGroup;
@@ -940,6 +951,7 @@
 				2EC581A9285C76CA001446C3 /* Reminder.swift in Sources */,
 				2E8B461A2AB2968100E8F1B6 /* Collection+Extension.swift in Sources */,
 				2ECEEE9828E9D55500B55CCB /* NestedGroupViewController.swift in Sources */,
+				F412DE842C8D956A00AB3AD8 /* CollectionViewController+DataSource.swift in Sources */,
 				2EF49EA72AD53F15002EC8E6 /* Data+Extensions.swift in Sources */,
 				2E62C814295AECC800C83C0C /* OverlappedViewController.swift in Sources */,
 				2E0D6BD328A14059001E0019 /* MultipleLinkTextViewController.swift in Sources */,
@@ -957,7 +969,6 @@
 				2E60B06C2A7C807E00680EBC /* GCDViewController.swift in Sources */,
 				F480F5C32ADC29F100C1FE98 /* FileManagerViewController.swift in Sources */,
 				2EC581A3285C696A001446C3 /* TabBarViewController.swift in Sources */,
-				2E86415B2BFC1A52004ABAC2 /* Actor.swift in Sources */,
 				F44191FE2C84B75500156655 /* GlobalVariableInConcurrency.swift in Sources */,
 				2E17A2DC2B70808C00FD71B9 /* PageViewcontroller.swift in Sources */,
 				2E8B46152AB295D700E8F1B6 /* BaseTabBarController.swift in Sources */,
