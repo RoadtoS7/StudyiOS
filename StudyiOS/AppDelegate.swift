@@ -8,7 +8,7 @@
 import UIKit
 import OSLog
 
-let willShowLifecycleLog: Bool = false
+let willShowLifecycleLog: Bool = true
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let logger = Logger()
     
-
+    func application(_ application: UIApplication, willFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        if willShowLifecycleLog {
+            logger.log("$$ willFinishLaunchingWithOptions")
+        }
+        return true
+    }
+    
     /// not runing -> inactive
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

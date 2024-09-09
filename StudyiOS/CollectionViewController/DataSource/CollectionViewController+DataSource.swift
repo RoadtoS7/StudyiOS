@@ -8,7 +8,7 @@
 import UIKit
 
 final class CollectionViewController2: UIViewController {
-    let cellReuseId: String = String(describing: UICollectionViewListCell.self)
+    let cellReuseId: String = String(describing: FlowLayoutCell.self)
     private let flowLayout: UICollectionViewFlowLayout = {
         $0.itemSize = .init(width: 100, height: 100)
         $0.scrollDirection = .vertical
@@ -25,7 +25,7 @@ final class CollectionViewController2: UIViewController {
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         
-        collectionView.register(UICollectionViewListCell.self, forCellWithReuseIdentifier: cellReuseId)
+        collectionView.register(FlowLayoutCell.self, forCellWithReuseIdentifier: cellReuseId)
         collectionView.dataSource = self
         collectionView.delegate = self
     }
@@ -33,7 +33,7 @@ final class CollectionViewController2: UIViewController {
 
 extension CollectionViewController2: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        15
+        100
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -42,8 +42,10 @@ extension CollectionViewController2: UICollectionViewDataSource {
         }
         
         var config = cell.defaultContentConfiguration()
-        config.text = "\(indexPath.section) - \(indexPath.row) - \(indexPath.item)"
+        let text = "\(indexPath.section) - \(indexPath.row) - \(indexPath.item)"
+        config.text = text
         cell.contentConfiguration = config
+        print("$$ cellForItem: ", text)
         return cell
     }
 }
@@ -52,3 +54,9 @@ extension CollectionViewController2: UICollectionViewDelegate {
     
 }
 
+final class FlowLayoutCell: UICollectionViewListCell {
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        print("$$ prepareForReuse")
+    }
+}
