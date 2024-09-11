@@ -35,7 +35,8 @@ extension ViewType {
         ViewType(title: "File System 경로 출력", toViewController: FileManagerViewController()),
         ViewType(title: "Throttle 동작 Test", toViewController: ThrottleViewController()),
         ViewType(title: "layer를 통한 circle 만들기", toViewController: TestLayerViewController()),
-        ViewType(title: "UICollectionViewDataSource + UICollectionViewFlowLayout", toViewController: CollectionViewController2())
+        ViewType(title: "UICollectionViewDataSource + UICollectionViewFlowLayout", toViewController: CollectionViewController2()),
+        ViewType(title: "ImageIO를 이용해서 downscale하기", toViewController: ImageDownScaleViewController()),
     ]
     
     static func get(ofIndex index: Int) -> ViewType? {
