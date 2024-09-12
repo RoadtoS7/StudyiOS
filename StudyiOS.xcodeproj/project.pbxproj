@@ -103,6 +103,7 @@
 		F4693D842C91DB7100F4DAA0 /* ImageDownScaleTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4693D832C91DB7100F4DAA0 /* ImageDownScaleTest.swift */; };
 		F480F5C12ADBB8E100C1FE98 /* FileSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F480F5C02ADBB8E100C1FE98 /* FileSystem.swift */; };
 		F480F5C32ADC29F100C1FE98 /* FileManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F480F5C22ADC29F100C1FE98 /* FileManagerViewController.swift */; };
+		F4D84FA42C932F6100064DA7 /* ComicViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D84FA32C932F6100064DA7 /* ComicViewerController.swift */; };
 		F4FB13082C7ECCBF009CE0DD /* TestActor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FB13072C7ECCBF009CE0DD /* TestActor.swift */; };
 /* End PBXBuildFile section */
 
@@ -258,6 +259,7 @@
 		F4693D832C91DB7100F4DAA0 /* ImageDownScaleTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownScaleTest.swift; sourceTree = "<group>"; };
 		F480F5C02ADBB8E100C1FE98 /* FileSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystem.swift; sourceTree = "<group>"; };
 		F480F5C22ADC29F100C1FE98 /* FileManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerViewController.swift; sourceTree = "<group>"; };
+		F4D84FA32C932F6100064DA7 /* ComicViewerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicViewerController.swift; sourceTree = "<group>"; };
 		F4FB13072C7ECCBF009CE0DD /* TestActor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestActor.swift; sourceTree = "<group>"; };
 		F4FB13092C80ABEC009CE0DD /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -562,6 +564,7 @@
 		2EC5816F285C2BE5001446C3 /* StudyiOS */ = {
 			isa = PBXGroup;
 			children = (
+				F4D84FA22C932F3500064DA7 /* ComicViewer */,
 				F4693D802C91DA7000F4DAA0 /* Image */,
 				F44191FA2C84B22500156655 /* Swift6 */,
 				2EF848492C8572ED0090D82C /* Datarace */,
@@ -725,6 +728,14 @@
 				F4693D832C91DB7100F4DAA0 /* ImageDownScaleTest.swift */,
 			);
 			path = Image;
+			sourceTree = "<group>";
+		};
+		F4D84FA22C932F3500064DA7 /* ComicViewer */ = {
+			isa = PBXGroup;
+			children = (
+				F4D84FA32C932F6100064DA7 /* ComicViewerController.swift */,
+			);
+			path = ComicViewer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1001,6 +1012,7 @@
 				2ECC29BB2A723D3D009D210D /* NonSubviewsViewController.swift in Sources */,
 				2E969FC52AE0D52A003DC07B /* CoreDataExtensions.swift in Sources */,
 				2E396C442B688083003CBC51 /* InfiniteScrollViewController.swift in Sources */,
+				F4D84FA42C932F6100064DA7 /* ComicViewerController.swift in Sources */,
 				2E9E34102AD9133A00EBCE96 /* MigrationManager.swift in Sources */,
 				F4FB13082C7ECCBF009CE0DD /* TestActor.swift in Sources */,
 				2EC15228288681FA00649ED4 /* ImageViewController.swift in Sources */,

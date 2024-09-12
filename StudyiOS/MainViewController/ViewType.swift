@@ -37,6 +37,7 @@ extension ViewType {
         ViewType(title: "layer를 통한 circle 만들기", toViewController: TestLayerViewController()),
         ViewType(title: "UICollectionViewDataSource + UICollectionViewFlowLayout", toViewController: CollectionViewController2()),
         ViewType(title: "ImageIO를 이용해서 downscale하기", toViewController: ImageDownScaleViewController()),
+        ViewType(title: "Viewer 구현하기", toViewController: ComicViewerController()),
     ]
     
     static func get(ofIndex index: Int) -> ViewType? {
