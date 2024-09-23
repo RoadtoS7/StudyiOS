@@ -11,8 +11,11 @@ import SDWebImage
 class ViewController: UIViewController {
     private var originImageView: UIImageView!
     private var imageView: UIImageView!
+    private var stepScaledImageView: UIImageView!
+    private var stepScaledImageView: UIImageView!
     private var imageViews: [UIImageView] = []
     private var scaledImageViews: [UIImageView] = []
+    
     
     private let bookCorverUrl: URL = URL(string: "https://story-a.tapas.io/prod/story/9928b181-d589-4cc6-a4d6-0ab67b17eff2/bc/2x/6d91f071-65e7-49fa-a18e-31a2e0346364.heic")!
     private let comicCoverUrl: URL =  URL(string: "https://dev-story-a.tapas.io/qa/story/170601/c2/2x/c2_The_Lady_and_Her_Butler.heic")!
@@ -20,24 +23,26 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let bookCardWidth: CGFloat = 101
-        let bookCardHeight: CGFloat = 152
+        print("$$ current display scale: ", traitCollection.displayScale)
+        view.backgroundColor = .white
+        let (bookCardWidth, bookCardHeight): (CGFloat, CGFloat) = (101, 152)
         let width: CGFloat = abs(view.frame.width / 3)
         let height: CGFloat = width * 2
         let (x, y): (CGFloat, CGFloat) = (10, 10)
         
-        originImageView = UIImageView(frame: CGRect(x: 10, y: 10, width: bookCardWidth, height: bookCardHeight))
-        imageView = UIImageView(frame: CGRect(x: 10 + width + 10, y: 10, width: bookCardWidth, height: bookCardHeight))
-        imageViews = [originImageView, imageView]
-        scaledImageViews = [imageView]
+        originImageView = UIImageView(frame: CGRect(x: 10, y: 100, width: bookCardWidth, height: bookCardHeight))
+        imageView = UIImageView(frame: CGRect(x: 10 + width + 10, y: 100, width: bookCardWidth, height: bookCardHeight))
+        stepScaledImageView = UIImageView(frame: CGRect(x:10, y: 10 + height + 10, width: bookCardWidth, height: bookCardHeight))
+        imageViews = [originImageView, imageView, stepScaledImageView]
+        scaledImageViews = [imageView, stepScaledImageView]
         
         imageViews.forEach { view.addSubview($0) }
         
         originImageView.sd_setImage(with: bookCorverUrl)
 
-        scaledImageViews.forEach {
-            downloadAndResizeWithURLSessionWitoutThumbnail(imageView: $0, url: bookCorverUrl, targetSize: $0.frame.size, interpolation: "CIBicubicScaleTransform")
-        }
+        
+        downloadAndResizeWithURLSessionWitoutThumbnail(imageView: imageView, url: bookCorverUrl, targetSize: imageView.frame.size, interpolation: "CILanczosScaleTransform")
+        downloadAndResizeStepByStep(imageView: stepScaledImageView, url: bookCorverUrl, targetSize: stepScaledImageView.frame.size, interpolation: "CILanczosScaleTransform")
     }
     
     func setBookCoverImage() {
@@ -148,7 +153,7 @@ extension ViewController {
             
             // Create CIImage from raw image data
             if let ciImage = CIImage(data: imageData),
-               let interpolatedImage = ciImage.applyInterpolation(targetSize: targetSize, interpolatino: interpolation),
+               let interpolatedImage = ciImage.applyInterpolation(targetSize: targetSize, interpolation: interpolation),
                let cgImage = CIContext(options: nil).createCGImage(interpolatedImage, from: interpolatedImage.extent) { // Apply interpolation
                 let uiimage = UIImage(cgImage: cgImage)
                 
@@ -160,19 +165,95 @@ extension ViewController {
         
         task.resume()
     }
+    
+    func downloadAndResizeStepByStep(imageView: UIImageView, url: URL, targetSize: CGSize, interpolation: String) {
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print("Failed to download image: \(error)")
+                return
+            }
+            
+            guard let imageData = data else {
+                print("No data received")
+                return
+            }
+            
+            // Create CIImage from raw image data
+            if let ciImage = CIImage(data: imageData),
+               let interpolatedImage = ciImage.applyStepByStepInterpolation(targetSize: targetSize, interpolation: interpolation),
+               let cgImage = CIContext(options: nil).createCGImage(interpolatedImage, from: interpolatedImage.extent) { // Apply interpolation
+                let uiimage = UIImage(cgImage: cgImage)
+                
+                DispatchQueue.main.async {
+                    imageView.image = uiimage
+                }
+            }
+        }
+        
+        task.resume()
+        
+    }
 }
 
 extension CIImage {
-    func applyInterpolation(targetSize: CGSize, interpolatino: String) -> CIImage? {
-        let filter = CIFilter(name: interpolatino)
+    func applyInterpolation(targetSize: CGSize, interpolation: String) -> CIImage? {
+        let filter = CIFilter(name: interpolation)
         filter?.setValue(self, forKey: kCIInputImageKey)
-        print("$$ exten", extent, "- targetSize: ", targetSize)
-        filter?.setValue(NSNumber(value: Double(targetSize.width / extent.width)), forKey: kCIInputScaleKey)
+        
+        
+       let scaleWidth = targetSize.width / extent.width
+       let scaleHeight = targetSize.height / extent.height
+        let scale = min(scaleWidth, scaleHeight)
+        let refactoredScale = scale * 2
+        
+        print("$$ extent \(extent) - targetSize: \(targetSize) - originScale: \(scale) - scale: \(refactoredScale)")
+        filter?.setValue(NSNumber(value: Double(scale)), forKey: kCIInputScaleKey)
         filter?.setValue(1.0, forKey: kCIInputAspectRatioKey)
         return filter?.outputImage
-
+    }
+    
+    func applyStepByStepInterpolation(targetSize: CGSize, interpolation: String) -> CIImage? {
+        // Initial size
+        var currentImage = self
+        let initialSize = self.extent.size
+        
+        // Calculate the number of steps for downscaling
+        let stepCount = 10 // You can adjust this value to control the number of downscaling steps
+        let widthStep = (initialSize.width - targetSize.width) / CGFloat(stepCount)
+        let heightStep = (initialSize.height - targetSize.height) / CGFloat(stepCount)
+        
+        // Perform downscaling in steps
+        for i in 1...stepCount {
+            let intermediateSize = CGSize(
+                width: initialSize.width - (widthStep * CGFloat(i)),
+                height: initialSize.height - (heightStep * CGFloat(i))
+            )
+            let scale = min(intermediateSize.width / currentImage.extent.width, intermediateSize.height / currentImage.extent.height)
+            
+            let filter = CIFilter(name: interpolation)
+            filter?.setValue(currentImage, forKey: kCIInputImageKey)
+            filter?.setValue(NSNumber(value: Double(scale)), forKey: kCIInputScaleKey)
+            filter?.setValue(1.0, forKey: kCIInputAspectRatioKey)
+            
+            if let outputImage = filter?.outputImage {
+                currentImage = outputImage
+            } else {
+                return nil
+            }
+        }
+        
+        // Final scaling to the target size
+        let finalScale = min(targetSize.width / currentImage.extent.width, targetSize.height / currentImage.extent.height)
+        let filter = CIFilter(name: interpolation)
+        filter?.setValue(currentImage, forKey: kCIInputImageKey)
+        filter?.setValue(NSNumber(value: Double(finalScale)), forKey: kCIInputScaleKey)
+        filter?.setValue(1.0, forKey: kCIInputAspectRatioKey)
+        
+        return filter?.outputImage
     }
 }
+
+
 
 extension CGImage {
     func resizeWithInterpolation(currentSize: CGSize, targetSize: CGSize, interpolation: String) -> CGImage? {

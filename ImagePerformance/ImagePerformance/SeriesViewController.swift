@@ -9,8 +9,6 @@ import Foundation
 import UIKit
 
 final class SeriesViewController: UINavigationController {
-
-    
     private let button = UIButton(frame: CGRect(x: 10, y: 10, width: 200, height: 200))
     
     override func viewDidLoad() {
