@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     private var originImageView: UIImageView!
     private var imageView: UIImageView!
     private var stepScaledImageView: UIImageView!
-    private var stepScaledImageView: UIImageView!
+    private var sharpenFilterImageView: UIImageView!
     private var imageViews: [UIImageView] = []
     private var scaledImageViews: [UIImageView] = []
     
@@ -26,23 +26,36 @@ class ViewController: UIViewController {
         print("$$ current display scale: ", traitCollection.displayScale)
         view.backgroundColor = .white
         let (bookCardWidth, bookCardHeight): (CGFloat, CGFloat) = (101, 152)
+        let bookCardImageSize = CGSize(width: bookCardWidth, height: bookCardHeight)
         let width: CGFloat = abs(view.frame.width / 3)
         let height: CGFloat = width * 2
         let (x, y): (CGFloat, CGFloat) = (10, 10)
         
+        
         originImageView = UIImageView(frame: CGRect(x: 10, y: 100, width: bookCardWidth, height: bookCardHeight))
         imageView = UIImageView(frame: CGRect(x: 10 + width + 10, y: 100, width: bookCardWidth, height: bookCardHeight))
+        
         stepScaledImageView = UIImageView(frame: CGRect(x:10, y: 10 + height + 10, width: bookCardWidth, height: bookCardHeight))
-        imageViews = [originImageView, imageView, stepScaledImageView]
-        scaledImageViews = [imageView, stepScaledImageView]
+        sharpenFilterImageView = UIImageView(frame: CGRect(x: 10 + width + 10, y: 10 + height + 10, width: bookCardWidth, height: bookCardHeight))
+        
+        imageViews = [originImageView, imageView, stepScaledImageView, sharpenFilterImageView]
+        scaledImageViews = [imageView, stepScaledImageView, sharpenFilterImageView]
         
         imageViews.forEach { view.addSubview($0) }
         
         originImageView.sd_setImage(with: bookCorverUrl)
 
-        
         downloadAndResizeWithURLSessionWitoutThumbnail(imageView: imageView, url: bookCorverUrl, targetSize: imageView.frame.size, interpolation: "CILanczosScaleTransform")
         downloadAndResizeStepByStep(imageView: stepScaledImageView, url: bookCorverUrl, targetSize: stepScaledImageView.frame.size, interpolation: "CILanczosScaleTransform")
+        downloadImage(imageView: sharpenFilterImageView, url: bookCorverUrl) { data in
+            guard let data else { return nil }
+            
+            if let ciImage = CIImage(data: data) {
+                return ciImage.applyInterpolationWithSharpening(targetSize: bookCardImageSize, interpolation: "CILanczosScaleTransform")
+            }
+            
+            return nil
+        }
     }
     
     func setBookCoverImage() {
@@ -139,6 +152,31 @@ extension ViewController {
         task.resume()
     }
     
+    func downloadImage(imageView: UIImageView, url: URL, makeCIImage: @escaping (Data?) -> CIImage?) {
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print("Failed to download image: \(error)")
+                return
+            }
+            
+            guard let imageData = data else {
+                print("No data received")
+                return
+            }
+            
+            // Create CIImage from raw image data
+            if let ciImage = makeCIImage(imageData),
+               let cgImage = CIContext(options: nil).createCGImage(ciImage, from: ciImage.extent) { // Apply interpolation
+                let uiimage = UIImage(cgImage: cgImage)
+                
+                DispatchQueue.main.async {
+                    imageView.image = uiimage
+                }
+            }
+        }
+        task.resume()
+    }
+    
     func downloadAndResizeWithURLSessionWitoutThumbnail(imageView: UIImageView, url: URL, targetSize: CGSize, interpolation: String) {
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
@@ -191,7 +229,6 @@ extension ViewController {
         }
         
         task.resume()
-        
     }
 }
 
@@ -251,6 +288,71 @@ extension CIImage {
         
         return filter?.outputImage
     }
+    
+    func applyInterpolationWithSharpening(targetSize: CGSize, interpolation: String) -> CIImage? {
+        // Initial size
+        var currentImage = self
+        let initialSize = self.extent.size
+        
+        // Calculate the number of steps for downscaling
+        let stepCount = 100 // Number of intermediate downscaling steps
+        let widthStep = (initialSize.width - targetSize.width) / CGFloat(stepCount)
+        let heightStep = (initialSize.height - targetSize.height) / CGFloat(stepCount)
+        
+        // Perform downscaling in steps
+        for i in 1...stepCount {
+            let intermediateSize = CGSize(
+                width: initialSize.width - (widthStep * CGFloat(i)),
+                height: initialSize.height - (heightStep * CGFloat(i))
+            )
+            let scale = min(intermediateSize.width / currentImage.extent.width, intermediateSize.height / currentImage.extent.height)
+            
+            let filter = CIFilter(name: interpolation)
+            filter?.setValue(currentImage, forKey: kCIInputImageKey)
+            filter?.setValue(NSNumber(value: Double(scale)), forKey: kCIInputScaleKey)
+            filter?.setValue(1.0, forKey: kCIInputAspectRatioKey)
+            
+            if let outputImage = filter?.outputImage {
+                currentImage = outputImage
+            } else {
+                return nil
+            }
+        }
+        
+        // Final scaling to the target size
+        let finalScale = min(targetSize.width / currentImage.extent.width, targetSize.height / currentImage.extent.height)
+        let filter = CIFilter(name: interpolation)
+        filter?.setValue(currentImage, forKey: kCIInputImageKey)
+        filter?.setValue(NSNumber(value: Double(finalScale)), forKey: kCIInputScaleKey)
+        filter?.setValue(1.0, forKey: kCIInputAspectRatioKey)
+        
+        guard let downscaledImage = filter?.outputImage else { return nil }
+        
+        // Apply sharpening filter to enhance image quality
+        let sharpenFilter = CIFilter(name: "CISharpenLuminance")
+        sharpenFilter?.setValue(downscaledImage, forKey: kCIInputImageKey)
+        sharpenFilter?.setValue(0.4, forKey: kCIInputSharpnessKey) // Adjust sharpness value as needed
+        
+        return sharpenFilter?.outputImage
+    }
+    
+    func applySharpening(targetSize: CGSize, interpolation: String) -> CIImage? {
+            // Final scaling to the target size
+            let scale = min(targetSize.width / self.extent.width, targetSize.height / self.extent.height)
+            let filter = CIFilter(name: interpolation)
+            filter?.setValue(self, forKey: kCIInputImageKey)
+            filter?.setValue(NSNumber(value: Double(scale)), forKey: kCIInputScaleKey)
+            filter?.setValue(1.0, forKey: kCIInputAspectRatioKey)
+            
+            guard let downscaledImage = filter?.outputImage else { return nil }
+            
+            // Apply sharpening filter to enhance image quality
+            let sharpenFilter = CIFilter(name: "CISharpenLuminance")
+            sharpenFilter?.setValue(downscaledImage, forKey: kCIInputImageKey)
+            sharpenFilter?.setValue(0.4, forKey: kCIInputSharpnessKey) // Adjust sharpness value as needed
+            
+            return sharpenFilter?.outputImage
+        }
 }
 
 
