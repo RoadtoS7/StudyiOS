@@ -18,6 +18,8 @@
 		2EBF54522C929D1800010C4B /* ImagePerformanceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBF54512C929D1800010C4B /* ImagePerformanceUITestsLaunchTests.swift */; };
 		2EBF54602C92A71600010C4B /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 2EBF545F2C92A71600010C4B /* SDWebImage */; };
 		2EBF54622C92A71600010C4B /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2EBF54612C92A71600010C4B /* SDWebImageMapKit */; };
+		2EE920E32CA11DEE00E47283 /* SeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE920E22CA11DEE00E47283 /* SeriesViewController.swift */; };
+		2EE920E52CA11E7000E47283 /* ViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE920E42CA11E7000E47283 /* ViewerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		2EBF544B2C929D1800010C4B /* ImagePerformanceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImagePerformanceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2EBF544F2C929D1800010C4B /* ImagePerformanceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePerformanceUITests.swift; sourceTree = "<group>"; };
 		2EBF54512C929D1800010C4B /* ImagePerformanceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePerformanceUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2EE920E22CA11DEE00E47283 /* SeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesViewController.swift; sourceTree = "<group>"; };
+		2EE920E42CA11E7000E47283 /* ViewerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,8 @@
 				2EBF54392C929D1800010C4B /* LaunchScreen.storyboard */,
 				2EBF543C2C929D1800010C4B /* Info.plist */,
 				2E2478DD2C947240009B6CAC /* CIFilter_description.md */,
+				2EE920E22CA11DEE00E47283 /* SeriesViewController.swift */,
+				2EE920E42CA11E7000E47283 /* ViewerViewController.swift */,
 			);
 			path = ImagePerformance;
 			sourceTree = "<group>";
@@ -271,9 +277,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EE920E52CA11E7000E47283 /* ViewerViewController.swift in Sources */,
 				2EBF54332C929D1600010C4B /* ViewController.swift in Sources */,
 				2EBF542F2C929D1600010C4B /* AppDelegate.swift in Sources */,
 				2EBF54312C929D1600010C4B /* SceneDelegate.swift in Sources */,
+				2EE920E32CA11DEE00E47283 /* SeriesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
