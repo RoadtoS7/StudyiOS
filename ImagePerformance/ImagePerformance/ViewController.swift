@@ -166,7 +166,7 @@ extension ViewController {
             
             // Create CIImage from raw image data
             if let ciImage = makeCIImage(imageData),
-               let cgImage = CIContext(options: nil).createCGImage(ciImage, from: ciImage.extent) { // Apply interpolation
+               let cgImage = CIContext(options: [.useSoftwareRenderer:false]).createCGImage(ciImage, from: ciImage.extent) { // Apply interpolation
                 let uiimage = UIImage(cgImage: cgImage)
                 
                 DispatchQueue.main.async {
@@ -192,7 +192,7 @@ extension ViewController {
             // Create CIImage from raw image data
             if let ciImage = CIImage(data: imageData),
                let interpolatedImage = ciImage.applyInterpolation(targetSize: targetSize, interpolation: interpolation),
-               let cgImage = CIContext(options: nil).createCGImage(interpolatedImage, from: interpolatedImage.extent) { // Apply interpolation
+               let cgImage = CIContext(options: [.useSoftwareRenderer:false]).createCGImage(interpolatedImage, from: interpolatedImage.extent) { // Apply interpolation
                 let uiimage = UIImage(cgImage: cgImage)
                 
                 DispatchQueue.main.async {
@@ -219,7 +219,7 @@ extension ViewController {
             // Create CIImage from raw image data
             if let ciImage = CIImage(data: imageData),
                let interpolatedImage = ciImage.applyStepByStepInterpolation(targetSize: targetSize, interpolation: interpolation),
-               let cgImage = CIContext(options: nil).createCGImage(interpolatedImage, from: interpolatedImage.extent) { // Apply interpolation
+               let cgImage = CIContext(options: [.useSoftwareRenderer:false]).createCGImage(interpolatedImage, from: interpolatedImage.extent) { // Apply interpolation
                 let uiimage = UIImage(cgImage: cgImage)
                 
                 DispatchQueue.main.async {
@@ -237,14 +237,13 @@ extension CIImage {
         let filter = CIFilter(name: interpolation)
         filter?.setValue(self, forKey: kCIInputImageKey)
         
-        
        let scaleWidth = targetSize.width / extent.width
        let scaleHeight = targetSize.height / extent.height
-        let scale = min(scaleWidth, scaleHeight)
+        let scale = max(scaleWidth, scaleHeight)
         let refactoredScale = scale * 2
         
         print("$$ extent \(extent) - targetSize: \(targetSize) - originScale: \(scale) - scale: \(refactoredScale)")
-        filter?.setValue(NSNumber(value: Double(scale)), forKey: kCIInputScaleKey)
+        filter?.setValue(NSNumber(value: Double(0.5)), forKey: kCIInputScaleKey)
         filter?.setValue(1.0, forKey: kCIInputAspectRatioKey)
         return filter?.outputImage
     }
@@ -265,7 +264,7 @@ extension CIImage {
                 width: initialSize.width - (widthStep * CGFloat(i)),
                 height: initialSize.height - (heightStep * CGFloat(i))
             )
-            let scale = min(intermediateSize.width / currentImage.extent.width, intermediateSize.height / currentImage.extent.height)
+            let scale = max(intermediateSize.width / currentImage.extent.width, intermediateSize.height / currentImage.extent.height)
             
             let filter = CIFilter(name: interpolation)
             filter?.setValue(currentImage, forKey: kCIInputImageKey)
@@ -280,7 +279,7 @@ extension CIImage {
         }
         
         // Final scaling to the target size
-        let finalScale = min(targetSize.width / currentImage.extent.width, targetSize.height / currentImage.extent.height)
+        let finalScale = max(targetSize.width / currentImage.extent.width, targetSize.height / currentImage.extent.height)
         let filter = CIFilter(name: interpolation)
         filter?.setValue(currentImage, forKey: kCIInputImageKey)
         filter?.setValue(NSNumber(value: Double(finalScale)), forKey: kCIInputScaleKey)
@@ -305,7 +304,7 @@ extension CIImage {
                 width: initialSize.width - (widthStep * CGFloat(i)),
                 height: initialSize.height - (heightStep * CGFloat(i))
             )
-            let scale = min(intermediateSize.width / currentImage.extent.width, intermediateSize.height / currentImage.extent.height)
+            let scale = max(intermediateSize.width / currentImage.extent.width, intermediateSize.height / currentImage.extent.height)
             
             let filter = CIFilter(name: interpolation)
             filter?.setValue(currentImage, forKey: kCIInputImageKey)
@@ -320,7 +319,7 @@ extension CIImage {
         }
         
         // Final scaling to the target size
-        let finalScale = min(targetSize.width / currentImage.extent.width, targetSize.height / currentImage.extent.height)
+        let finalScale = max(targetSize.width / currentImage.extent.width, targetSize.height / currentImage.extent.height)
         let filter = CIFilter(name: interpolation)
         filter?.setValue(currentImage, forKey: kCIInputImageKey)
         filter?.setValue(NSNumber(value: Double(finalScale)), forKey: kCIInputScaleKey)
@@ -338,7 +337,7 @@ extension CIImage {
     
     func applySharpening(targetSize: CGSize, interpolation: String) -> CIImage? {
             // Final scaling to the target size
-            let scale = min(targetSize.width / self.extent.width, targetSize.height / self.extent.height)
+            let scale = max(targetSize.width / self.extent.width, targetSize.height / self.extent.height)
             let filter = CIFilter(name: interpolation)
             filter?.setValue(self, forKey: kCIInputImageKey)
             filter?.setValue(NSNumber(value: Double(scale)), forKey: kCIInputScaleKey)
@@ -353,6 +352,26 @@ extension CIImage {
             
             return sharpenFilter?.outputImage
         }
+
+    func applyHigherSizeAndSharpen(targetSize: CGSize, interpolation: String) -> CIImage? {
+        let adjustedTargetSize = CGSize(width: targetSize.width * 1.5, height: targetSize.height * 1.5)
+        let scaleWidth = adjustedTargetSize.width / extent.width
+        let scaleHeight = adjustedTargetSize.height / extent.height
+        let scale = max(scaleWidth, scaleHeight)
+        
+        let filter = CIFilter(name: "CILanczosScaleTransform")
+        filter?.setValue(self, forKey: kCIInputImageKey)
+        filter?.setValue(NSNumber(value: Double(scale)), forKey: kCIInputScaleKey)
+        filter?.setValue(1.0, forKey: kCIInputAspectRatioKey)
+
+        guard let outputImage = filter?.outputImage else { return nil }
+        
+        let sharpenFilter = CIFilter(name: "CISharpenLuminance")
+        sharpenFilter?.setValue(outputImage, forKey: kCIInputImageKey)
+        sharpenFilter?.setValue(0.4, forKey: kCIInputSharpnessKey)
+        
+        return sharpenFilter?.outputImage
+    }
 }
 
 
