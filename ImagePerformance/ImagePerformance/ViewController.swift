@@ -20,10 +20,10 @@ class ViewController: UIViewController {
     
     private let bookCorverUrl: URL = URL(string: "https://story-a.tapas.io/prod/story/9928b181-d589-4cc6-a4d6-0ab67b17eff2/bc/2x/6d91f071-65e7-49fa-a18e-31a2e0346364.heic")!
     private let comicCoverUrl: URL =  URL(string: "https://dev-story-a.tapas.io/qa/story/170601/c2/2x/c2_The_Lady_and_Her_Butler.heic")!
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        let displayScale: CGFloat = traitCollection.displayScale
         print("$$ current display scale: ", traitCollection.displayScale)
         view.backgroundColor = .white
         let (bookCardWidth, bookCardHeight): (CGFloat, CGFloat) = (101, 152)
@@ -58,9 +58,10 @@ class ViewController: UIViewController {
             return nil
         }
         
+        
         downloadImage(imageView: dispalyScaleImageView, url: bookCorverUrl, makeCIImage: { data in
             if let ciImage = CIImage(data: data) {
-                return ciImage.applyDisplayScaleInterplation(targetSize: bookCardImageSize, interpolation: "CILanczosScaleTransform", displayScale: traitCollection.displayScale)
+                return ciImage.applyDisplayScaleInterplation(targetSize: bookCardImageSize, interpolation: "CILanczosScaleTransform", displayScale: displayScale)
             }
             
             return nil
@@ -258,9 +259,14 @@ extension CIImage {
     }
     
     func applyDisplayScaleInterplation(targetSize: CGSize, interpolation: String, displayScale: CGFloat) -> CIImage? {
+        let scaledTargetSize = CGSize(width: targetSize.width * displayScale, height: targetSize.height * displayScale) // pixel 사이즈에 맞도록 배수를 한다.
+        let scale = min(scaledTargetSize.width / self.extent.width, scaledTargetSize.height / self.extent.height)
+        
+        print("$$ scale: \(scale) - width: \(scaledTargetSize.width / self.extent.width) - height: \(scaledTargetSize.height / self.extent.height)")
+        
         let filter = CIFilter(name: interpolation)
         filter?.setValue(self, forKey: kCIInputImageKey)
-        filter?.setValue(NSNumber(value: Double(displayScale)), forKey: kCIInputScaleKey)
+        filter?.setValue(NSNumber(value: Double(scale)), forKey: kCIInputScaleKey)
         filter?.setValue(1.0, forKey: kCIInputAspectRatioKey)
         return filter?.outputImage
     }
