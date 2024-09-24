@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     private let bookCorverUrl: URL = URL(string: "https://story-a.tapas.io/prod/story/9928b181-d589-4cc6-a4d6-0ab67b17eff2/bc/2x/6d91f071-65e7-49fa-a18e-31a2e0346364.heic")!
     private let comicCoverUrl: URL =  URL(string: "https://dev-story-a.tapas.io/qa/story/170601/c2/2x/c2_The_Lady_and_Her_Butler.heic")!
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("$$ current display scale: ", traitCollection.displayScale)
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         imageViews.forEach { view.addSubview($0) }
         
         originImageView.sd_setImage(with: bookCorverUrl)
-
+        
         downloadAndResizeWithURLSessionWitoutThumbnail(imageView: imageView, url: bookCorverUrl, targetSize: imageView.frame.size, interpolation: "CILanczosScaleTransform")
         downloadAndResizeStepByStep(imageView: stepScaledImageView, url: bookCorverUrl, targetSize: stepScaledImageView.frame.size, interpolation: "CILanczosScaleTransform")
         downloadImage(imageView: sharpenFilterImageView, url: bookCorverUrl) { data in
@@ -65,42 +65,42 @@ class ViewController: UIViewController {
         
         
         
-// SDWebImageCoderOption: // width, height를 줄이는 작업을 하지 않는다.
-//        let decodeOptions : [SDImageCoderOption : Any] = [
-//            SDImageCoderOption.decodeThumbnailPixelSize: imageView.frame.size
-//        ]
-//        let context = [SDWebImageContextOption.imageDecodeOptions : decodeOptions]
-//        imageView.sd_setImage(with: bookCorverUrl, placeholderImage: nil, context: context)
+        // SDWebImageCoderOption: // width, height를 줄이는 작업을 하지 않는다.
+        //        let decodeOptions : [SDImageCoderOption : Any] = [
+        //            SDImageCoderOption.decodeThumbnailPixelSize: imageView.frame.size
+        //        ]
+        //        let context = [SDWebImageContextOption.imageDecodeOptions : decodeOptions]
+        //        imageView.sd_setImage(with: bookCorverUrl, placeholderImage: nil, context: context)
         
-//         CGImageSourceCreateThumbnailAtIndex 사용 O!!!! , 그런데 이미지가 조금 뭉게지는 것 같아요...
-//        imageView.sd_setImage(with: bookCorverUrl, placeholderImage: nil, options: [], context: [.imageThumbnailPixelSize : imageView.frame.size, .imagePreserveAspectRatio: false])
-      
-// 애니메이션 이미지에서
-//        imageView.sd_setImage(with: bookCorverUrl, placeholderImage: nil, options: .decodeFirstFrameOnly)   // -> CGImageSourceCreateThumbnailAtIndex 사용 X
+        //         CGImageSourceCreateThumbnailAtIndex 사용 O!!!! , 그런데 이미지가 조금 뭉게지는 것 같아요...
+        //        imageView.sd_setImage(with: bookCorverUrl, placeholderImage: nil, options: [], context: [.imageThumbnailPixelSize : imageView.frame.size, .imagePreserveAspectRatio: false])
         
-//        let transformer = SDImageResizingTransformer(size: imageView.frame.size, scaleMode: .aspectFill)
-//        imageView.sd_setImage(with: bookCorverUrl, placeholderImage: nil, options: [], context:  [.imageTransformer: transformer])   // -> CGImageSourceCreateThumbnailAtIndex 사용 X
+        // 애니메이션 이미지에서
+        //        imageView.sd_setImage(with: bookCorverUrl, placeholderImage: nil, options: .decodeFirstFrameOnly)   // -> CGImageSourceCreateThumbnailAtIndex 사용 X
         
-//        imageView.sd_setImage(with: bookCorverUrl, placeholderImage: nil, options: .scaleDownLargeImages)   // -> CGImageSourceCreateThumbnailAtIndex 사용 X
-//        imageView.sd_setImage(with: bookCorverUrl)  // -> CGImageSourceCreateThumbnailAtIndex 사용 X
+        //        let transformer = SDImageResizingTransformer(size: imageView.frame.size, scaleMode: .aspectFill)
+        //        imageView.sd_setImage(with: bookCorverUrl, placeholderImage: nil, options: [], context:  [.imageTransformer: transformer])   // -> CGImageSourceCreateThumbnailAtIndex 사용 X
+        
+        //        imageView.sd_setImage(with: bookCorverUrl, placeholderImage: nil, options: .scaleDownLargeImages)   // -> CGImageSourceCreateThumbnailAtIndex 사용 X
+        //        imageView.sd_setImage(with: bookCorverUrl)  // -> CGImageSourceCreateThumbnailAtIndex 사용 X
         
         
         //        imageView.sd_setImage(with: bookCorverUrl, placeholderImage: nil, options: []) // 아무것도 지정하지 않은 것
     }
     
     func customBookCorverImage() {
-//        let imageSource = CGImageSourceCreateWithURL(url as CFURL, nil)!
-//       let properties = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, nil)
-//       let options: [CFString : Any] = [
-//           kCGImageSourceThumbnailMaxPixelSize: 100,
-//           kCGImageSourceCreateThumbnailFromImageAlways: true
-//       ]
-//       let scaledImage = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, options as CFDictionary)!
-//       let image = UIImage(cgImage: scaledImage)
-//       imageView.image = image
+        //        let imageSource = CGImageSourceCreateWithURL(url as CFURL, nil)!
+        //       let properties = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, nil)
+        //       let options: [CFString : Any] = [
+        //           kCGImageSourceThumbnailMaxPixelSize: 100,
+        //           kCGImageSourceCreateThumbnailFromImageAlways: true
+        //       ]
+        //       let scaledImage = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, options as CFDictionary)!
+        //       let image = UIImage(cgImage: scaledImage)
+        //       imageView.image = image
     }
     
- 
+    
 }
 
 extension ViewController {
@@ -237,8 +237,8 @@ extension CIImage {
         let filter = CIFilter(name: interpolation)
         filter?.setValue(self, forKey: kCIInputImageKey)
         
-       let scaleWidth = targetSize.width / extent.width
-       let scaleHeight = targetSize.height / extent.height
+        let scaleWidth = targetSize.width / extent.width
+        let scaleHeight = targetSize.height / extent.height
         let scale = max(scaleWidth, scaleHeight)
         let refactoredScale = scale * 2
         
@@ -336,23 +336,23 @@ extension CIImage {
     }
     
     func applySharpening(targetSize: CGSize, interpolation: String) -> CIImage? {
-            // Final scaling to the target size
-            let scale = max(targetSize.width / self.extent.width, targetSize.height / self.extent.height)
-            let filter = CIFilter(name: interpolation)
-            filter?.setValue(self, forKey: kCIInputImageKey)
-            filter?.setValue(NSNumber(value: Double(scale)), forKey: kCIInputScaleKey)
-            filter?.setValue(1.0, forKey: kCIInputAspectRatioKey)
-            
-            guard let downscaledImage = filter?.outputImage else { return nil }
-            
-            // Apply sharpening filter to enhance image quality
-            let sharpenFilter = CIFilter(name: "CISharpenLuminance")
-            sharpenFilter?.setValue(downscaledImage, forKey: kCIInputImageKey)
-            sharpenFilter?.setValue(0.4, forKey: kCIInputSharpnessKey) // Adjust sharpness value as needed
-            
-            return sharpenFilter?.outputImage
-        }
-
+        // Final scaling to the target size
+        let scale = max(targetSize.width / self.extent.width, targetSize.height / self.extent.height)
+        let filter = CIFilter(name: interpolation)
+        filter?.setValue(self, forKey: kCIInputImageKey)
+        filter?.setValue(NSNumber(value: Double(scale)), forKey: kCIInputScaleKey)
+        filter?.setValue(1.0, forKey: kCIInputAspectRatioKey)
+        
+        guard let downscaledImage = filter?.outputImage else { return nil }
+        
+        // Apply sharpening filter to enhance image quality
+        let sharpenFilter = CIFilter(name: "CISharpenLuminance")
+        sharpenFilter?.setValue(downscaledImage, forKey: kCIInputImageKey)
+        sharpenFilter?.setValue(0.4, forKey: kCIInputSharpnessKey) // Adjust sharpness value as needed
+        
+        return sharpenFilter?.outputImage
+    }
+    
     func applyHigherSizeAndSharpen(targetSize: CGSize, interpolation: String) -> CIImage? {
         let adjustedTargetSize = CGSize(width: targetSize.width * 1.5, height: targetSize.height * 1.5)
         let scaleWidth = adjustedTargetSize.width / extent.width
@@ -363,7 +363,7 @@ extension CIImage {
         filter?.setValue(self, forKey: kCIInputImageKey)
         filter?.setValue(NSNumber(value: Double(scale)), forKey: kCIInputScaleKey)
         filter?.setValue(1.0, forKey: kCIInputAspectRatioKey)
-
+        
         guard let outputImage = filter?.outputImage else { return nil }
         
         let sharpenFilter = CIFilter(name: "CISharpenLuminance")
@@ -371,6 +371,23 @@ extension CIImage {
         sharpenFilter?.setValue(0.4, forKey: kCIInputSharpnessKey)
         
         return sharpenFilter?.outputImage
+    }
+    
+    func applySmoothingAfterDownscale(targetSize: CGSize, interpolation: String) -> CIImage? {
+        let scale = min(targetSize.width / self.extent.width, targetSize.height / self.extent.height)
+        let filter = CIFilter(name: interpolation)
+        filter?.setValue(self, forKey: kCIInputImageKey)
+        filter?.setValue(NSNumber(value: Double(scale)), forKey: kCIInputScaleKey)
+        filter?.setValue(1.0, forKey: kCIInputAspectRatioKey)
+        
+        guard let downscaledImage = filter?.outputImage else { return nil }
+        
+        // Apply Gaussian blur to smooth out artifacts
+        let smoothingFilter = CIFilter(name: "CIGaussianBlur")
+        smoothingFilter?.setValue(downscaledImage, forKey: kCIInputImageKey)
+        smoothingFilter?.setValue(2.0, forKey: kCIInputRadiusKey) // Adjust blur radius as needed
+        
+        return smoothingFilter?.outputImage
     }
 }
 
@@ -400,18 +417,18 @@ extension CGImage {
 extension UIImage {
     func downsampleImage(for size: CGSize) -> UIImage? {
         var aspectFillSize = size
-
+        
         let newWidth: CGFloat = size.width / self.size.width
         let newHeight: CGFloat = size.height / self.size.height
-
+        
         if newHeight > newWidth {
             aspectFillSize.width = newHeight * self.size.width
         } else if newHeight < newWidth {
             aspectFillSize.height = newWidth * self.size.height
         }
-
+        
         let renderer = UIGraphicsImageRenderer(size: aspectFillSize)
-
+        
         return renderer.image { _ in
             self.draw(in: CGRect(origin: .zero, size: aspectFillSize))
         }
