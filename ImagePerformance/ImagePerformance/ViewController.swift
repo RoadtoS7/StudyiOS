@@ -14,12 +14,12 @@ class ViewController: UIViewController {
     private var stepScaledImageView: UIImageView!
     private var sharpenFilterImageView: UIImageView!
     private var dispalyScaleImageView: UIImageView!
-    private var scaleTestImage: UIImageView!
+    private var bicubicImageView: UIImageView!
     private var imageViews: [UIImageView] = []
     private var scaledImageViews: [UIImageView] = []
     
     
-    private let bookCorverUrl: URL = URL(string: "https://story-a.tapas.io/prod/story/9928b181-d589-4cc6-a4d6-0ab67b17eff2/bc/2x/6d91f071-65e7-49fa-a18e-31a2e0346364.heic")!
+    private let bookCorverUrl1: URL = URL(string: "https://story-a.tapas.io/prod/story/9928b181-d589-4cc6-a4d6-0ab67b17eff2/bc/2x/6d91f071-65e7-49fa-a18e-31a2e0346364.heic")!
     private let comicCoverUrl: URL =  URL(string: "https://dev-story-a.tapas.io/qa/story/170601/c2/2x/c2_The_Lady_and_Her_Butler.heic")!
 
     override func viewDidLoad() {
@@ -36,42 +36,49 @@ class ViewController: UIViewController {
         
         originImageView = UIImageView(frame: CGRect(x: 10, y: 100, width: bookCardWidth, height: bookCardHeight))
         imageView = UIImageView(frame: CGRect(x: 10 + width + 10, y: 100, width: bookCardWidth, height: bookCardHeight))
+        bicubicImageView = UIImageView(frame: CGRect(x:10, y: 10 + height + 10, width: bookCardWidth, height: bookCardHeight))
         
-        stepScaledImageView = UIImageView(frame: CGRect(x:10, y: 10 + height + 10, width: bookCardWidth, height: bookCardHeight))
         sharpenFilterImageView = UIImageView(frame: CGRect(x: 10 + width + 10, y: 10 + height + 10, width: bookCardWidth, height: bookCardHeight))
         
         dispalyScaleImageView = UIImageView(frame: CGRect(x: 10, y: 10 + height * 2 + 10, width: bookCardWidth, height: bookCardHeight))
-        scaleTestImage = UIImageView(frame: CGRect(x: 10 + width, y: 10 + height * 2 + 10, width: bookCardWidth, height: bookCardHeight))
+        stepScaledImageView = UIImageView(frame: CGRect(x: 10 + width, y: 10 + height * 2 + 10, width: bookCardWidth, height: bookCardHeight))
         
-        imageViews = [originImageView, imageView, stepScaledImageView, sharpenFilterImageView, dispalyScaleImageView, scaleTestImage]
+        imageViews = [originImageView, imageView, stepScaledImageView, sharpenFilterImageView, dispalyScaleImageView, bicubicImageView]
         scaledImageViews = [imageView, stepScaledImageView, sharpenFilterImageView, dispalyScaleImageView]
         
         imageViews.forEach { view.addSubview($0) }
         
-        originImageView.sd_setImage(with: bookCorverUrl)
+        originImageView.sd_setImage(with: bookCorverUrl1)
 
-        downloadAndResizeWithURLSessionWitoutThumbnail(imageView: imageView, url: bookCorverUrl, targetSize: imageView.bounds.size, interpolation: "CILanczosScaleTransform")
-        downloadAndResizeStepByStep(imageView: stepScaledImageView, url: bookCorverUrl, targetSize: stepScaledImageView.bounds.size, interpolation: "CILanczosScaleTransform")
-        downloadImage(imageView: sharpenFilterImageView, url: bookCorverUrl) { data in
-            if let ciImage = CIImage(data: data) {
-                return ciImage.applyInterpolationWithSharpening(targetSize: bookCardImageSize, interpolation: "CILanczosScaleTransform")
-            }
-            
-            return nil
-        }
-        
-        
-        downloadImage(imageView: dispalyScaleImageView, url: bookCorverUrl, makeCIImage: { data in
-            if let ciImage = CIImage(data: data) {
-                return ciImage.applyDisplayScaleInterplation(targetSize: bookCardImageSize, interpolation: "CILanczosScaleTransform", displayScale: displayScale)
-            }
-            
-            return nil
-        })
+//        downloadAndResizeWithURLSessionWitoutThumbnail(imageView: imageView, url: bookCorverUrl, targetSize: imageView.bounds.size, interpolation: "CILanczosScaleTransform")
+//        downloadAndResizeStepByStep(imageView: stepScaledImageView, url: bookCorverUrl, targetSize: stepScaledImageView.bounds.size, interpolation: "CILanczosScaleTransform")
+//        downloadImage(imageView: sharpenFilterImageView, url: bookCorverUrl) { data in
+//            if let ciImage = CIImage(data: data) {
+//                return ciImage.applyInterpolationWithSharpening(targetSize: bookCardImageSize, interpolation: "CILanczosScaleTransform")
+//            }
+//            
+//            return nil
+//        }
+//        
+//        
+//        downloadImage(imageView: dispalyScaleImageView, url: bookCorverUrl, makeCIImage: { data in
+//            if let ciImage = CIImage(data: data) {
+//                return ciImage.applyDisplayScaleInterplation(targetSize: bookCardImageSize, interpolation: "CILanczosScaleTransform", displayScale: displayScale)
+//            }
+//            
+//            return nil
+//        })
+//        
+//        downloadImage(imageView: bicubicImageView, url: bookCorverUrl) { data in
+//            if let ciImage = CIImage(data: data) {
+//                return ciImage.applyInterpolation(targetSize: bookCardImageSize, interpolation: "CIBicubicScaleTransform")
+//            }
+//            return nil
+//        }
     }
     
     func setBookCoverImage() {
-        SDWebImageManager.shared.loadImage(with: bookCorverUrl, context: nil, progress: nil) { [weak self] image, data, error, cacheType, finished, url in
+        SDWebImageManager.shared.loadImage(with: bookCorverUrl1, context: nil, progress: nil) { [weak self] image, data, error, cacheType, finished, url in
             self?.imageView.image = image?.downsampleImage(for: self?.imageView.frame.size ?? .zero)
         }
         
@@ -204,7 +211,7 @@ extension ViewController {
             // Create CIImage from raw image data
             if let ciImage = CIImage(data: imageData),
                let interpolatedImage = ciImage.applyInterpolation(targetSize: targetSize, interpolation: interpolation),
-               let cgImage = CIContext(options: [.useSoftwareRenderer:false]).createCGImage(interpolatedImage, from: interpolatedImage.extent) { // Apply interpolation
+               let cgImage = CIContext(options: [.useSoftwareRenderer:true]).createCGImage(interpolatedImage, from: interpolatedImage.extent) { // Apply interpolation
                 let uiimage = UIImage(cgImage: cgImage)
                 
                 DispatchQueue.main.async {
@@ -250,7 +257,8 @@ extension CIImage {
         let (widthPointCount, heightPointCount): (CGFloat, CGFloat) = (displayScale * targetSize.width, displayScale * targetSize.height)
         let (scaleWidth, scaleHeight): (CGFloat, CGFloat) = (widthPointCount / extent.width, heightPointCount / extent.height)
         
-        let scale = min(scaleWidth, scaleHeight)
+//        let scale = min(scaleWidth, scaleHeight)
+        let scale = 0.5
         
         print("$$ extent \(extent) - targetSize: \(targetSize) - scaleWidth: \(scaleWidth) - scaleHeight: \(scaleHeight)")
 
