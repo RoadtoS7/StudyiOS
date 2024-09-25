@@ -19,7 +19,8 @@ class ViewController: UIViewController {
     private var scaledImageViews: [UIImageView] = []
     
     
-    private let bookCorverUrl1: URL = URL(string: "https://story-a.tapas.io/prod/story/9928b181-d589-4cc6-a4d6-0ab67b17eff2/bc/2x/6d91f071-65e7-49fa-a18e-31a2e0346364.heic")!
+    private let bookCorverUrl: URL = URL(string: "https://story-a.tapas.io/prod/story/9928b181-d589-4cc6-a4d6-0ab67b17eff2/bc/2x/6d91f071-65e7-49fa-a18e-31a2e0346364.heic")!
+    private let bookCorverUrl2: URL = URL(string: "https://story-a.tapas.io/prod/story/cef4dc69-f7bf-40ad-a4ed-d37563379ec6/bc/2x/8d9d6365-7bca-4efb-b995-e950847259be.heic")! // 9MB
     private let comicCoverUrl: URL =  URL(string: "https://dev-story-a.tapas.io/qa/story/170601/c2/2x/c2_The_Lady_and_Her_Butler.heic")!
 
     override func viewDidLoad() {
@@ -48,9 +49,14 @@ class ViewController: UIViewController {
         
         imageViews.forEach { view.addSubview($0) }
         
-        originImageView.sd_setImage(with: bookCorverUrl1)
+        originImageView.sd_setImage(with: bookCorverUrl2) { image, _, _, _ in
+            if let cgimage = image?.cgImage {
+                let bytes = cgimage.bytesPerRow * cgimage.height
+                print("$$ origin image bytes - \(bytes)")
+            }
+        }
 
-//        downloadAndResizeWithURLSessionWitoutThumbnail(imageView: imageView, url: bookCorverUrl, targetSize: imageView.bounds.size, interpolation: "CILanczosScaleTransform")
+        downloadAndResizeWithURLSessionWitoutThumbnail(imageView: imageView, url: bookCorverUrl2, targetSize: imageView.bounds.size, interpolation: "CILanczosScaleTransform")
 //        downloadAndResizeStepByStep(imageView: stepScaledImageView, url: bookCorverUrl, targetSize: stepScaledImageView.bounds.size, interpolation: "CILanczosScaleTransform")
 //        downloadImage(imageView: sharpenFilterImageView, url: bookCorverUrl) { data in
 //            if let ciImage = CIImage(data: data) {
@@ -69,20 +75,13 @@ class ViewController: UIViewController {
 //            return nil
 //        })
 //        
-//        downloadImage(imageView: bicubicImageView, url: bookCorverUrl) { data in
-//            if let ciImage = CIImage(data: data) {
-//                return ciImage.applyInterpolation(targetSize: bookCardImageSize, interpolation: "CIBicubicScaleTransform")
-//            }
-//            return nil
-//        }
-    }
-    
-    func setBookCoverImage() {
-        SDWebImageManager.shared.loadImage(with: bookCorverUrl1, context: nil, progress: nil) { [weak self] image, data, error, cacheType, finished, url in
-            self?.imageView.image = image?.downsampleImage(for: self?.imageView.frame.size ?? .zero)
+        downloadImage(imageView: bicubicImageView, url: bookCorverUrl2) { data in
+            if let ciImage = CIImage(data: data) {
+                return ciImage.applyInterpolation(targetSize: bookCardImageSize, interpolation: "CIBicubicScaleTransform")
+            }
+            return nil
         }
-        
-        
+    }
         
         // SDWebImageCoderOption: // width, height를 줄이는 작업을 하지 않는다.
         //        let decodeOptions : [SDImageCoderOption : Any] = [
@@ -108,18 +107,16 @@ class ViewController: UIViewController {
     }
     
     func customBookCorverImage() {
-        //        let imageSource = CGImageSourceCreateWithURL(url as CFURL, nil)!
-        //       let properties = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, nil)
-        //       let options: [CFString : Any] = [
-        //           kCGImageSourceThumbnailMaxPixelSize: 100,
-        //           kCGImageSourceCreateThumbnailFromImageAlways: true
-        //       ]
-        //       let scaledImage = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, options as CFDictionary)!
-        //       let image = UIImage(cgImage: scaledImage)
-        //       imageView.image = image
-    }
-    
-    
+//        let imageSource = CGImageSourceCreateWithURL(url as CFURL, nil)!
+//       let properties = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, nil)
+//       let options: [CFString : Any] = [
+//           kCGImageSourceThumbnailMaxPixelSize: 100,
+//           kCGImageSourceCreateThumbnailFromImageAlways: true
+//       ]
+//       let scaledImage = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, options as CFDictionary)!
+//       let image = UIImage(cgImage: scaledImage)
+//       imageView.image = image
+//    }
 }
 
 extension ViewController {
@@ -187,7 +184,8 @@ extension ViewController {
             if let ciImage = makeCIImage(imageData),
                let cgImage = CIContext(options: [.useSoftwareRenderer:false]).createCGImage(ciImage, from: ciImage.extent) { // Apply interpolation
                 let uiimage = UIImage(cgImage: cgImage)
-                
+                let imageSize = cgImage.bytesPerRow * cgImage.height
+                print("$$ downloadImage - imageSize: ", imageSize)
                 DispatchQueue.main.async {
                     imageView.image = uiimage
                 }
@@ -213,6 +211,9 @@ extension ViewController {
                let interpolatedImage = ciImage.applyInterpolation(targetSize: targetSize, interpolation: interpolation),
                let cgImage = CIContext(options: [.useSoftwareRenderer:true]).createCGImage(interpolatedImage, from: interpolatedImage.extent) { // Apply interpolation
                 let uiimage = UIImage(cgImage: cgImage)
+                
+                let imageSize = cgImage.bytesPerRow * cgImage.height
+                print("$$ lanchos image size: ", imageSize)
                 
                 DispatchQueue.main.async {
                     imageView.image = uiimage
@@ -257,8 +258,8 @@ extension CIImage {
         let (widthPointCount, heightPointCount): (CGFloat, CGFloat) = (displayScale * targetSize.width, displayScale * targetSize.height)
         let (scaleWidth, scaleHeight): (CGFloat, CGFloat) = (widthPointCount / extent.width, heightPointCount / extent.height)
         
-//        let scale = min(scaleWidth, scaleHeight)
-        let scale = 0.5
+        let scale = min(scaleWidth, scaleHeight)
+//        let scale = 0.5
         
         print("$$ extent \(extent) - targetSize: \(targetSize) - scaleWidth: \(scaleWidth) - scaleHeight: \(scaleHeight)")
 
