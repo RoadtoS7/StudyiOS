@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     private var stepScaledImageView: UIImageView!
     private var sharpenFilterImageView: UIImageView!
     private var dispalyScaleImageView: UIImageView!
+    private var scaleTestImage: UIImageView!
     private var imageViews: [UIImageView] = []
     private var scaledImageViews: [UIImageView] = []
     
@@ -40,16 +41,17 @@ class ViewController: UIViewController {
         sharpenFilterImageView = UIImageView(frame: CGRect(x: 10 + width + 10, y: 10 + height + 10, width: bookCardWidth, height: bookCardHeight))
         
         dispalyScaleImageView = UIImageView(frame: CGRect(x: 10, y: 10 + height * 2 + 10, width: bookCardWidth, height: bookCardHeight))
+        scaleTestImage = UIImageView(frame: CGRect(x: 10 + width, y: 10 + height * 2 + 10, width: bookCardWidth, height: bookCardHeight))
         
-        imageViews = [originImageView, imageView, stepScaledImageView, sharpenFilterImageView, dispalyScaleImageView]
+        imageViews = [originImageView, imageView, stepScaledImageView, sharpenFilterImageView, dispalyScaleImageView, scaleTestImage]
         scaledImageViews = [imageView, stepScaledImageView, sharpenFilterImageView, dispalyScaleImageView]
         
         imageViews.forEach { view.addSubview($0) }
         
         originImageView.sd_setImage(with: bookCorverUrl)
-        
-        downloadAndResizeWithURLSessionWitoutThumbnail(imageView: imageView, url: bookCorverUrl, targetSize: imageView.frame.size, interpolation: "CILanczosScaleTransform")
-        downloadAndResizeStepByStep(imageView: stepScaledImageView, url: bookCorverUrl, targetSize: stepScaledImageView.frame.size, interpolation: "CILanczosScaleTransform")
+
+        downloadAndResizeWithURLSessionWitoutThumbnail(imageView: imageView, url: bookCorverUrl, targetSize: imageView.bounds.size, interpolation: "CILanczosScaleTransform")
+        downloadAndResizeStepByStep(imageView: stepScaledImageView, url: bookCorverUrl, targetSize: stepScaledImageView.bounds.size, interpolation: "CILanczosScaleTransform")
         downloadImage(imageView: sharpenFilterImageView, url: bookCorverUrl) { data in
             if let ciImage = CIImage(data: data) {
                 return ciImage.applyInterpolationWithSharpening(targetSize: bookCardImageSize, interpolation: "CILanczosScaleTransform")
@@ -244,8 +246,17 @@ extension ViewController {
 
 extension CIImage {
     func applyInterpolation(targetSize: CGSize, interpolation: String) -> CIImage? {
+        let displayScale: CGFloat = UITraitCollection.current.displayScale
+        let (widthPointCount, heightPointCount): (CGFloat, CGFloat) = (displayScale * targetSize.width, displayScale * targetSize.height)
+        let (scaleWidth, scaleHeight): (CGFloat, CGFloat) = (widthPointCount / extent.width, heightPointCount / extent.height)
+        
+        let scale = min(scaleWidth, scaleHeight)
+        
+        print("$$ extent \(extent) - targetSize: \(targetSize) - scaleWidth: \(scaleWidth) - scaleHeight: \(scaleHeight)")
+
         let filter = CIFilter(name: interpolation)
         filter?.setValue(self, forKey: kCIInputImageKey)
+<<<<<<< HEAD
         
         let scaleWidth = targetSize.width / extent.width
         let scaleHeight = targetSize.height / extent.height
@@ -254,12 +265,16 @@ extension CIImage {
         
         print("$$ extent \(extent) - targetSize: \(targetSize) - originScale: \(scale) - scale: \(refactoredScale)")
         filter?.setValue(NSNumber(value: Double(0.5)), forKey: kCIInputScaleKey)
+=======
+        filter?.setValue(NSNumber(value: Double(scale)), forKey: kCIInputScaleKey)
+>>>>>>> d6cab11 (UIImageView의 bounds를 가지고 물리적 픽셀 개수를 구하고, 이미지를 구성하는 점(논리적 픽셀) 개수를 줄이도록 구성했다.)
         filter?.setValue(1.0, forKey: kCIInputAspectRatioKey)
         return filter?.outputImage
     }
     
     func applyDisplayScaleInterplation(targetSize: CGSize, interpolation: String, displayScale: CGFloat) -> CIImage? {
-        let scaledTargetSize = CGSize(width: targetSize.width * displayScale, height: targetSize.height * displayScale) // pixel 사이즈에 맞도록 배수를 한다.
+        // 배수를 하게 되면, downscale이 아니라 upscale이 될 수 있는 우려가 있다.
+        let scaledTargetSize = CGSize(width: targetSize.width * displayScale, height: targetSize.height * displayScale)
         let scale = min(scaledTargetSize.width / self.extent.width, scaledTargetSize.height / self.extent.height)
         
         print("$$ scale: \(scale) - width: \(scaledTargetSize.width / self.extent.width) - height: \(scaledTargetSize.height / self.extent.height)")
@@ -270,6 +285,7 @@ extension CIImage {
         filter?.setValue(1.0, forKey: kCIInputAspectRatioKey)
         return filter?.outputImage
     }
+    
     
     func applyStepByStepInterpolation(targetSize: CGSize, interpolation: String) -> CIImage? {
         // Initial size
