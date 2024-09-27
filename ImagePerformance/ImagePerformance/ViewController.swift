@@ -11,52 +11,95 @@ import SDWebImage
 class ViewController: UIViewController {
     private var originImageView: UIImageView!
     private var imageView: UIImageView!
+    private var bicubicImageView: UIImageView!
+    private var sdThumbnailImageView: UIImageView!
+    
     private var stepScaledImageView: UIImageView!
     private var sharpenFilterImageView: UIImageView!
     private var dispalyScaleImageView: UIImageView!
-    private var bicubicImageView: UIImageView!
     private var imageViews: [UIImageView] = []
     private var scaledImageViews: [UIImageView] = []
     
+    // constants
+    private let (bookCardWidth, bookCardHeight): (CGFloat, CGFloat) = (101, 152)
+    private var width: CGFloat {
+        abs(view.frame.width / 3)
+    }
+    private var height: CGFloat {
+        width * 2
+    }
     
+    private var rects: [CGRect] {
+        [
+            CGRect(x: 10, y: 100, width: bookCardWidth, height: bookCardHeight),
+            CGRect(x: 10 + width + 10, y: 100, width: bookCardWidth, height: bookCardHeight),
+            
+            CGRect(x:10, y: 10 + height + 10, width: bookCardWidth, height: bookCardHeight),
+            CGRect(x: 10 + width + 10, y: 10 + height + 10, width: bookCardWidth, height: bookCardHeight),
+            
+            CGRect(x: 10, y: 10 + height * 2 + 10, width: bookCardWidth, height: bookCardHeight),
+            CGRect(x: 10 + width, y: 10 + height * 2 + 10, width: bookCardWidth, height: bookCardHeight),
+            
+            CGRect(x: 10, y: 10 + height * 3 + 10, width: bookCardWidth, height: bookCardHeight),
+        ]
+    }
+    
+    // url
     private let bookCorverUrl: URL = URL(string: "https://story-a.tapas.io/prod/story/9928b181-d589-4cc6-a4d6-0ab67b17eff2/bc/2x/6d91f071-65e7-49fa-a18e-31a2e0346364.heic")!
     private let bookCorverUrl2: URL = URL(string: "https://story-a.tapas.io/prod/story/cef4dc69-f7bf-40ad-a4ed-d37563379ec6/bc/2x/8d9d6365-7bca-4efb-b995-e950847259be.heic")! // 9MB
     private let comicCoverUrl: URL =  URL(string: "https://dev-story-a.tapas.io/qa/story/170601/c2/2x/c2_The_Lady_and_Her_Butler.heic")!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
+        
+        // constant
         let displayScale: CGFloat = traitCollection.displayScale
         print("$$ current display scale: ", traitCollection.displayScale)
-        view.backgroundColor = .white
-        let (bookCardWidth, bookCardHeight): (CGFloat, CGFloat) = (101, 152)
         let bookCardImageSize = CGSize(width: bookCardWidth, height: bookCardHeight)
-        let width: CGFloat = abs(view.frame.width / 3)
-        let height: CGFloat = width * 2
         let (x, y): (CGFloat, CGFloat) = (10, 10)
         
         
+        // make image view
         originImageView = UIImageView(frame: CGRect(x: 10, y: 100, width: bookCardWidth, height: bookCardHeight))
         imageView = UIImageView(frame: CGRect(x: 10 + width + 10, y: 100, width: bookCardWidth, height: bookCardHeight))
         bicubicImageView = UIImageView(frame: CGRect(x:10, y: 10 + height + 10, width: bookCardWidth, height: bookCardHeight))
+        sdThumbnailImageView = UIImageView(frame: CGRect(x:10, y: 10 + height + 10, width: bookCardWidth, height: bookCardHeight))
         
         sharpenFilterImageView = UIImageView(frame: CGRect(x: 10 + width + 10, y: 10 + height + 10, width: bookCardWidth, height: bookCardHeight))
         
         dispalyScaleImageView = UIImageView(frame: CGRect(x: 10, y: 10 + height * 2 + 10, width: bookCardWidth, height: bookCardHeight))
         stepScaledImageView = UIImageView(frame: CGRect(x: 10 + width, y: 10 + height * 2 + 10, width: bookCardWidth, height: bookCardHeight))
         
-        imageViews = [originImageView, imageView, stepScaledImageView, sharpenFilterImageView, dispalyScaleImageView, bicubicImageView]
         scaledImageViews = [imageView, stepScaledImageView, sharpenFilterImageView, dispalyScaleImageView]
+        imageViews = [originImageView, imageView, bicubicImageView, sdThumbnailImageView, stepScaledImageView, sharpenFilterImageView, dispalyScaleImageView, bicubicImageView]
+
+        zip(imageViews, rects)
+            .forEach { (imageView, rect) in
+                imageView.frame = rect
+            }
         
         imageViews.forEach { view.addSubview($0) }
         
-        originImageView.sd_setImage(with: bookCorverUrl2) { image, _, _, _ in
-            if let cgimage = image?.cgImage {
-                let bytes = cgimage.bytesPerRow * cgimage.height
-                print("$$ origin image bytes - \(bytes)")
-            }
-        }
-
-        downloadAndResizeWithURLSessionWitoutThumbnail(imageView: imageView, url: bookCorverUrl2, targetSize: imageView.bounds.size, interpolation: "CILanczosScaleTransform")
+            
+        // setImage
+//        1.
+//        originImageView.sd_setImage(with: bookCorverUrl2) { image, _, _, _ in
+//            if let cgimage = image?.cgImage {
+//                let bytes = cgimage.bytesPerRow * cgimage.height
+//                print("$$ origin image bytes - \(bytes)")
+//            }
+//        }
+//      
+        
+//        2.
+//        useSdImageCoderOption(url: bookCorverUrl2, imageView: imageView)
+        
+        
+        useContextToSetPixelSize(url: bookCorverUrl2, imageView: imageView)
+//
+//        downloadAndResizeWithURLSessionWitoutThumbnail(imageView: imageView, url: bookCorverUrl2, targetSize: imageView.bounds.size, interpolation: "CILanczosScaleTransform")
+        
 //        downloadAndResizeStepByStep(imageView: stepScaledImageView, url: bookCorverUrl, targetSize: stepScaledImageView.bounds.size, interpolation: "CILanczosScaleTransform")
 //        downloadImage(imageView: sharpenFilterImageView, url: bookCorverUrl) { data in
 //            if let ciImage = CIImage(data: data) {
@@ -74,24 +117,39 @@ class ViewController: UIViewController {
 //            
 //            return nil
 //        })
-//        
-        downloadImage(imageView: bicubicImageView, url: bookCorverUrl2) { data in
-            if let ciImage = CIImage(data: data) {
-                return ciImage.applyInterpolation(targetSize: bookCardImageSize, interpolation: "CIBicubicScaleTransform")
-            }
-            return nil
-        }
+//      
+        
+//         -- biciubic algorithm 사용
+//        downloadImage(imageView: bicubicImageView, url: bookCorverUrl2) { data in
+//            if let ciImage = CIImage(data: data) {
+//                return ciImage.applyInterpolation(targetSize: bookCardImageSize, interpolation: "CIBicubicScaleTransform")
+//            }
+//            return nil
+//        }
+    }
+    
+    /// SDWebImageCoderOption: width, height를 줄이는 작업을 하지 않는다.
+    func useSdImageCoderOption(url: URL, imageView: UIImageView) {
+        let displayScale = UITraitCollection.current.displayScale
+        let targetSize = CGSize(width: imageView.bounds.width * displayScale, height: imageView.bounds.height * displayScale)
+        
+        let decodeOptions : [SDImageCoderOption : CGSize] = [
+            SDImageCoderOption.decodeThumbnailPixelSize: targetSize
+        ]
+        
+        print("$$ set sdImageCoderOption.thumbnailPixelSize: ", targetSize)
+        let context = [SDWebImageContextOption.imageDecodeOptions : decodeOptions]
+        imageView.sd_setImage(with: url, placeholderImage: nil, context: context)
+    }
+    
+
+    /// CGImageSourceCreateThumbnailAtIndex 사용 O!!!! , 그런데 이미지가 조금 뭉게지는 것 같아요...
+    func useContextToSetPixelSize(url: URL, imageView: UIImageView) {
+        let displayScale = UITraitCollection.current.displayScale
+        let targetSize = CGSize(width: imageView.bounds.width * displayScale, height: imageView.bounds.height * displayScale)
+        imageView.sd_setImage(with: url, placeholderImage: nil, options: [], context: [.imageThumbnailPixelSize : targetSize, .imagePreserveAspectRatio: false])
     }
         
-        // SDWebImageCoderOption: // width, height를 줄이는 작업을 하지 않는다.
-        //        let decodeOptions : [SDImageCoderOption : Any] = [
-        //            SDImageCoderOption.decodeThumbnailPixelSize: imageView.frame.size
-        //        ]
-        //        let context = [SDWebImageContextOption.imageDecodeOptions : decodeOptions]
-        //        imageView.sd_setImage(with: bookCorverUrl, placeholderImage: nil, context: context)
-        
-        //         CGImageSourceCreateThumbnailAtIndex 사용 O!!!! , 그런데 이미지가 조금 뭉게지는 것 같아요...
-        //        imageView.sd_setImage(with: bookCorverUrl, placeholderImage: nil, options: [], context: [.imageThumbnailPixelSize : imageView.frame.size, .imagePreserveAspectRatio: false])
         
         // 애니메이션 이미지에서
         //        imageView.sd_setImage(with: bookCorverUrl, placeholderImage: nil, options: .decodeFirstFrameOnly)   // -> CGImageSourceCreateThumbnailAtIndex 사용 X
@@ -250,6 +308,19 @@ extension ViewController {
         
         task.resume()
     }
+    
+    func sdDownloadWithResizing(imageView: UIImageView, url: URL, targetSize: CGSize) {
+        let transformer = SDImageResizingTransformer(size: targetSize, scaleMode: .fill)
+        SDWebImageManager.shared.loadImage(
+            with: url,
+            options: [.fromLoaderOnly],
+            context: [.storeCacheType: SDImageCacheType.none.rawValue],
+            progress: nil,
+            completed: { [weak self] (image, data, error, cacheType, finished, url) in
+                imageView.image = image
+            }
+        )
+    }
 }
 
 extension CIImage {
@@ -265,18 +336,7 @@ extension CIImage {
 
         let filter = CIFilter(name: interpolation)
         filter?.setValue(self, forKey: kCIInputImageKey)
-<<<<<<< HEAD
-        
-        let scaleWidth = targetSize.width / extent.width
-        let scaleHeight = targetSize.height / extent.height
-        let scale = max(scaleWidth, scaleHeight)
-        let refactoredScale = scale * 2
-        
-        print("$$ extent \(extent) - targetSize: \(targetSize) - originScale: \(scale) - scale: \(refactoredScale)")
-        filter?.setValue(NSNumber(value: Double(0.5)), forKey: kCIInputScaleKey)
-=======
         filter?.setValue(NSNumber(value: Double(scale)), forKey: kCIInputScaleKey)
->>>>>>> d6cab11 (UIImageView의 bounds를 가지고 물리적 픽셀 개수를 구하고, 이미지를 구성하는 점(논리적 픽셀) 개수를 줄이도록 구성했다.)
         filter?.setValue(1.0, forKey: kCIInputAspectRatioKey)
         return filter?.outputImage
     }
