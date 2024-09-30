@@ -19,7 +19,11 @@ final class SDDownscalingCoder: SDImageIOCoder {
               let data,
               let ciImage = CIImage(data: data) else {
             
-            return super.decodedImage(with: data, options: options)
+            let uiimage =  super.decodedImage(with: data, options: options)
+            let bytesPerRow = uiimage?.cgImage?.bytesPerRow ?? .zero
+            let height = uiimage?.cgImage?.height ?? .zero
+            print("$$ not downscale: \(bytesPerRow * height)")
+            return uiimage
         }
             
         print("$$ size in options: \(size), options: \(options?[SDImageCoderOption.decodeThumbnailPixelSize])")
