@@ -15,31 +15,43 @@ final class SDDownscalingCoder: SDImageIOCoder {
     }
     
     override func decodedImage(with data: Data?, options: [SDImageCoderOption : Any]? = nil) -> UIImage? {
-        let size = options?[SDImageCoderOption.decodeThumbnailPixelSize] as? CGSize
+        guard let size = options?[SDImageCoderOption.decodeThumbnailPixelSize] as? CGSize,
+              let data,
+              let ciImage = CIImage(data: data) else {
+            
+            return super.decodedImage(with: data, options: options)
+        }
+            
         print("$$ size in options: \(size), options: \(options?[SDImageCoderOption.decodeThumbnailPixelSize])")
         
-        guard let data else {
-            return super.decodedImage(with: data, options: options)
-        }
-        
-        guard let ciImage = CIImage(data: data) else {
-            return super.decodedImage(with: data, options: options)
-        }
-        
-        let targetSize: CGSize
-        if let size, size == .zero {
-            targetSize = ciImage.extent.size
-        } else if let size {
-            targetSize = size
+        let targetSize: CGSize = if size == .zero {
+            ciImage.extent.size
         } else {
-            targetSize = ciImage.extent.size
+            size
         }
         
-        if let interpolatedImage = ciImage.applyInterpolation(targetSize: targetSize, interpolation: "CILanczosScaleTransform"),
+        if let interpolatedImage = ciImage.applyDownScaling(targetSize: targetSize, interpolation: "CILanczosScaleTransform"),
            let cgImage = CIContext(options: [.useSoftwareRenderer:true]).createCGImage(interpolatedImage, from: interpolatedImage.extent) {
             let uiimage = UIImage(cgImage: cgImage)
+            print("$$ after decode cgImageBytes: - \(cgImage.bytesPerRow * cgImage.height)")
             return uiimage
         }
         return super.decodedImage(with: data, options: options)
+    }
+}
+
+extension CIImage {
+    func applyDownScaling(targetSize: CGSize, interpolation: String) -> CIImage? {
+        let (scaleWidth, scaleHeight): (CGFloat, CGFloat) = (targetSize.width / extent.width, targetSize.height / extent.height)
+        
+        let scale = min(scaleWidth, scaleHeight)
+        
+        print("$$ extent \(extent) - targetSize: \(targetSize) - scaleWidth: \(scaleWidth) - scaleHeight: \(scaleHeight)")
+
+        let filter = CIFilter(name: interpolation)
+        filter?.setValue(self, forKey: kCIInputImageKey)
+        filter?.setValue(NSNumber(value: Double(scale)), forKey: kCIInputScaleKey)
+        filter?.setValue(1.0, forKey: kCIInputAspectRatioKey)
+        return filter?.outputImage
     }
 }

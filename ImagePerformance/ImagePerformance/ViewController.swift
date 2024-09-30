@@ -81,15 +81,13 @@ class ViewController: UIViewController {
         imageViews.forEach { view.addSubview($0) }
         
             
-        // setImage
-//        1.
+//         1. setImage
 //        originImageView.sd_setImage(with: bookCorverUrl2) { image, _, _, _ in
 //            if let cgimage = image?.cgImage {
 //                let bytes = cgimage.bytesPerRow * cgimage.height
 //                print("$$ origin image bytes - \(bytes)")
 //            }
 //        }
-//      
         
 //        2. SDImageCoderOption으로 target size를 지정
 //        useSdImageCoderOption(url: bookCorverUrl2, imageView: imageView)
@@ -149,8 +147,14 @@ class ViewController: UIViewController {
         let displayScale = UITraitCollection.current.displayScale
         let targetSize = CGSize(width: imageView.bounds.width * displayScale, height: imageView.bounds.height * displayScale)
         
+        let decodeOptions : [SDImageCoderOption : CGSize] = [
+            SDImageCoderOption.decodeThumbnailPixelSize: targetSize
+        ]
+        
+        
         imageView.sd_setImage(with: url, placeholderImage: nil, options: [], context: [
-            .imageThumbnailPixelSize : imageView.bounds.size,
+            .imageThumbnailPixelSize : targetSize,
+            .imageDecodeOptions : decodeOptions,
             .imageCoder: SDDownscalingCoder()
         ])
     }
