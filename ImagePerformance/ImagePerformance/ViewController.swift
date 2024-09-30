@@ -54,7 +54,6 @@ class ViewController: UIViewController {
         view.backgroundColor = .white
         
         // constant
-        let displayScale: CGFloat = traitCollection.displayScale
         print("$$ current display scale: ", traitCollection.displayScale)
         let bookCardImageSize = CGSize(width: bookCardWidth, height: bookCardHeight)
         let (x, y): (CGFloat, CGFloat) = (10, 10)
@@ -92,12 +91,14 @@ class ViewController: UIViewController {
 //        }
 //      
         
-//        2.
+//        2. SDImageCoderOption으로 target size를 지정
 //        useSdImageCoderOption(url: bookCorverUrl2, imageView: imageView)
         
         
+//        3. imageThumbnailSize context option으로 target size를 지정
         useContextToSetPixelSize(url: bookCorverUrl2, imageView: imageView)
-//
+
+//         4. URLSession을 사용해서 이미지 다운로드 -> interpolation을 이용해서 직접 다운스케일링 수행
 //        downloadAndResizeWithURLSessionWitoutThumbnail(imageView: imageView, url: bookCorverUrl2, targetSize: imageView.bounds.size, interpolation: "CILanczosScaleTransform")
         
 //        downloadAndResizeStepByStep(imageView: stepScaledImageView, url: bookCorverUrl, targetSize: stepScaledImageView.bounds.size, interpolation: "CILanczosScaleTransform")
@@ -147,7 +148,11 @@ class ViewController: UIViewController {
     func useContextToSetPixelSize(url: URL, imageView: UIImageView) {
         let displayScale = UITraitCollection.current.displayScale
         let targetSize = CGSize(width: imageView.bounds.width * displayScale, height: imageView.bounds.height * displayScale)
-        imageView.sd_setImage(with: url, placeholderImage: nil, options: [], context: [.imageThumbnailPixelSize : targetSize, .imagePreserveAspectRatio: false])
+        
+        imageView.sd_setImage(with: url, placeholderImage: nil, options: [], context: [
+            .imageThumbnailPixelSize : imageView.bounds.size,
+            .imageCoder: SDDownscalingCoder()
+        ])
     }
         
         
