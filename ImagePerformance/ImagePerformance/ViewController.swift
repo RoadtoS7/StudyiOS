@@ -47,6 +47,7 @@ class ViewController: UIViewController {
     // url
     private let bookCorverUrl: URL = URL(string: "https://story-a.tapas.io/prod/story/9928b181-d589-4cc6-a4d6-0ab67b17eff2/bc/2x/6d91f071-65e7-49fa-a18e-31a2e0346364.heic")!
     private let bookCorverUrl2: URL = URL(string: "https://story-a.tapas.io/prod/story/cef4dc69-f7bf-40ad-a4ed-d37563379ec6/bc/2x/8d9d6365-7bca-4efb-b995-e950847259be.heic")! // 9MB
+    private let bookCorverIssueUrl: URL = URL(string: "https://story-a.tapas.io/prod/story/7740ae3e-2875-4303-897f-53e864f46e23/bc/2x/50de29b7-372b-436d-9424-0ca15c4cf70a.heic")!
     private let comicCoverUrl: URL =  URL(string: "https://dev-story-a.tapas.io/qa/story/170601/c2/2x/c2_The_Lady_and_Her_Butler.heic")!
 
     override func viewDidLoad() {
@@ -94,7 +95,7 @@ class ViewController: UIViewController {
         
         
 //        3. imageThumbnailSize context option으로 target size를 지정
-        useContextToSetPixelSize(url: bookCorverUrl2, imageView: imageView)
+        useContextToSetPixelSize(url: bookCorverIssueUrl, imageView: imageView)
 
 //         4. URLSession을 사용해서 이미지 다운로드 -> interpolation을 이용해서 직접 다운스케일링 수행
 //        downloadAndResizeWithURLSessionWitoutThumbnail(imageView: imageView, url: bookCorverUrl2, targetSize: imageView.bounds.size, interpolation: "CILanczosScaleTransform")
@@ -143,6 +144,7 @@ class ViewController: UIViewController {
     
 
     /// CGImageSourceCreateThumbnailAtIndex 사용 O!!!! , 그런데 이미지가 조금 뭉게지는 것 같아요...
+    /// 이미지 뭉게지는 이슈 해결: targetSize가 pixel 사이즈가 되도록, displayScale을 곱해야 한다.
     func useContextToSetPixelSize(url: URL, imageView: UIImageView) {
         let displayScale = UITraitCollection.current.displayScale
         let targetSize = CGSize(width: imageView.bounds.width * displayScale, height: imageView.bounds.height * displayScale)
@@ -150,13 +152,19 @@ class ViewController: UIViewController {
         let decodeOptions : [SDImageCoderOption : CGSize] = [
             SDImageCoderOption.decodeThumbnailPixelSize: targetSize
         ]
-        
-        
+        let contextOptions: [SDWebImageContextOption : Any] = [
+            .imageThumbnailPixelSize : targetSize,
+            .imageDecodeOptions : decodeOptions,
+            .imageCoder: SDDownscalingCoder()
+        ]
         imageView.sd_setImage(with: url, placeholderImage: nil, options: [], context: [
             .imageThumbnailPixelSize : targetSize,
             .imageDecodeOptions : decodeOptions,
             .imageCoder: SDDownscalingCoder()
         ])
+        imageView.sd_setImage(with: url, placeholderImage: nil, context: contextOptions, progress: nil) { image, error, cacheType, url in
+            print("$$ image: \(image) - error: \(error) - cacheType: \(cacheType) - url:\(url)")
+        }
     }
         
         
