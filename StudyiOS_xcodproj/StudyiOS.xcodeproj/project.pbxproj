@@ -67,6 +67,7 @@
 		2E9E340C2AD8D34C00EBCE96 /* CoreDataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E340B2AD8D34C00EBCE96 /* CoreDataUtils.swift */; };
 		2E9E34102AD9133A00EBCE96 /* MigrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E340F2AD9133A00EBCE96 /* MigrationManager.swift */; };
 		2EA1C6122ACFC47800D526DD /* MenuCacheManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA1C6112ACFC47800D526DD /* MenuCacheManagerTest.swift */; };
+		2EA8F3FC2CD47EF9002D30E2 /* AutoResizingMaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA8F3FB2CD47EF9002D30E2 /* AutoResizingMaskViewController.swift */; };
 		2EC15228288681FA00649ED4 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC15227288681FA00649ED4 /* ImageViewController.swift */; };
 		2EC318D329EFEF2E0015A8B1 /* StudyUIViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC318D229EFEF2E0015A8B1 /* StudyUIViewViewController.swift */; };
 		2EC58171285C2BE5001446C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC58170285C2BE5001446C3 /* AppDelegate.swift */; };
@@ -217,6 +218,7 @@
 		2E9E340B2AD8D34C00EBCE96 /* CoreDataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataUtils.swift; sourceTree = "<group>"; };
 		2E9E340F2AD9133A00EBCE96 /* MigrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationManager.swift; sourceTree = "<group>"; };
 		2EA1C6112ACFC47800D526DD /* MenuCacheManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCacheManagerTest.swift; sourceTree = "<group>"; };
+		2EA8F3FB2CD47EF9002D30E2 /* AutoResizingMaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoResizingMaskViewController.swift; sourceTree = "<group>"; };
 		2EC15227288681FA00649ED4 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		2EC318D229EFEF2E0015A8B1 /* StudyUIViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyUIViewViewController.swift; sourceTree = "<group>"; };
 		2EC5816D285C2BE5001446C3 /* StudyiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -528,6 +530,14 @@
 			path = "XCode New Feature";
 			sourceTree = "<group>";
 		};
+		2EA8F3FA2CD47E60002D30E2 /* AutoResizingMask */ = {
+			isa = PBXGroup;
+			children = (
+				2EA8F3FB2CD47EF9002D30E2 /* AutoResizingMaskViewController.swift */,
+			);
+			path = AutoResizingMask;
+			sourceTree = "<group>";
+		};
 		2EC318D129EFEE8C0015A8B1 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
@@ -564,6 +574,7 @@
 		2EC5816F285C2BE5001446C3 /* StudyiOS */ = {
 			isa = PBXGroup;
 			children = (
+				2EA8F3FA2CD47E60002D30E2 /* AutoResizingMask */,
 				F4D84FA22C932F3500064DA7 /* ComicViewer */,
 				F4693D802C91DA7000F4DAA0 /* Image */,
 				F44191FA2C84B22500156655 /* Swift6 */,
@@ -961,6 +972,7 @@
 				2E9E340C2AD8D34C00EBCE96 /* CoreDataUtils.swift in Sources */,
 				2E87D0582A6A194000346934 /* CustomFlowLayout.swift in Sources */,
 				2E8B461D2AB296D800E8F1B6 /* BoxTabBar.swift in Sources */,
+				2EA8F3FC2CD47EF9002D30E2 /* AutoResizingMaskViewController.swift in Sources */,
 				2E4BA2B02A78EA2F0004E73E /* NavigationTestView.swift in Sources */,
 				2E93CBF52B05B20000BA9F54 /* ThrottleViewController.swift in Sources */,
 				2EF8484E2C8573200090D82C /* DefaultParameterActorIsolation.swift in Sources */,

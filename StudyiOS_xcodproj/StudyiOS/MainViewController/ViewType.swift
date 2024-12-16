@@ -38,6 +38,7 @@ extension ViewType {
         ViewType(title: "UICollectionViewDataSource + UICollectionViewFlowLayout", toViewController: CollectionViewController2()),
         ViewType(title: "ImageIO를 이용해서 downscale하기", toViewController: ImageDownScaleViewController()),
         ViewType(title: "Viewer 구현하기", toViewController: ComicViewerController()),
+        ViewType(title: "Auto Resizing Mask 테스트", toViewController: AutoResizingMaskViewController()),
     ]
     
     static func get(ofIndex index: Int) -> ViewType? {

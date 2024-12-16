@@ -11,20 +11,73 @@ class GCDViewController: UIViewController {
     private var workItem: DispatchWorkItem?
     private var animationStorage: UIViewPropertyAnimator?
     private var closureParameter: ClosureParameter = .init()
+    private var handlerList: [Int : () -> Void] = [:]
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         navigationItem.title = "GCDViewController"
         view.backgroundColor = .white
         
         // test code
         notRetainMultipleObject()
+        
+        
     }
     
 
     deinit {
         print("$$ AsycnSyncSerialConcurrent - deinit")
     }
+    
+    
+//    // Tapas에서 이슈가 발생하던 원래 코드이다.
+//    func origialIssueCode() {
+//        let lockQueue = DispatchQueue(label: "serialQueue")
+//        let concurrentQueue = DispatchConcurrentQueue(label: "concurrentQueue")
+//        var handler: [Int:() -> Void] = [:]
+//        
+//        // action에 넘겨지는 Int값이 서로 같은 경우가 있다면 race condition이 발생한다.
+//        concurrentQueue.async {
+//            let handler = lockQueue.sync {
+//                return handler[0]
+//            } // 얻어와서 바로 실행하니까 문제 없지 않나?
+//            handler[i] = nil
+//        }
+//        concurrentQueue.async {
+//            let handler = lockQueue.sync {
+//                return handler[i]
+//            }
+//            
+//            handler[i] = nil
+//        }
+//        
+//    }
+//    func getSetByLockQueue() {
+//        let lockQueue = DispatchQueue(label: "serialQueue")
+//        let concurrentQueue = DispatchConcurrentQueue(label: "concurrentQueue")
+//        
+//        let action = { (taskIdentifier: Int) in
+//            lockQueue.sync {
+//                let handler = offlineDownloadHandler[taskIdentifier]
+//            }
+//            // 말그대로 동시에 실행될 수 있는 것이기 때문에 무엇이 되는가?
+//            lockQueue.sync {
+//                // handler()
+//                offlineDownloadHandler[taskIdentifier] = nil
+//            }
+//        }
+//        
+//        // action에 넘겨지는 Int값이 서로 같은 경우가 있다면 race condition이 발생한다.
+//        concurrentQueue.async {
+//            action(0)
+//        }
+//        concurrentQueue.async {
+//            action(1)
+//        }
+//    }
 }
 
 extension GCDViewController {
@@ -135,5 +188,19 @@ extension GCDViewController {
         }
         self.animationStorage = anim
         self.animationStorage?.startAnimation()
+    }
+}
+
+extension GCDViewController {
+    func testNestedSyncAndAsync() {
+//        dispatchQueue.sync {
+//            if let handler = handlerList[1] {
+//                DispatchQueue.main.async {
+//                    dispatchQueue.sync {
+//                        handlerList[1] = nil
+//                    }
+//                }
+//            }
+//        }
     }
 }
