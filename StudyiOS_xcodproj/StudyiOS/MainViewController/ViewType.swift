@@ -39,6 +39,7 @@ extension ViewType {
         ViewType(title: "ImageIO를 이용해서 downscale하기", toViewController: ImageDownScaleViewController()),
         ViewType(title: "Viewer 구현하기", toViewController: ComicViewerController()),
         ViewType(title: "Auto Resizing Mask 테스트", toViewController: AutoResizingMaskViewController()),
+        ViewType(title: "Dictionary에서 nil을 반복할 때 테스트", toViewController: DictViewController())
     ]
     
     static func get(ofIndex index: Int) -> ViewType? {

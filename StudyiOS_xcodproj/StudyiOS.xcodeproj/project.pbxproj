@@ -63,6 +63,7 @@
 		2E969FC52AE0D52A003DC07B /* CoreDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E969FC42AE0D52A003DC07B /* CoreDataExtensions.swift */; };
 		2E9777B72ACE9BCF000016F9 /* MenuLayout.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E9777B52ACE9BCF000016F9 /* MenuLayout.xcdatamodeld */; };
 		2E9777BA2ACE9D96000016F9 /* Slope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9777B92ACE9D96000016F9 /* Slope.swift */; };
+		2E99F78B2D0FCABD0071FF3B /* DictViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E99F78A2D0FCABD0071FF3B /* DictViewController.swift */; };
 		2E9E340A2AD8C90500EBCE96 /* DeleteEntityAndMigrationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E34092AD8C90500EBCE96 /* DeleteEntityAndMigrationTest.swift */; };
 		2E9E340C2AD8D34C00EBCE96 /* CoreDataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E340B2AD8D34C00EBCE96 /* CoreDataUtils.swift */; };
 		2E9E34102AD9133A00EBCE96 /* MigrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9E340F2AD9133A00EBCE96 /* MigrationManager.swift */; };
@@ -214,6 +215,7 @@
 		2E969FC42AE0D52A003DC07B /* CoreDataExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataExtensions.swift; sourceTree = "<group>"; };
 		2E9777B62ACE9BCF000016F9 /* MenuLayout.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MenuLayout.xcdatamodel; sourceTree = "<group>"; };
 		2E9777B92ACE9D96000016F9 /* Slope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Slope.swift; sourceTree = "<group>"; };
+		2E99F78A2D0FCABD0071FF3B /* DictViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictViewController.swift; sourceTree = "<group>"; };
 		2E9E34092AD8C90500EBCE96 /* DeleteEntityAndMigrationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteEntityAndMigrationTest.swift; sourceTree = "<group>"; };
 		2E9E340B2AD8D34C00EBCE96 /* CoreDataUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataUtils.swift; sourceTree = "<group>"; };
 		2E9E340F2AD9133A00EBCE96 /* MigrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationManager.swift; sourceTree = "<group>"; };
@@ -523,6 +525,14 @@
 			path = Macro;
 			sourceTree = "<group>";
 		};
+		2E99F7892D0FCAAB0071FF3B /* Dict */ = {
+			isa = PBXGroup;
+			children = (
+				2E99F78A2D0FCABD0071FF3B /* DictViewController.swift */,
+			);
+			path = Dict;
+			sourceTree = "<group>";
+		};
 		2EA40CAF2A72501100DA8C76 /* XCode New Feature */ = {
 			isa = PBXGroup;
 			children = (
@@ -574,6 +584,7 @@
 		2EC5816F285C2BE5001446C3 /* StudyiOS */ = {
 			isa = PBXGroup;
 			children = (
+				2E99F7892D0FCAAB0071FF3B /* Dict */,
 				2EA8F3FA2CD47E60002D30E2 /* AutoResizingMask */,
 				F4D84FA22C932F3500064DA7 /* ComicViewer */,
 				F4693D802C91DA7000F4DAA0 /* Image */,
@@ -1012,6 +1023,7 @@
 				2E0ADBE028B842220035A21B /* Main.swift in Sources */,
 				2E3BB39A2874868F00BBB95C /* Date+Today.swift in Sources */,
 				2E62C80F295ADADA00C83C0C /* ResponderChainViewController.swift in Sources */,
+				2E99F78B2D0FCABD0071FF3B /* DictViewController.swift in Sources */,
 				2E167DE22ACE8AEB0002B921 /* CoreDataContextSaveIssue.swift in Sources */,
 				2E8B46172AB2960200E8F1B6 /* BaseTabBarContentView.swift in Sources */,
 				2EC58173285C2BE5001446C3 /* SceneDelegate.swift in Sources */,
