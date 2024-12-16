@@ -8,12 +8,13 @@
 import UIKit
 
 class DictViewController: UIViewController {
+    private var dict: [String:String] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .green
         applyNil()
-        
+        testValueTypeCapture()
         
     }
     
@@ -23,6 +24,15 @@ class DictViewController: UIViewController {
         dict["key1"] = "value1"
         dict["key1"] = nil
         dict["key1"] = nil
+    }
+    
+    func testValueTypeCapture() {
+        let closure = { [dict] in
+            print("$$ dict: \(dict)")
+        }
+        
+        dict["key1"] = "value1"
+        closure()
     }
     
 
